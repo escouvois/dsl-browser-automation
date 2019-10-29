@@ -2,8 +2,53 @@ grammar org.xtext.imt.fil.dsl.BrowserAutomation with org.eclipse.xtext.common.Te
 
 generate browserAutomation "http://www.xtext.org/imt/fil/dsl/BrowserAutomation"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+Test:
+	{Test}
+	'open' webBrowser=WebBrowser
+	'go' 'to' url=STRING
+	(actions+=Action)*
+;
+
+WebBrowser:
+	'firefox' | 'chrome' | 'safari' | 'internet explorer'
+;
+
+Action:
+	Click | Insert | Verify 
+;
+//| Check | Uncheck | Choose
+
+Get:
+	var=Variable ':' 'get' element=Element 'by' attr=Attribut '=' attrVal=STRING
+;
+ 
+Element:
+	'link' | 'input' | 'button' | 'checkbox' | 'combobox' | 'image' | 'text'
+;
+
+Attribut:
+	'class' | 'value' | 'alt'
+;
+
+Variable:
+	name=ID
+;
+
+VarReference:
+	var=[Variable]
+;
+
+Click:
+	get=Get 
+	'click' 'on' var=VarReference
+;
+
+Insert:
+	get=Get
+	'insert' value=STRING 'in' var=VarReference
+;
+
+Verify:
+	get=Get
+	'verify page contains' var=VarReference
+;
