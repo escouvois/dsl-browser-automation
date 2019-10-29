@@ -1,0 +1,9 @@
+grammar org.xtext.imt.fil.dsl.BrowserAutomation with org.eclipse.xtext.common.Terminals
+
+generate browserAutomation "http://www.xtext.org/imt/fil/dsl/BrowserAutomation"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
