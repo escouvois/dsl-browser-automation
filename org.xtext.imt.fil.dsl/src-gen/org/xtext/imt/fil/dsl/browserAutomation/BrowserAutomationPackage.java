@@ -114,31 +114,13 @@ public interface BrowserAutomationPackage extends EPackage
   int ACTION = 1;
 
   /**
-   * The feature id for the '<em><b>Get</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__GET = 0;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION__VAR = 1;
-
-  /**
    * The number of structural features of the '<em>Action</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = 2;
+  int ACTION_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl <em>Get</em>}' class.
@@ -157,7 +139,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET__VAR = 0;
+  int GET__VAR = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Element</b></em>' attribute.
@@ -166,7 +148,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET__ELEMENT = 1;
+  int GET__ELEMENT = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Attr</b></em>' attribute.
@@ -175,7 +157,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET__ATTR = 2;
+  int GET__ATTR = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Attr Val</b></em>' attribute.
@@ -184,7 +166,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET__ATTR_VAL = 3;
+  int GET__ATTR_VAL = ACTION_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Get</em>' class.
@@ -193,7 +175,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_FEATURE_COUNT = 4;
+  int GET_FEATURE_COUNT = ACTION_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VariableImpl <em>Variable</em>}' class.
@@ -262,22 +244,13 @@ public interface BrowserAutomationPackage extends EPackage
   int CLICK = 5;
 
   /**
-   * The feature id for the '<em><b>Get</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLICK__GET = ACTION__GET;
-
-  /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLICK__VAR = ACTION__VAR;
+  int CLICK__VAR = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Click</em>' class.
@@ -286,7 +259,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CLICK_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+  int CLICK_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl <em>Insert</em>}' class.
@@ -299,24 +272,6 @@ public interface BrowserAutomationPackage extends EPackage
   int INSERT = 6;
 
   /**
-   * The feature id for the '<em><b>Get</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSERT__GET = ACTION__GET;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSERT__VAR = ACTION__VAR;
-
-  /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -326,13 +281,22 @@ public interface BrowserAutomationPackage extends EPackage
   int INSERT__VALUE = ACTION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Var</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSERT__VAR = ACTION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Insert</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+  int INSERT_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VerifyImpl <em>Verify</em>}' class.
@@ -345,22 +309,13 @@ public interface BrowserAutomationPackage extends EPackage
   int VERIFY = 7;
 
   /**
-   * The feature id for the '<em><b>Get</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VERIFY__GET = ACTION__GET;
-
-  /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VERIFY__VAR = ACTION__VAR;
+  int VERIFY__VAR = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Verify</em>' class.
@@ -369,7 +324,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VERIFY_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+  int VERIFY_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
 
   /**
@@ -424,28 +379,6 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    */
   EClass getAction();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Action#getGet <em>Get</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Get</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Action#getGet()
-   * @see #getAction()
-   * @generated
-   */
-  EReference getAction_Get();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Action#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Action#getVar()
-   * @see #getAction()
-   * @generated
-   */
-  EReference getAction_Var();
 
   /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Get <em>Get</em>}'.
@@ -554,6 +487,17 @@ public interface BrowserAutomationPackage extends EPackage
   EClass getClick();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Click#getVar()
+   * @see #getClick()
+   * @generated
+   */
+  EReference getClick_Var();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert <em>Insert</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -575,6 +519,17 @@ public interface BrowserAutomationPackage extends EPackage
   EAttribute getInsert_Value();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar()
+   * @see #getInsert()
+   * @generated
+   */
+  EReference getInsert_Var();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Verify <em>Verify</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -583,6 +538,17 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    */
   EClass getVerify();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Verify#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Verify#getVar()
+   * @see #getVerify()
+   * @generated
+   */
+  EReference getVerify_Var();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -650,22 +616,6 @@ public interface BrowserAutomationPackage extends EPackage
      * @generated
      */
     EClass ACTION = eINSTANCE.getAction();
-
-    /**
-     * The meta object literal for the '<em><b>Get</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION__GET = eINSTANCE.getAction_Get();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION__VAR = eINSTANCE.getAction_Var();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl <em>Get</em>}' class.
@@ -756,6 +706,14 @@ public interface BrowserAutomationPackage extends EPackage
     EClass CLICK = eINSTANCE.getClick();
 
     /**
+     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CLICK__VAR = eINSTANCE.getClick_Var();
+
+    /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl <em>Insert</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -774,6 +732,14 @@ public interface BrowserAutomationPackage extends EPackage
     EAttribute INSERT__VALUE = eINSTANCE.getInsert_Value();
 
     /**
+     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSERT__VAR = eINSTANCE.getInsert_Var();
+
+    /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VerifyImpl <em>Verify</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -782,6 +748,14 @@ public interface BrowserAutomationPackage extends EPackage
      * @generated
      */
     EClass VERIFY = eINSTANCE.getVerify();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VERIFY__VAR = eINSTANCE.getVerify_Var();
 
   }
 

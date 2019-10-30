@@ -8,12 +8,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
         eType="#//Action" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="get" eType="#//Get" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Get">
+  <eClassifiers xsi:type="ecore:EClass" name="Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Get" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -26,9 +22,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="VarReference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Click" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Click" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Insert" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Verify" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Verify" eSuperTypes="#//Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

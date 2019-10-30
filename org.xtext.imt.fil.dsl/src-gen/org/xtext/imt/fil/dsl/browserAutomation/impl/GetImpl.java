@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
 import org.xtext.imt.fil.dsl.browserAutomation.Get;
@@ -32,7 +31,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.Variable;
  *
  * @generated
  */
-public class GetImpl extends MinimalEObjectImpl.Container implements Get
+public class GetImpl extends ActionImpl implements Get
 {
   /**
    * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.

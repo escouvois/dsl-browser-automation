@@ -91,6 +91,7 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
       {
         Get get = (Get)theEObject;
         T result = caseGet(get);
+        if (result == null) result = caseAction(get);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

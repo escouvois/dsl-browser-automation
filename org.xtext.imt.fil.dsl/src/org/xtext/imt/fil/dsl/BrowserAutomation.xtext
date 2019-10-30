@@ -10,16 +10,16 @@ Test:
 ;
 
 WebBrowser:
-	'firefox' | 'chrome' | 'safari' | 'internet explorer'
+	'mozilla' | 'chrome' | 'safari' | 'internet explorer'
 ;
 
 Action:
-	Click | Insert | Verify 
+	Click | Insert | Verify | Get
 ;
 //| Check | Uncheck | Choose
 
 Get:
-	var=Variable ':' 'get' element=Element 'by' attr=Attribut '=' attrVal=STRING
+	var=Variable ':' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']'
 ;
  
 Element:
@@ -39,16 +39,14 @@ VarReference:
 ;
 
 Click:
-	get=Get 
 	'click' 'on' var=VarReference
 ;
 
 Insert:
-	get=Get
+	
 	'insert' value=STRING 'in' var=VarReference
 ;
 
 Verify:
-	get=Get
 	'verify page contains' var=VarReference
 ;

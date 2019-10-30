@@ -170,10 +170,10 @@ ruleWebBrowser returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 	leaveRule();
 }:
 	(
-		kw='firefox'
+		kw='mozilla'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0());
+			newLeafNode(kw, grammarAccess.getWebBrowserAccess().getMozillaKeyword_0());
 		}
 		    |
 		kw='chrome'
@@ -236,6 +236,15 @@ ruleAction returns [EObject current=null]
 		this_Verify_2=ruleVerify
 		{
 			$current = $this_Verify_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getGetParserRuleCall_3());
+		}
+		this_Get_3=ruleGet
+		{
+			$current = $this_Get_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -326,9 +335,9 @@ ruleGet returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_6='='
+		otherlv_6='['
 		{
-			newLeafNode(otherlv_6, grammarAccess.getGetAccess().getEqualsSignKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getGetAccess().getLeftSquareBracketKeyword_6());
 		}
 		(
 			(
@@ -348,6 +357,10 @@ ruleGet returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_8=']'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getGetAccess().getRightSquareBracketKeyword_8());
+		}
 	)
 ;
 
@@ -528,39 +541,20 @@ ruleClick returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getClickAccess().getGetGetParserRuleCall_0_0());
-				}
-				lv_get_0_0=ruleGet
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getClickRule());
-					}
-					set(
-						$current,
-						"get",
-						lv_get_0_0,
-						"org.xtext.imt.fil.dsl.BrowserAutomation.Get");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1='click'
+		otherlv_0='click'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getClickAccess().getClickKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getClickAccess().getClickKeyword_0());
 		}
-		otherlv_2='on'
+		otherlv_1='on'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getClickAccess().getOnKeyword_2());
+			newLeafNode(otherlv_1, grammarAccess.getClickAccess().getOnKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getClickAccess().getVarVarReferenceParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getClickAccess().getVarVarReferenceParserRuleCall_2_0());
 				}
-				lv_var_3_0=ruleVarReference
+				lv_var_2_0=ruleVarReference
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getClickRule());
@@ -568,7 +562,7 @@ ruleClick returns [EObject current=null]
 					set(
 						$current,
 						"var",
-						lv_var_3_0,
+						lv_var_2_0,
 						"org.xtext.imt.fil.dsl.BrowserAutomation.VarReference");
 					afterParserOrEnumRuleCall();
 				}
@@ -593,34 +587,15 @@ ruleInsert returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getInsertAccess().getGetGetParserRuleCall_0_0());
-				}
-				lv_get_0_0=ruleGet
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInsertRule());
-					}
-					set(
-						$current,
-						"get",
-						lv_get_0_0,
-						"org.xtext.imt.fil.dsl.BrowserAutomation.Get");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1='insert'
+		otherlv_0='insert'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getInsertAccess().getInsertKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getInsertAccess().getInsertKeyword_0());
 		}
 		(
 			(
-				lv_value_2_0=RULE_STRING
+				lv_value_1_0=RULE_STRING
 				{
-					newLeafNode(lv_value_2_0, grammarAccess.getInsertAccess().getValueSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_value_1_0, grammarAccess.getInsertAccess().getValueSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -629,21 +604,21 @@ ruleInsert returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_2_0,
+						lv_value_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_3='in'
+		otherlv_2='in'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getInsertAccess().getInKeyword_3());
+			newLeafNode(otherlv_2, grammarAccess.getInsertAccess().getInKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInsertAccess().getVarVarReferenceParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getInsertAccess().getVarVarReferenceParserRuleCall_3_0());
 				}
-				lv_var_4_0=ruleVarReference
+				lv_var_3_0=ruleVarReference
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getInsertRule());
@@ -651,7 +626,7 @@ ruleInsert returns [EObject current=null]
 					set(
 						$current,
 						"var",
-						lv_var_4_0,
+						lv_var_3_0,
 						"org.xtext.imt.fil.dsl.BrowserAutomation.VarReference");
 					afterParserOrEnumRuleCall();
 				}
@@ -676,35 +651,16 @@ ruleVerify returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getVerifyAccess().getGetGetParserRuleCall_0_0());
-				}
-				lv_get_0_0=ruleGet
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getVerifyRule());
-					}
-					set(
-						$current,
-						"get",
-						lv_get_0_0,
-						"org.xtext.imt.fil.dsl.BrowserAutomation.Get");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_1='verify page contains'
+		otherlv_0='verify page contains'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getVerifyAccess().getVerifyPageContainsKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getVerifyAccess().getVerifyPageContainsKeyword_0());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVerifyAccess().getVarVarReferenceParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getVerifyAccess().getVarVarReferenceParserRuleCall_1_0());
 				}
-				lv_var_2_0=ruleVarReference
+				lv_var_1_0=ruleVarReference
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVerifyRule());
@@ -712,7 +668,7 @@ ruleVerify returns [EObject current=null]
 					set(
 						$current,
 						"var",
-						lv_var_2_0,
+						lv_var_1_0,
 						"org.xtext.imt.fil.dsl.BrowserAutomation.VarReference");
 					afterParserOrEnumRuleCall();
 				}

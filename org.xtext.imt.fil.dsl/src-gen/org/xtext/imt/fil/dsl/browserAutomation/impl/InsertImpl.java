@@ -4,13 +4,16 @@
 package org.xtext.imt.fil.dsl.browserAutomation.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
 import org.xtext.imt.fil.dsl.browserAutomation.Insert;
+import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +24,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.Insert;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVar <em>Var</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +50,16 @@ public class InsertImpl extends ActionImpl implements Insert
    * @ordered
    */
   protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVar()
+   * @generated
+   * @ordered
+   */
+  protected VarReference var;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,12 +113,80 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
+  public VarReference getVar()
+  {
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVar(VarReference newVar, NotificationChain msgs)
+  {
+    VarReference oldVar = var;
+    var = newVar;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR, oldVar, newVar);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVar(VarReference newVar)
+  {
+    if (newVar != var)
+    {
+      NotificationChain msgs = null;
+      if (var != null)
+        msgs = ((InternalEObject)var).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR, null, msgs);
+      if (newVar != null)
+        msgs = ((InternalEObject)newVar).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR, null, msgs);
+      msgs = basicSetVar(newVar, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR, newVar, newVar));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case BrowserAutomationPackage.INSERT__VAR:
+        return basicSetVar(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case BrowserAutomationPackage.INSERT__VALUE:
         return getValue();
+      case BrowserAutomationPackage.INSERT__VAR:
+        return getVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,6 +203,9 @@ public class InsertImpl extends ActionImpl implements Insert
     {
       case BrowserAutomationPackage.INSERT__VALUE:
         setValue((String)newValue);
+        return;
+      case BrowserAutomationPackage.INSERT__VAR:
+        setVar((VarReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +224,9 @@ public class InsertImpl extends ActionImpl implements Insert
       case BrowserAutomationPackage.INSERT__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
+      case BrowserAutomationPackage.INSERT__VAR:
+        setVar((VarReference)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +243,8 @@ public class InsertImpl extends ActionImpl implements Insert
     {
       case BrowserAutomationPackage.INSERT__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case BrowserAutomationPackage.INSERT__VAR:
+        return var != null;
     }
     return super.eIsSet(featureID);
   }

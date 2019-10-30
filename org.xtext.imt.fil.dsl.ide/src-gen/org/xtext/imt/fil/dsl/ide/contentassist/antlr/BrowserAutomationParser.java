@@ -49,13 +49,10 @@ public class BrowserAutomationParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGetAccess().getAttrValAssignment_7(), "rule__Get__AttrValAssignment_7");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment(), "rule__Variable__NameAssignment");
 			builder.put(grammarAccess.getVarReferenceAccess().getVarAssignment(), "rule__VarReference__VarAssignment");
-			builder.put(grammarAccess.getClickAccess().getGetAssignment_0(), "rule__Click__GetAssignment_0");
-			builder.put(grammarAccess.getClickAccess().getVarAssignment_3(), "rule__Click__VarAssignment_3");
-			builder.put(grammarAccess.getInsertAccess().getGetAssignment_0(), "rule__Insert__GetAssignment_0");
-			builder.put(grammarAccess.getInsertAccess().getValueAssignment_2(), "rule__Insert__ValueAssignment_2");
-			builder.put(grammarAccess.getInsertAccess().getVarAssignment_4(), "rule__Insert__VarAssignment_4");
-			builder.put(grammarAccess.getVerifyAccess().getGetAssignment_0(), "rule__Verify__GetAssignment_0");
-			builder.put(grammarAccess.getVerifyAccess().getVarAssignment_2(), "rule__Verify__VarAssignment_2");
+			builder.put(grammarAccess.getClickAccess().getVarAssignment_2(), "rule__Click__VarAssignment_2");
+			builder.put(grammarAccess.getInsertAccess().getValueAssignment_1(), "rule__Insert__ValueAssignment_1");
+			builder.put(grammarAccess.getInsertAccess().getVarAssignment_3(), "rule__Insert__VarAssignment_3");
+			builder.put(grammarAccess.getVerifyAccess().getVarAssignment_1(), "rule__Verify__VarAssignment_1");
 		}
 	}
 	
