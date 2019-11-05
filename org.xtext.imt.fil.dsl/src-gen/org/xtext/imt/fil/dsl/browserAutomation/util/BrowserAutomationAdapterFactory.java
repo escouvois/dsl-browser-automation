@@ -81,6 +81,11 @@ public class BrowserAutomationAdapterFactory extends AdapterFactoryImpl
         return createTestAdapter();
       }
       @Override
+      public Adapter caseStatement(Statement object)
+      {
+        return createStatementAdapter();
+      }
+      @Override
       public Adapter caseAction(Action object)
       {
         return createActionAdapter();
@@ -116,6 +121,16 @@ public class BrowserAutomationAdapterFactory extends AdapterFactoryImpl
         return createVerifyAdapter();
       }
       @Override
+      public Adapter caseCheck(Check object)
+      {
+        return createCheckAdapter();
+      }
+      @Override
+      public Adapter caseChoose(Choose object)
+      {
+        return createChooseAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -148,6 +163,21 @@ public class BrowserAutomationAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTestAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.imt.fil.dsl.browserAutomation.Statement <em>Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Statement
+   * @generated
+   */
+  public Adapter createStatementAdapter()
   {
     return null;
   }
@@ -253,6 +283,36 @@ public class BrowserAutomationAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVerifyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.imt.fil.dsl.browserAutomation.Check <em>Check</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Check
+   * @generated
+   */
+  public Adapter createCheckAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.imt.fil.dsl.browserAutomation.Choose <em>Choose</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Choose
+   * @generated
+   */
+  public Adapter createChooseAdapter()
   {
     return null;
   }

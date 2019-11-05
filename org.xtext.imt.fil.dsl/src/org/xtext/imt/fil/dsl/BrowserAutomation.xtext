@@ -6,20 +6,26 @@ Test:
 	{Test}
 	'open' webBrowser=WebBrowser
 	'go' 'to' url=STRING
-	(actions+=Action)*
+	(statements+= Statement)*
 ;
 
 WebBrowser:
-	'mozilla' | 'chrome' | 'safari' | 'internet explorer'
+	'mozilla' | 'chrome' | 'safari' | 'internet' 'explorer'
+;
+
+Statement:
+	(Get
+	action=Action) | 'uncheck' 'all'
 ;
 
 Action:
-	Click | Insert | Verify | Get
+	Click | Insert | Verify | Check | Choose
 ;
+
 //| Check | Uncheck | Choose
 
 Get:
-	var=Variable ':' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']'
+	var=Variable '=' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']'
 ;
  
 Element:
@@ -43,10 +49,17 @@ Click:
 ;
 
 Insert:
-	
 	'insert' value=STRING 'in' var=VarReference
 ;
 
 Verify:
-	'verify page contains' var=VarReference
+	var=VarReference 'is' 'not' 'null'
+;
+
+Check:
+	'check' var=VarReference
+;
+
+Choose:
+	'choose' var=VarReference
 ;

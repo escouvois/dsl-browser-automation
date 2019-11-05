@@ -33,6 +33,15 @@ public interface BrowserAutomationFactory extends EFactory
   Test createTest();
 
   /**
+   * Returns a new object of class '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Statement</em>'.
+   * @generated
+   */
+  Statement createStatement();
+
+  /**
    * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +103,24 @@ public interface BrowserAutomationFactory extends EFactory
    * @generated
    */
   Verify createVerify();
+
+  /**
+   * Returns a new object of class '<em>Check</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Check</em>'.
+   * @generated
+   */
+  Check createCheck();
+
+  /**
+   * Returns a new object of class '<em>Choose</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Choose</em>'.
+   * @generated
+   */
+  Choose createChoose();
 
   /**
    * Returns the package supported by this factory.

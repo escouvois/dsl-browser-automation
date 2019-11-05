@@ -15,6 +15,8 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
+import org.xtext.imt.fil.dsl.browserAutomation.Check;
+import org.xtext.imt.fil.dsl.browserAutomation.Choose;
 import org.xtext.imt.fil.dsl.browserAutomation.Click;
 import org.xtext.imt.fil.dsl.browserAutomation.Get;
 import org.xtext.imt.fil.dsl.browserAutomation.Insert;
@@ -38,12 +40,25 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == BrowserAutomationPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case BrowserAutomationPackage.CHECK:
+				sequence_Check(context, (Check) semanticObject); 
+				return; 
+			case BrowserAutomationPackage.CHOOSE:
+				sequence_Choose(context, (Choose) semanticObject); 
+				return; 
 			case BrowserAutomationPackage.CLICK:
 				sequence_Click(context, (Click) semanticObject); 
 				return; 
 			case BrowserAutomationPackage.GET:
-				sequence_Get(context, (Get) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getGetRule()) {
+					sequence_Get(context, (Get) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getStatementRule()) {
+					sequence_Get_Statement(context, (Get) semanticObject); 
+					return; 
+				}
+				else break;
 			case BrowserAutomationPackage.INSERT:
 				sequence_Insert(context, (Insert) semanticObject); 
 				return; 
@@ -66,6 +81,44 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Action returns Check
+	 *     Check returns Check
+	 *
+	 * Constraint:
+	 *     var=VarReference
+	 */
+	protected void sequence_Check(ISerializationContext context, Check semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCheckAccess().getVarVarReferenceParserRuleCall_1_0(), semanticObject.getVar());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Action returns Choose
+	 *     Choose returns Choose
+	 *
+	 * Constraint:
+	 *     var=VarReference
+	 */
+	protected void sequence_Choose(ISerializationContext context, Choose semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getChooseAccess().getVarVarReferenceParserRuleCall_1_0(), semanticObject.getVar());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Action returns Click
 	 *     Click returns Click
 	 *
@@ -74,8 +127,8 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_Click(ISerializationContext context, Click semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.CLICK__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.CLICK__VAR));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getClickAccess().getVarVarReferenceParserRuleCall_2_0(), semanticObject.getVar());
@@ -85,7 +138,6 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     Action returns Get
 	 *     Get returns Get
 	 *
 	 * Constraint:
@@ -113,6 +165,36 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     Statement returns Get
+	 *
+	 * Constraint:
+	 *     (var=Variable element=Element attr=Attribut attrVal=STRING action=Action)
+	 */
+	protected void sequence_Get_Statement(ISerializationContext context, Get semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.GET__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.GET__VAR));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.GET__ELEMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.GET__ELEMENT));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.GET__ATTR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.GET__ATTR));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.GET__ATTR_VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.GET__ATTR_VAL));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.GET__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.GET__ACTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getGetAccess().getVarVariableParserRuleCall_0_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getGetAccess().getElementElementParserRuleCall_3_0(), semanticObject.getElement());
+		feeder.accept(grammarAccess.getGetAccess().getAttrAttributParserRuleCall_5_0(), semanticObject.getAttr());
+		feeder.accept(grammarAccess.getGetAccess().getAttrValSTRINGTerminalRuleCall_7_0(), semanticObject.getAttrVal());
+		feeder.accept(grammarAccess.getStatementAccess().getActionActionParserRuleCall_0_1_0(), semanticObject.getAction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Action returns Insert
 	 *     Insert returns Insert
 	 *
@@ -123,8 +205,8 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.INSERT__VALUE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.INSERT__VALUE));
-			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.INSERT__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.INSERT__VAR));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getInsertAccess().getValueSTRINGTerminalRuleCall_1_0(), semanticObject.getValue());
@@ -138,7 +220,7 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 *     Test returns Test
 	 *
 	 * Constraint:
-	 *     (webBrowser=WebBrowser url=STRING actions+=Action*)
+	 *     (webBrowser=WebBrowser url=STRING statements+=Statement*)
 	 */
 	protected void sequence_Test(ISerializationContext context, Test semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -191,11 +273,11 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 */
 	protected void sequence_Verify(ISerializationContext context, Verify semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.VERIFY__VAR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.VERIFY__VAR));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.ACTION__VAR));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVerifyAccess().getVarVarReferenceParserRuleCall_1_0(), semanticObject.getVar());
+		feeder.accept(grammarAccess.getVerifyAccess().getVarVarReferenceParserRuleCall_0_0(), semanticObject.getVar());
 		feeder.finish();
 	}
 	

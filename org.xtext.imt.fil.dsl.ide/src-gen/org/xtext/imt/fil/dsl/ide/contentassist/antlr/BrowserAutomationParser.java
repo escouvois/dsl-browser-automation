@@ -32,17 +32,24 @@ public class BrowserAutomationParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, BrowserAutomationGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getWebBrowserAccess().getAlternatives(), "rule__WebBrowser__Alternatives");
+			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getActionAccess().getAlternatives(), "rule__Action__Alternatives");
 			builder.put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
 			builder.put(grammarAccess.getAttributAccess().getAlternatives(), "rule__Attribut__Alternatives");
 			builder.put(grammarAccess.getTestAccess().getGroup(), "rule__Test__Group__0");
+			builder.put(grammarAccess.getWebBrowserAccess().getGroup_3(), "rule__WebBrowser__Group_3__0");
+			builder.put(grammarAccess.getStatementAccess().getGroup_0(), "rule__Statement__Group_0__0");
+			builder.put(grammarAccess.getStatementAccess().getGroup_1(), "rule__Statement__Group_1__0");
 			builder.put(grammarAccess.getGetAccess().getGroup(), "rule__Get__Group__0");
 			builder.put(grammarAccess.getClickAccess().getGroup(), "rule__Click__Group__0");
 			builder.put(grammarAccess.getInsertAccess().getGroup(), "rule__Insert__Group__0");
 			builder.put(grammarAccess.getVerifyAccess().getGroup(), "rule__Verify__Group__0");
+			builder.put(grammarAccess.getCheckAccess().getGroup(), "rule__Check__Group__0");
+			builder.put(grammarAccess.getChooseAccess().getGroup(), "rule__Choose__Group__0");
 			builder.put(grammarAccess.getTestAccess().getWebBrowserAssignment_2(), "rule__Test__WebBrowserAssignment_2");
 			builder.put(grammarAccess.getTestAccess().getUrlAssignment_5(), "rule__Test__UrlAssignment_5");
-			builder.put(grammarAccess.getTestAccess().getActionsAssignment_6(), "rule__Test__ActionsAssignment_6");
+			builder.put(grammarAccess.getTestAccess().getStatementsAssignment_6(), "rule__Test__StatementsAssignment_6");
+			builder.put(grammarAccess.getStatementAccess().getActionAssignment_0_1(), "rule__Statement__ActionAssignment_0_1");
 			builder.put(grammarAccess.getGetAccess().getVarAssignment_0(), "rule__Get__VarAssignment_0");
 			builder.put(grammarAccess.getGetAccess().getElementAssignment_3(), "rule__Get__ElementAssignment_3");
 			builder.put(grammarAccess.getGetAccess().getAttrAssignment_5(), "rule__Get__AttrAssignment_5");
@@ -52,7 +59,9 @@ public class BrowserAutomationParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getClickAccess().getVarAssignment_2(), "rule__Click__VarAssignment_2");
 			builder.put(grammarAccess.getInsertAccess().getValueAssignment_1(), "rule__Insert__ValueAssignment_1");
 			builder.put(grammarAccess.getInsertAccess().getVarAssignment_3(), "rule__Insert__VarAssignment_3");
-			builder.put(grammarAccess.getVerifyAccess().getVarAssignment_1(), "rule__Verify__VarAssignment_1");
+			builder.put(grammarAccess.getVerifyAccess().getVarAssignment_0(), "rule__Verify__VarAssignment_0");
+			builder.put(grammarAccess.getCheckAccess().getVarAssignment_1(), "rule__Check__VarAssignment_1");
+			builder.put(grammarAccess.getChooseAccess().getVarAssignment_1(), "rule__Choose__VarAssignment_1");
 		}
 	}
 	
