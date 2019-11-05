@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.xtext.imt.fil.dsl.browserAutomation.Action;
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
 import org.xtext.imt.fil.dsl.browserAutomation.Get;
 import org.xtext.imt.fil.dsl.browserAutomation.Variable;
@@ -23,6 +24,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.Variable;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getAction <em>Action</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getVar <em>Var</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getElement <em>Element</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getAttr <em>Attr</em>}</li>
@@ -31,8 +33,18 @@ import org.xtext.imt.fil.dsl.browserAutomation.Variable;
  *
  * @generated
  */
-public class GetImpl extends ActionImpl implements Get
+public class GetImpl extends StatementImpl implements Get
 {
+  /**
+   * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAction()
+   * @generated
+   * @ordered
+   */
+  protected Action action;
+
   /**
    * The cached value of the '{@link #getVar() <em>Var</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -122,6 +134,56 @@ public class GetImpl extends ActionImpl implements Get
   protected EClass eStaticClass()
   {
     return BrowserAutomationPackage.Literals.GET;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Action getAction()
+  {
+    return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAction(Action newAction, NotificationChain msgs)
+  {
+    Action oldAction = action;
+    action = newAction;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.GET__ACTION, oldAction, newAction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAction(Action newAction)
+  {
+    if (newAction != action)
+    {
+      NotificationChain msgs = null;
+      if (action != null)
+        msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.GET__ACTION, null, msgs);
+      if (newAction != null)
+        msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.GET__ACTION, null, msgs);
+      msgs = basicSetAction(newAction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.GET__ACTION, newAction, newAction));
   }
 
   /**
@@ -259,6 +321,8 @@ public class GetImpl extends ActionImpl implements Get
   {
     switch (featureID)
     {
+      case BrowserAutomationPackage.GET__ACTION:
+        return basicSetAction(null, msgs);
       case BrowserAutomationPackage.GET__VAR:
         return basicSetVar(null, msgs);
     }
@@ -275,6 +339,8 @@ public class GetImpl extends ActionImpl implements Get
   {
     switch (featureID)
     {
+      case BrowserAutomationPackage.GET__ACTION:
+        return getAction();
       case BrowserAutomationPackage.GET__VAR:
         return getVar();
       case BrowserAutomationPackage.GET__ELEMENT:
@@ -297,6 +363,9 @@ public class GetImpl extends ActionImpl implements Get
   {
     switch (featureID)
     {
+      case BrowserAutomationPackage.GET__ACTION:
+        setAction((Action)newValue);
+        return;
       case BrowserAutomationPackage.GET__VAR:
         setVar((Variable)newValue);
         return;
@@ -323,6 +392,9 @@ public class GetImpl extends ActionImpl implements Get
   {
     switch (featureID)
     {
+      case BrowserAutomationPackage.GET__ACTION:
+        setAction((Action)null);
+        return;
       case BrowserAutomationPackage.GET__VAR:
         setVar((Variable)null);
         return;
@@ -349,6 +421,8 @@ public class GetImpl extends ActionImpl implements Get
   {
     switch (featureID)
     {
+      case BrowserAutomationPackage.GET__ACTION:
+        return action != null;
       case BrowserAutomationPackage.GET__VAR:
         return var != null;
       case BrowserAutomationPackage.GET__ELEMENT:

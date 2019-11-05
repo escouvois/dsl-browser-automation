@@ -35,17 +35,17 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cUrlAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cUrlSTRINGTerminalRuleCall_5_0 = (RuleCall)cUrlAssignment_5.eContents().get(0);
-		private final Assignment cActionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cActionsActionParserRuleCall_6_0 = (RuleCall)cActionsAssignment_6.eContents().get(0);
+		private final Assignment cStatementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStatementsStatementParserRuleCall_6_0 = (RuleCall)cStatementsAssignment_6.eContents().get(0);
 		
 		//Test:
 		//	{Test}
 		//	'open' webBrowser=WebBrowser
 		//	'go' 'to' url=STRING
-		//	actions+=Action*;
+		//	statements+=Statement*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Test} 'open' webBrowser=WebBrowser 'go' 'to' url=STRING actions+=Action*
+		//{Test} 'open' webBrowser=WebBrowser 'go' 'to' url=STRING statements+=Statement*
 		public Group getGroup() { return cGroup; }
 		
 		//{Test}
@@ -72,11 +72,11 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//STRING
 		public RuleCall getUrlSTRINGTerminalRuleCall_5_0() { return cUrlSTRINGTerminalRuleCall_5_0; }
 		
-		//actions+=Action*
-		public Assignment getActionsAssignment_6() { return cActionsAssignment_6; }
+		//statements+=Statement*
+		public Assignment getStatementsAssignment_6() { return cStatementsAssignment_6; }
 		
-		//Action
-		public RuleCall getActionsActionParserRuleCall_6_0() { return cActionsActionParserRuleCall_6_0; }
+		//Statement
+		public RuleCall getStatementsStatementParserRuleCall_6_0() { return cStatementsStatementParserRuleCall_6_0; }
 	}
 	public class WebBrowserElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.WebBrowser");
@@ -84,13 +84,15 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cMozillaKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cChromeKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		private final Keyword cSafariKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		private final Keyword cInternetExplorerKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Keyword cInternetKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cExplorerKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		
 		//WebBrowser:
-		//	'mozilla' | 'chrome' | 'safari' | 'internet explorer';
+		//	'mozilla' | 'chrome' | 'safari' | 'internet' 'explorer';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'mozilla' | 'chrome' | 'safari' | 'internet explorer'
+		//'mozilla' | 'chrome' | 'safari' | 'internet' 'explorer'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'mozilla'
@@ -102,8 +104,54 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//'safari'
 		public Keyword getSafariKeyword_2() { return cSafariKeyword_2; }
 		
-		//'internet explorer'
-		public Keyword getInternetExplorerKeyword_3() { return cInternetExplorerKeyword_3; }
+		//'internet' 'explorer'
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'internet'
+		public Keyword getInternetKeyword_3_0() { return cInternetKeyword_3_0; }
+		
+		//'explorer'
+		public Keyword getExplorerKeyword_3_1() { return cExplorerKeyword_3_1; }
+	}
+	public class StatementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Statement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final RuleCall cGetParserRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Assignment cActionAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cActionActionParserRuleCall_0_1_0 = (RuleCall)cActionAssignment_0_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cUncheckKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cAllKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		
+		//Statement:
+		//	Get
+		//	action=Action | 'uncheck' 'all';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Get action=Action | 'uncheck' 'all'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Get action=Action
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//Get
+		public RuleCall getGetParserRuleCall_0_0() { return cGetParserRuleCall_0_0; }
+		
+		//action=Action
+		public Assignment getActionAssignment_0_1() { return cActionAssignment_0_1; }
+		
+		//Action
+		public RuleCall getActionActionParserRuleCall_0_1_0() { return cActionActionParserRuleCall_0_1_0; }
+		
+		//'uncheck' 'all'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'uncheck'
+		public Keyword getUncheckKeyword_1_0() { return cUncheckKeyword_1_0; }
+		
+		//'all'
+		public Keyword getAllKeyword_1_1() { return cAllKeyword_1_1; }
 	}
 	public class ActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Action");
@@ -111,13 +159,14 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final RuleCall cClickParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cInsertParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVerifyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cGetParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cCheckParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cChooseParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Action:
-		//	Click | Insert | Verify | Get;
+		//	Click | Insert | Verify | Check | Choose;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Click | Insert | Verify | Get
+		//Click | Insert | Verify | Check | Choose
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Click
@@ -129,15 +178,18 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//Verify
 		public RuleCall getVerifyParserRuleCall_2() { return cVerifyParserRuleCall_2; }
 		
-		//Get
-		public RuleCall getGetParserRuleCall_3() { return cGetParserRuleCall_3; }
+		//Check
+		public RuleCall getCheckParserRuleCall_3() { return cCheckParserRuleCall_3; }
+		
+		//Choose
+		public RuleCall getChooseParserRuleCall_4() { return cChooseParserRuleCall_4; }
 	}
 	public class GetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Get");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cVarAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cVarVariableParserRuleCall_0_0 = (RuleCall)cVarAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cGetKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cElementAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cElementElementParserRuleCall_3_0 = (RuleCall)cElementAssignment_3.eContents().get(0);
@@ -151,10 +203,10 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		
 		////| Check | Uncheck | Choose
 		//Get:
-		//	var=Variable ':' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']';
+		//	var=Variable '=' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//var=Variable ':' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']'
+		//var=Variable '=' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']'
 		public Group getGroup() { return cGroup; }
 		
 		//var=Variable
@@ -163,8 +215,8 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//Variable
 		public RuleCall getVarVariableParserRuleCall_0_0() { return cVarVariableParserRuleCall_0_0; }
 		
-		//':'
-		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
 		
 		//'get'
 		public Keyword getGetKeyword_2() { return cGetKeyword_2; }
@@ -357,19 +409,73 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	public class VerifyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Verify");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cVerifyPageContainsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVarAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVarVarReferenceParserRuleCall_0_0 = (RuleCall)cVarAssignment_0.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cNotKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cNullKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Verify:
+		//	var=VarReference 'is' 'not' 'null';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//var=VarReference 'is' 'not' 'null'
+		public Group getGroup() { return cGroup; }
+		
+		//var=VarReference
+		public Assignment getVarAssignment_0() { return cVarAssignment_0; }
+		
+		//VarReference
+		public RuleCall getVarVarReferenceParserRuleCall_0_0() { return cVarVarReferenceParserRuleCall_0_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//'not'
+		public Keyword getNotKeyword_2() { return cNotKeyword_2; }
+		
+		//'null'
+		public Keyword getNullKeyword_3() { return cNullKeyword_3; }
+	}
+	public class CheckElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Check");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCheckKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cVarVarReferenceParserRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
 		
-		//Verify:
-		//	'verify page contains' var=VarReference;
+		//Check:
+		//	'check' var=VarReference;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'verify page contains' var=VarReference
+		//'check' var=VarReference
 		public Group getGroup() { return cGroup; }
 		
-		//'verify page contains'
-		public Keyword getVerifyPageContainsKeyword_0() { return cVerifyPageContainsKeyword_0; }
+		//'check'
+		public Keyword getCheckKeyword_0() { return cCheckKeyword_0; }
+		
+		//var=VarReference
+		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
+		
+		//VarReference
+		public RuleCall getVarVarReferenceParserRuleCall_1_0() { return cVarVarReferenceParserRuleCall_1_0; }
+	}
+	public class ChooseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Choose");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cChooseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cVarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cVarVarReferenceParserRuleCall_1_0 = (RuleCall)cVarAssignment_1.eContents().get(0);
+		
+		//Choose:
+		//	'choose' var=VarReference;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'choose' var=VarReference
+		public Group getGroup() { return cGroup; }
+		
+		//'choose'
+		public Keyword getChooseKeyword_0() { return cChooseKeyword_0; }
 		
 		//var=VarReference
 		public Assignment getVarAssignment_1() { return cVarAssignment_1; }
@@ -381,6 +487,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	
 	private final TestElements pTest;
 	private final WebBrowserElements pWebBrowser;
+	private final StatementElements pStatement;
 	private final ActionElements pAction;
 	private final GetElements pGet;
 	private final ElementElements pElement;
@@ -390,6 +497,8 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	private final ClickElements pClick;
 	private final InsertElements pInsert;
 	private final VerifyElements pVerify;
+	private final CheckElements pCheck;
+	private final ChooseElements pChoose;
 	
 	private final Grammar grammar;
 	
@@ -402,6 +511,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		this.gaTerminals = gaTerminals;
 		this.pTest = new TestElements();
 		this.pWebBrowser = new WebBrowserElements();
+		this.pStatement = new StatementElements();
 		this.pAction = new ActionElements();
 		this.pGet = new GetElements();
 		this.pElement = new ElementElements();
@@ -411,6 +521,8 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		this.pClick = new ClickElements();
 		this.pInsert = new InsertElements();
 		this.pVerify = new VerifyElements();
+		this.pCheck = new CheckElements();
+		this.pChoose = new ChooseElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -444,7 +556,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	//	{Test}
 	//	'open' webBrowser=WebBrowser
 	//	'go' 'to' url=STRING
-	//	actions+=Action*;
+	//	statements+=Statement*;
 	public TestElements getTestAccess() {
 		return pTest;
 	}
@@ -454,7 +566,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//WebBrowser:
-	//	'mozilla' | 'chrome' | 'safari' | 'internet explorer';
+	//	'mozilla' | 'chrome' | 'safari' | 'internet' 'explorer';
 	public WebBrowserElements getWebBrowserAccess() {
 		return pWebBrowser;
 	}
@@ -463,8 +575,19 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		return getWebBrowserAccess().getRule();
 	}
 	
+	//Statement:
+	//	Get
+	//	action=Action | 'uncheck' 'all';
+	public StatementElements getStatementAccess() {
+		return pStatement;
+	}
+	
+	public ParserRule getStatementRule() {
+		return getStatementAccess().getRule();
+	}
+	
 	//Action:
-	//	Click | Insert | Verify | Get;
+	//	Click | Insert | Verify | Check | Choose;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
@@ -475,7 +598,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	
 	////| Check | Uncheck | Choose
 	//Get:
-	//	var=Variable ':' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']';
+	//	var=Variable '=' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']';
 	public GetElements getGetAccess() {
 		return pGet;
 	}
@@ -545,13 +668,33 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Verify:
-	//	'verify page contains' var=VarReference;
+	//	var=VarReference 'is' 'not' 'null';
 	public VerifyElements getVerifyAccess() {
 		return pVerify;
 	}
 	
 	public ParserRule getVerifyRule() {
 		return getVerifyAccess().getRule();
+	}
+	
+	//Check:
+	//	'check' var=VarReference;
+	public CheckElements getCheckAccess() {
+		return pCheck;
+	}
+	
+	public ParserRule getCheckRule() {
+		return getCheckAccess().getRule();
+	}
+	
+	//Choose:
+	//	'choose' var=VarReference;
+	public ChooseElements getChooseAccess() {
+		return pChoose;
+	}
+	
+	public ParserRule getChooseRule() {
+		return getChooseAccess().getRule();
 	}
 	
 	//terminal ID:

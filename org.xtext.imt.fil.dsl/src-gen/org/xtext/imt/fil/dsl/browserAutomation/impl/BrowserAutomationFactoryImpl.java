@@ -66,6 +66,7 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
     switch (eClass.getClassifierID())
     {
       case BrowserAutomationPackage.TEST: return createTest();
+      case BrowserAutomationPackage.STATEMENT: return createStatement();
       case BrowserAutomationPackage.ACTION: return createAction();
       case BrowserAutomationPackage.GET: return createGet();
       case BrowserAutomationPackage.VARIABLE: return createVariable();
@@ -73,6 +74,8 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
       case BrowserAutomationPackage.CLICK: return createClick();
       case BrowserAutomationPackage.INSERT: return createInsert();
       case BrowserAutomationPackage.VERIFY: return createVerify();
+      case BrowserAutomationPackage.CHECK: return createCheck();
+      case BrowserAutomationPackage.CHOOSE: return createChoose();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,6 +91,18 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
   {
     TestImpl test = new TestImpl();
     return test;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Statement createStatement()
+  {
+    StatementImpl statement = new StatementImpl();
+    return statement;
   }
 
   /**
@@ -172,6 +187,30 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
   {
     VerifyImpl verify = new VerifyImpl();
     return verify;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Check createCheck()
+  {
+    CheckImpl check = new CheckImpl();
+    return check;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Choose createChoose()
+  {
+    ChooseImpl choose = new ChooseImpl();
+    return choose;
   }
 
   /**

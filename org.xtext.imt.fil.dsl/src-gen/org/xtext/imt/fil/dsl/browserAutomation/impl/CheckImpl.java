@@ -6,23 +6,23 @@ package org.xtext.imt.fil.dsl.browserAutomation.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
-import org.xtext.imt.fil.dsl.browserAutomation.Click;
+import org.xtext.imt.fil.dsl.browserAutomation.Check;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Click</b></em>'.
+ * An implementation of the model object '<em><b>Check</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ClickImpl extends ActionImpl implements Click
+public class CheckImpl extends ActionImpl implements Check
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ClickImpl()
+  protected CheckImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class ClickImpl extends ActionImpl implements Click
   @Override
   protected EClass eStaticClass()
   {
-    return BrowserAutomationPackage.Literals.CLICK;
+    return BrowserAutomationPackage.Literals.CHECK;
   }
 
-} //ClickImpl
+} //CheckImpl

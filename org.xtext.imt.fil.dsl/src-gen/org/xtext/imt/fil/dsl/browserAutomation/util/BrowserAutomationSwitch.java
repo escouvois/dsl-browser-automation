@@ -80,6 +80,13 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case BrowserAutomationPackage.STATEMENT:
+      {
+        Statement statement = (Statement)theEObject;
+        T result = caseStatement(statement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case BrowserAutomationPackage.ACTION:
       {
         Action action = (Action)theEObject;
@@ -91,7 +98,7 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
       {
         Get get = (Get)theEObject;
         T result = caseGet(get);
-        if (result == null) result = caseAction(get);
+        if (result == null) result = caseStatement(get);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -133,6 +140,22 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case BrowserAutomationPackage.CHECK:
+      {
+        Check check = (Check)theEObject;
+        T result = caseCheck(check);
+        if (result == null) result = caseAction(check);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case BrowserAutomationPackage.CHOOSE:
+      {
+        Choose choose = (Choose)theEObject;
+        T result = caseChoose(choose);
+        if (result == null) result = caseAction(choose);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -149,6 +172,22 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTest(Test object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStatement(Statement object)
   {
     return null;
   }
@@ -261,6 +300,38 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseVerify(Verify object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Check</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Check</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCheck(Check object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Choose</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Choose</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseChoose(Choose object)
   {
     return null;
   }

@@ -13,6 +13,7 @@ package org.xtext.imt.fil.dsl.browserAutomation;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAction <em>Action</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getVar <em>Var</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getElement <em>Element</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAttr <em>Attr</em>}</li>
@@ -23,8 +24,30 @@ package org.xtext.imt.fil.dsl.browserAutomation;
  * @model
  * @generated
  */
-public interface Get extends Action
+public interface Get extends Statement
 {
+  /**
+   * Returns the value of the '<em><b>Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Action</em>' containment reference.
+   * @see #setAction(Action)
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getGet_Action()
+   * @model containment="true"
+   * @generated
+   */
+  Action getAction();
+
+  /**
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAction <em>Action</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Action</em>' containment reference.
+   * @see #getAction()
+   * @generated
+   */
+  void setAction(Action value);
+
   /**
    * Returns the value of the '<em><b>Var</b></em>' containment reference.
    * <!-- begin-user-doc -->

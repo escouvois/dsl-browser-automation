@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getWebBrowser <em>Web Browser</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getUrl <em>Url</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getActions <em>Actions</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getTest()
@@ -72,15 +72,15 @@ public interface Test extends EObject
   void setUrl(String value);
 
   /**
-   * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.imt.fil.dsl.browserAutomation.Action}.
+   * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.imt.fil.dsl.browserAutomation.Statement}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Actions</em>' containment reference list.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getTest_Actions()
+   * @return the value of the '<em>Statements</em>' containment reference list.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getTest_Statements()
    * @model containment="true"
    * @generated
    */
-  EList<Action> getActions();
+  EList<Statement> getStatements();
 
 } // Test

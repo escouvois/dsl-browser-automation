@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.imt.fil.dsl.browserAutomation.Action;
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
+import org.xtext.imt.fil.dsl.browserAutomation.Statement;
 import org.xtext.imt.fil.dsl.browserAutomation.Test;
 
 /**
@@ -33,7 +33,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.Test;
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getWebBrowser <em>Web Browser</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getUrl <em>Url</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,14 +81,14 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
   protected String url = URL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
+   * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getActions()
+   * @see #getStatements()
    * @generated
    * @ordered
    */
-  protected EList<Action> actions;
+  protected EList<Statement> statements;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,13 +167,13 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
    * @generated
    */
   @Override
-  public EList<Action> getActions()
+  public EList<Statement> getStatements()
   {
-    if (actions == null)
+    if (statements == null)
     {
-      actions = new EObjectContainmentEList<Action>(Action.class, this, BrowserAutomationPackage.TEST__ACTIONS);
+      statements = new EObjectContainmentEList<Statement>(Statement.class, this, BrowserAutomationPackage.TEST__STATEMENTS);
     }
-    return actions;
+    return statements;
   }
 
   /**
@@ -186,8 +186,8 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.TEST__ACTIONS:
-        return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+      case BrowserAutomationPackage.TEST__STATEMENTS:
+        return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -206,8 +206,8 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
         return getWebBrowser();
       case BrowserAutomationPackage.TEST__URL:
         return getUrl();
-      case BrowserAutomationPackage.TEST__ACTIONS:
-        return getActions();
+      case BrowserAutomationPackage.TEST__STATEMENTS:
+        return getStatements();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -229,9 +229,9 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
       case BrowserAutomationPackage.TEST__URL:
         setUrl((String)newValue);
         return;
-      case BrowserAutomationPackage.TEST__ACTIONS:
-        getActions().clear();
-        getActions().addAll((Collection<? extends Action>)newValue);
+      case BrowserAutomationPackage.TEST__STATEMENTS:
+        getStatements().clear();
+        getStatements().addAll((Collection<? extends Statement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -253,8 +253,8 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
       case BrowserAutomationPackage.TEST__URL:
         setUrl(URL_EDEFAULT);
         return;
-      case BrowserAutomationPackage.TEST__ACTIONS:
-        getActions().clear();
+      case BrowserAutomationPackage.TEST__STATEMENTS:
+        getStatements().clear();
         return;
     }
     super.eUnset(featureID);
@@ -274,8 +274,8 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
         return WEB_BROWSER_EDEFAULT == null ? webBrowser != null : !WEB_BROWSER_EDEFAULT.equals(webBrowser);
       case BrowserAutomationPackage.TEST__URL:
         return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
-      case BrowserAutomationPackage.TEST__ACTIONS:
-        return actions != null && !actions.isEmpty();
+      case BrowserAutomationPackage.TEST__STATEMENTS:
+        return statements != null && !statements.isEmpty();
     }
     return super.eIsSet(featureID);
   }
