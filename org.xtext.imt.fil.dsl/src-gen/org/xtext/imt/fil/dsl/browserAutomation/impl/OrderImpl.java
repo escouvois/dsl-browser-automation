@@ -11,49 +11,49 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
-import org.xtext.imt.fil.dsl.browserAutomation.Statement;
+import org.xtext.imt.fil.dsl.browserAutomation.Order;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Statement</b></em>'.
+ * An implementation of the model object '<em><b>Order</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.StatementImpl#getUrl <em>Url</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.OrderImpl#getOrder <em>Order</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class StatementImpl extends MinimalEObjectImpl.Container implements Statement
+public class OrderImpl extends MinimalEObjectImpl.Container implements Order
 {
   /**
-   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * The default value of the '{@link #getOrder() <em>Order</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUrl()
+   * @see #getOrder()
    * @generated
    * @ordered
    */
-  protected static final String URL_EDEFAULT = null;
+  protected static final int ORDER_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * The cached value of the '{@link #getOrder() <em>Order</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUrl()
+   * @see #getOrder()
    * @generated
    * @ordered
    */
-  protected String url = URL_EDEFAULT;
+  protected int order = ORDER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StatementImpl()
+  protected OrderImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   @Override
   protected EClass eStaticClass()
   {
-    return BrowserAutomationPackage.Literals.STATEMENT;
+    return BrowserAutomationPackage.Literals.ORDER;
   }
 
   /**
@@ -75,9 +75,9 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    */
   @Override
-  public String getUrl()
+  public int getOrder()
   {
-    return url;
+    return order;
   }
 
   /**
@@ -86,12 +86,12 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    */
   @Override
-  public void setUrl(String newUrl)
+  public void setOrder(int newOrder)
   {
-    String oldUrl = url;
-    url = newUrl;
+    int oldOrder = order;
+    order = newOrder;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.STATEMENT__URL, oldUrl, url));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.ORDER__ORDER, oldOrder, order));
   }
 
   /**
@@ -104,8 +104,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.STATEMENT__URL:
-        return getUrl();
+      case BrowserAutomationPackage.ORDER__ORDER:
+        return getOrder();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +120,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.STATEMENT__URL:
-        setUrl((String)newValue);
+      case BrowserAutomationPackage.ORDER__ORDER:
+        setOrder((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +137,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.STATEMENT__URL:
-        setUrl(URL_EDEFAULT);
+      case BrowserAutomationPackage.ORDER__ORDER:
+        setOrder(ORDER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +154,8 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.STATEMENT__URL:
-        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
+      case BrowserAutomationPackage.ORDER__ORDER:
+        return order != ORDER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +171,10 @@ public class StatementImpl extends MinimalEObjectImpl.Container implements State
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (url: ");
-    result.append(url);
+    result.append(" (order: ");
+    result.append(order);
     result.append(')');
     return result.toString();
   }
 
-} //StatementImpl
+} //OrderImpl

@@ -8,10 +8,11 @@
       fileExtensions="ba" ecorePackage="BrowserAutomation.ecore#/">
     <genClasses ecoreClass="BrowserAutomation.ecore#//Test">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Test/webBrowser"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Test/url"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Test/statements"/>
     </genClasses>
-    <genClasses ecoreClass="BrowserAutomation.ecore#//Statement"/>
+    <genClasses ecoreClass="BrowserAutomation.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Statement/url"/>
+    </genClasses>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Action">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Action/var"/>
     </genClasses>
@@ -19,8 +20,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Get/action"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Get/var"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Get/element"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Get/order"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Get/attr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Get/attrVal"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Get/attrVar"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Get/varRef"/>
+    </genClasses>
+    <genClasses ecoreClass="BrowserAutomation.ecore#//Order">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Order/order"/>
     </genClasses>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Variable/name"/>
@@ -30,10 +37,15 @@
     </genClasses>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Click"/>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Insert">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Insert/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Insert/var2"/>
     </genClasses>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Verify"/>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Check"/>
-    <genClasses ecoreClass="BrowserAutomation.ecore#//Choose"/>
+    <genClasses ecoreClass="BrowserAutomation.ecore#//Choose">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Choose/value"/>
+    </genClasses>
+    <genClasses ecoreClass="BrowserAutomation.ecore#//Contains">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Contains/var2"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

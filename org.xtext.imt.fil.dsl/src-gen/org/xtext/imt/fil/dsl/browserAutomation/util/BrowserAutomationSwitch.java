@@ -102,6 +102,13 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case BrowserAutomationPackage.ORDER:
+      {
+        Order order = (Order)theEObject;
+        T result = caseOrder(order);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case BrowserAutomationPackage.VARIABLE:
       {
         Variable variable = (Variable)theEObject;
@@ -153,6 +160,14 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
         Choose choose = (Choose)theEObject;
         T result = caseChoose(choose);
         if (result == null) result = caseAction(choose);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case BrowserAutomationPackage.CONTAINS:
+      {
+        Contains contains = (Contains)theEObject;
+        T result = caseContains(contains);
+        if (result == null) result = caseAction(contains);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -220,6 +235,22 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGet(Get object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Order</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Order</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOrder(Order object)
   {
     return null;
   }
@@ -332,6 +363,22 @@ public class BrowserAutomationSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseChoose(Choose object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Contains</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Contains</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContains(Contains object)
   {
     return null;
   }

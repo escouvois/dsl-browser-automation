@@ -5,7 +5,6 @@ generate browserAutomation "http://www.xtext.org/imt/fil/dsl/BrowserAutomation"
 Test:
 	{Test}
 	'open' webBrowser=WebBrowser
-	'go' 'to' url=STRING
 	(statements+= Statement)*
 ;
 
@@ -15,25 +14,29 @@ WebBrowser:
 
 Statement:
 	(Get
-	action=Action) | 'uncheck' 'all'
+	action=Action) | Get | 'uncheck' 'all' | 'go' 'to' url=STRING
 ;
 
 Action:
-	Click | Insert | Verify | Check | Choose
+	Click | Insert | Verify | Check | Choose | Contains
 ;
 
 //| Check | Uncheck | Choose
 
 Get:
-	var=Variable '=' 'get' element=Element 'by' attr=Attribut '[' attrVal=STRING ']'
+	var=Variable '=' 'get' (element=Element (order=Order)? ('by' attr=Attribut '[' (attrVal=STRING | attrVar=VarReference) ']' | 'from' varRef=VarReference) | 'pageTitle')
+;
+
+Order:
+	'number' order=INT
 ;
  
 Element:
-	'link' | 'input' | 'button' | 'checkbox' | 'combobox' | 'image' | 'text'
+	'link' | 'input' | 'button' | 'checkbox' | 'combobox' | 'image' | 'text' | 'title'
 ;
 
 Attribut:
-	'class' | 'value' | 'alt'
+	'class' | 'value' | 'alt' | 'name' | 'href'
 ;
 
 Variable:
@@ -49,7 +52,7 @@ Click:
 ;
 
 Insert:
-	'insert' value=STRING 'in' var=VarReference
+	'insert' var=VarReference 'in' var2=VarReference
 ;
 
 Verify:
@@ -61,5 +64,9 @@ Check:
 ;
 
 Choose:
-	'choose' var=VarReference
+	'choose' value=STRING 'in' var=VarReference
+;
+
+Contains:
+	var=VarReference 'contains' var2=VarReference
 ;

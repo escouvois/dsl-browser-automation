@@ -6,21 +6,21 @@ package org.xtext.imt.fil.dsl.browserAutomation;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Insert</b></em>'.
+ * A representation of the model object '<em><b>Contains</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Contains#getVar2 <em>Var2</em>}</li>
  * </ul>
  *
- * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert()
+ * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getContains()
  * @model
  * @generated
  */
-public interface Insert extends Action
+public interface Contains extends Action
 {
   /**
    * Returns the value of the '<em><b>Var2</b></em>' containment reference.
@@ -28,14 +28,14 @@ public interface Insert extends Action
    * <!-- end-user-doc -->
    * @return the value of the '<em>Var2</em>' containment reference.
    * @see #setVar2(VarReference)
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_Var2()
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getContains_Var2()
    * @model containment="true"
    * @generated
    */
   VarReference getVar2();
 
   /**
-   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Contains#getVar2 <em>Var2</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Var2</em>' containment reference.
@@ -44,4 +44,4 @@ public interface Insert extends Action
    */
   void setVar2(VarReference value);
 
-} // Insert
+} // Contains

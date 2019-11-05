@@ -1,0 +1,6 @@
+open safari
+go to "http://www.imt-atlantique.fr/fr"
+l = get link by value ["Toutes les actualités"]
+click on l
+accueil = get link by value ["Accueil"]
+accueil is not null

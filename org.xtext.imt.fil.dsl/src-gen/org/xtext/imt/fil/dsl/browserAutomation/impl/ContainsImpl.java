@@ -12,23 +12,23 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
-import org.xtext.imt.fil.dsl.browserAutomation.Insert;
+import org.xtext.imt.fil.dsl.browserAutomation.Contains;
 import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Insert</b></em>'.
+ * An implementation of the model object '<em><b>Contains</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVar2 <em>Var2</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ContainsImpl#getVar2 <em>Var2</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InsertImpl extends ActionImpl implements Insert
+public class ContainsImpl extends ActionImpl implements Contains
 {
   /**
    * The cached value of the '{@link #getVar2() <em>Var2</em>}' containment reference.
@@ -45,7 +45,7 @@ public class InsertImpl extends ActionImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InsertImpl()
+  protected ContainsImpl()
   {
     super();
   }
@@ -58,7 +58,7 @@ public class InsertImpl extends ActionImpl implements Insert
   @Override
   protected EClass eStaticClass()
   {
-    return BrowserAutomationPackage.Literals.INSERT;
+    return BrowserAutomationPackage.Literals.CONTAINS;
   }
 
   /**
@@ -83,7 +83,7 @@ public class InsertImpl extends ActionImpl implements Insert
     var2 = newVar2;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR2, oldVar2, newVar2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.CONTAINS__VAR2, oldVar2, newVar2);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -101,14 +101,14 @@ public class InsertImpl extends ActionImpl implements Insert
     {
       NotificationChain msgs = null;
       if (var2 != null)
-        msgs = ((InternalEObject)var2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR2, null, msgs);
+        msgs = ((InternalEObject)var2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.CONTAINS__VAR2, null, msgs);
       if (newVar2 != null)
-        msgs = ((InternalEObject)newVar2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR2, null, msgs);
+        msgs = ((InternalEObject)newVar2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.CONTAINS__VAR2, null, msgs);
       msgs = basicSetVar2(newVar2, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR2, newVar2, newVar2));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.CONTAINS__VAR2, newVar2, newVar2));
   }
 
   /**
@@ -121,7 +121,7 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAR2:
+      case BrowserAutomationPackage.CONTAINS__VAR2:
         return basicSetVar2(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -137,7 +137,7 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAR2:
+      case BrowserAutomationPackage.CONTAINS__VAR2:
         return getVar2();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -153,7 +153,7 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAR2:
+      case BrowserAutomationPackage.CONTAINS__VAR2:
         setVar2((VarReference)newValue);
         return;
     }
@@ -170,7 +170,7 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAR2:
+      case BrowserAutomationPackage.CONTAINS__VAR2:
         setVar2((VarReference)null);
         return;
     }
@@ -187,10 +187,10 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAR2:
+      case BrowserAutomationPackage.CONTAINS__VAR2:
         return var2 != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //InsertImpl
+} //ContainsImpl

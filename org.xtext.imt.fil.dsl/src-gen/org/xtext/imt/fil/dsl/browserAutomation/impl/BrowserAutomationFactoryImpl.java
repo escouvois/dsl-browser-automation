@@ -69,6 +69,7 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
       case BrowserAutomationPackage.STATEMENT: return createStatement();
       case BrowserAutomationPackage.ACTION: return createAction();
       case BrowserAutomationPackage.GET: return createGet();
+      case BrowserAutomationPackage.ORDER: return createOrder();
       case BrowserAutomationPackage.VARIABLE: return createVariable();
       case BrowserAutomationPackage.VAR_REFERENCE: return createVarReference();
       case BrowserAutomationPackage.CLICK: return createClick();
@@ -76,6 +77,7 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
       case BrowserAutomationPackage.VERIFY: return createVerify();
       case BrowserAutomationPackage.CHECK: return createCheck();
       case BrowserAutomationPackage.CHOOSE: return createChoose();
+      case BrowserAutomationPackage.CONTAINS: return createContains();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -127,6 +129,18 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
   {
     GetImpl get = new GetImpl();
     return get;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Order createOrder()
+  {
+    OrderImpl order = new OrderImpl();
+    return order;
   }
 
   /**
@@ -211,6 +225,18 @@ public class BrowserAutomationFactoryImpl extends EFactoryImpl implements Browse
   {
     ChooseImpl choose = new ChooseImpl();
     return choose;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Contains createContains()
+  {
+    ContainsImpl contains = new ContainsImpl();
+    return contains;
   }
 
   /**

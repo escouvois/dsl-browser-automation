@@ -1,0 +1,8 @@
+open mozilla
+go to "http://www.imt-atlantique.fr/fr"
+actu = get link by value ["Toutes les actualités"]
+click on actu
+img = get image by alt ["Accueil"]
+click on img
+actu2 = get link by value ["Toutes les actualités"]
+actu2 is not null

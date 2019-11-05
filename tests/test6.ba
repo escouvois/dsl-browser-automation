@@ -1,0 +1,11 @@
+open chrome
+go to "http://www.imt-atlantique.fr/fr/rechercher"
+uncheck all
+search = get input by value ["Rechercher"]
+insert "2007" in search
+combo = get combobox by value ["Période de publication"]
+choose "Le mois dernier" in combo
+btn = get button by value ["Appliquer les filtres"]
+click on btn
+noMatching = get text by value ["Aucun résultat ne correspond à votre recherche"]
+noMatching is not null

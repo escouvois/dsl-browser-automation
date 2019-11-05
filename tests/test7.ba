@@ -1,0 +1,6 @@
+open chrome
+go to "http://www.imt-atlantique.fr/fr"
+title1 = get text number 1 by class ["actu_home_ctner_inner_cell1_titre"]
+click on title1
+title2 = get pageTitle
+title2 contains title1

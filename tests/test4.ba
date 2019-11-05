@@ -1,0 +1,8 @@
+open mozilla
+go to "http://www.imt-atlantique.fr/fr/rechercher"
+trump = get input by value ["Search field"]
+insert "Donald Trump" in trump
+btn = get button by value ["Appliquer les filtres"]
+click on btn
+texte = get link by value ["Aucun résultat ne correspond à votre recherche"]
+texte is not null

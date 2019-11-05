@@ -77,22 +77,13 @@ public interface BrowserAutomationPackage extends EPackage
   int TEST__WEB_BROWSER = 0;
 
   /**
-   * The feature id for the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEST__URL = 1;
-
-  /**
    * The feature id for the '<em><b>Statements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST__STATEMENTS = 2;
+  int TEST__STATEMENTS = 1;
 
   /**
    * The number of structural features of the '<em>Test</em>' class.
@@ -101,7 +92,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEST_FEATURE_COUNT = 3;
+  int TEST_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.StatementImpl <em>Statement</em>}' class.
@@ -114,13 +105,22 @@ public interface BrowserAutomationPackage extends EPackage
   int STATEMENT = 1;
 
   /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATEMENT__URL = 0;
+
+  /**
    * The number of structural features of the '<em>Statement</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATEMENT_FEATURE_COUNT = 0;
+  int STATEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ActionImpl <em>Action</em>}' class.
@@ -161,6 +161,15 @@ public interface BrowserAutomationPackage extends EPackage
   int GET = 3;
 
   /**
+   * The feature id for the '<em><b>Url</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET__URL = STATEMENT__URL;
+
+  /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -188,13 +197,22 @@ public interface BrowserAutomationPackage extends EPackage
   int GET__ELEMENT = STATEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Order</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET__ORDER = STATEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Attr</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET__ATTR = STATEMENT_FEATURE_COUNT + 3;
+  int GET__ATTR = STATEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Attr Val</b></em>' attribute.
@@ -203,7 +221,25 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET__ATTR_VAL = STATEMENT_FEATURE_COUNT + 4;
+  int GET__ATTR_VAL = STATEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The feature id for the '<em><b>Attr Var</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET__ATTR_VAR = STATEMENT_FEATURE_COUNT + 6;
+
+  /**
+   * The feature id for the '<em><b>Var Ref</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET__VAR_REF = STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Get</em>' class.
@@ -212,7 +248,35 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 5;
+  int GET_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 8;
+
+  /**
+   * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.OrderImpl <em>Order</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.imt.fil.dsl.browserAutomation.impl.OrderImpl
+   * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getOrder()
+   * @generated
+   */
+  int ORDER = 4;
+
+  /**
+   * The feature id for the '<em><b>Order</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER__ORDER = 0;
+
+  /**
+   * The number of structural features of the '<em>Order</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ORDER_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VariableImpl <em>Variable</em>}' class.
@@ -222,7 +286,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 4;
+  int VARIABLE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -250,7 +314,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getVarReference()
    * @generated
    */
-  int VAR_REFERENCE = 5;
+  int VAR_REFERENCE = 6;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' reference.
@@ -278,7 +342,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getClick()
    * @generated
    */
-  int CLICK = 6;
+  int CLICK = 7;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -306,7 +370,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getInsert()
    * @generated
    */
-  int INSERT = 7;
+  int INSERT = 8;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -318,13 +382,13 @@ public interface BrowserAutomationPackage extends EPackage
   int INSERT__VAR = ACTION__VAR;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Var2</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT__VALUE = ACTION_FEATURE_COUNT + 0;
+  int INSERT__VAR2 = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Insert</em>' class.
@@ -343,7 +407,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getVerify()
    * @generated
    */
-  int VERIFY = 8;
+  int VERIFY = 9;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -371,7 +435,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getCheck()
    * @generated
    */
-  int CHECK = 9;
+  int CHECK = 10;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -399,7 +463,7 @@ public interface BrowserAutomationPackage extends EPackage
    * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getChoose()
    * @generated
    */
-  int CHOOSE = 10;
+  int CHOOSE = 11;
 
   /**
    * The feature id for the '<em><b>Var</b></em>' containment reference.
@@ -411,13 +475,59 @@ public interface BrowserAutomationPackage extends EPackage
   int CHOOSE__VAR = ACTION__VAR;
 
   /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHOOSE__VALUE = ACTION_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Choose</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHOOSE_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+  int CHOOSE_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ContainsImpl <em>Contains</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.imt.fil.dsl.browserAutomation.impl.ContainsImpl
+   * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getContains()
+   * @generated
+   */
+  int CONTAINS = 12;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINS__VAR = ACTION__VAR;
+
+  /**
+   * The feature id for the '<em><b>Var2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINS__VAR2 = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Contains</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTAINS_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
 
 
   /**
@@ -442,17 +552,6 @@ public interface BrowserAutomationPackage extends EPackage
   EAttribute getTest_WebBrowser();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getUrl <em>Url</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Url</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Test#getUrl()
-   * @see #getTest()
-   * @generated
-   */
-  EAttribute getTest_Url();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getStatements <em>Statements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -472,6 +571,17 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    */
   EClass getStatement();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Statement#getUrl <em>Url</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Url</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Statement#getUrl()
+   * @see #getStatement()
+   * @generated
+   */
+  EAttribute getStatement_Url();
 
   /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Action <em>Action</em>}'.
@@ -538,6 +648,17 @@ public interface BrowserAutomationPackage extends EPackage
   EAttribute getGet_Element();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getOrder <em>Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Order</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Get#getOrder()
+   * @see #getGet()
+   * @generated
+   */
+  EReference getGet_Order();
+
+  /**
    * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAttr <em>Attr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -558,6 +679,49 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    */
   EAttribute getGet_AttrVal();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAttrVar <em>Attr Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Attr Var</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Get#getAttrVar()
+   * @see #getGet()
+   * @generated
+   */
+  EReference getGet_AttrVar();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getVarRef <em>Var Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var Ref</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Get#getVarRef()
+   * @see #getGet()
+   * @generated
+   */
+  EReference getGet_VarRef();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Order <em>Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Order</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Order
+   * @generated
+   */
+  EClass getOrder();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Order#getOrder <em>Order</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Order</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Order#getOrder()
+   * @see #getOrder()
+   * @generated
+   */
+  EAttribute getOrder_Order();
 
   /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Variable <em>Variable</em>}'.
@@ -622,15 +786,15 @@ public interface BrowserAutomationPackage extends EPackage
   EClass getInsert();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getValue()
+   * @return the meta object for the containment reference '<em>Var2</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2()
    * @see #getInsert()
    * @generated
    */
-  EAttribute getInsert_Value();
+  EReference getInsert_Var2();
 
   /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Verify <em>Verify</em>}'.
@@ -661,6 +825,38 @@ public interface BrowserAutomationPackage extends EPackage
    * @generated
    */
   EClass getChoose();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Choose#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Choose#getValue()
+   * @see #getChoose()
+   * @generated
+   */
+  EAttribute getChoose_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Contains <em>Contains</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Contains</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Contains
+   * @generated
+   */
+  EClass getContains();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Contains#getVar2 <em>Var2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Var2</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Contains#getVar2()
+   * @see #getContains()
+   * @generated
+   */
+  EReference getContains_Var2();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -704,14 +900,6 @@ public interface BrowserAutomationPackage extends EPackage
     EAttribute TEST__WEB_BROWSER = eINSTANCE.getTest_WebBrowser();
 
     /**
-     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEST__URL = eINSTANCE.getTest_Url();
-
-    /**
      * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -728,6 +916,14 @@ public interface BrowserAutomationPackage extends EPackage
      * @generated
      */
     EClass STATEMENT = eINSTANCE.getStatement();
+
+    /**
+     * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATEMENT__URL = eINSTANCE.getStatement_Url();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ActionImpl <em>Action</em>}' class.
@@ -782,6 +978,14 @@ public interface BrowserAutomationPackage extends EPackage
     EAttribute GET__ELEMENT = eINSTANCE.getGet_Element();
 
     /**
+     * The meta object literal for the '<em><b>Order</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET__ORDER = eINSTANCE.getGet_Order();
+
+    /**
      * The meta object literal for the '<em><b>Attr</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -796,6 +1000,40 @@ public interface BrowserAutomationPackage extends EPackage
      * @generated
      */
     EAttribute GET__ATTR_VAL = eINSTANCE.getGet_AttrVal();
+
+    /**
+     * The meta object literal for the '<em><b>Attr Var</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET__ATTR_VAR = eINSTANCE.getGet_AttrVar();
+
+    /**
+     * The meta object literal for the '<em><b>Var Ref</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GET__VAR_REF = eINSTANCE.getGet_VarRef();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.OrderImpl <em>Order</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.imt.fil.dsl.browserAutomation.impl.OrderImpl
+     * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getOrder()
+     * @generated
+     */
+    EClass ORDER = eINSTANCE.getOrder();
+
+    /**
+     * The meta object literal for the '<em><b>Order</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ORDER__ORDER = eINSTANCE.getOrder_Order();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VariableImpl <em>Variable</em>}' class.
@@ -854,12 +1092,12 @@ public interface BrowserAutomationPackage extends EPackage
     EClass INSERT = eINSTANCE.getInsert();
 
     /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Var2</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INSERT__VALUE = eINSTANCE.getInsert_Value();
+    EReference INSERT__VAR2 = eINSTANCE.getInsert_Var2();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VerifyImpl <em>Verify</em>}' class.
@@ -890,6 +1128,32 @@ public interface BrowserAutomationPackage extends EPackage
      * @generated
      */
     EClass CHOOSE = eINSTANCE.getChoose();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHOOSE__VALUE = eINSTANCE.getChoose_Value();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ContainsImpl <em>Contains</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.imt.fil.dsl.browserAutomation.impl.ContainsImpl
+     * @see org.xtext.imt.fil.dsl.browserAutomation.impl.BrowserAutomationPackageImpl#getContains()
+     * @generated
+     */
+    EClass CONTAINS = eINSTANCE.getContains();
+
+    /**
+     * The meta object literal for the '<em><b>Var2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTAINS__VAR2 = eINSTANCE.getContains_Var2();
 
   }
 

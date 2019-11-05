@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getWebBrowser <em>Web Browser</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -48,28 +47,6 @@ public interface Test extends EObject
    * @generated
    */
   void setWebBrowser(String value);
-
-  /**
-   * Returns the value of the '<em><b>Url</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Url</em>' attribute.
-   * @see #setUrl(String)
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getTest_Url()
-   * @model
-   * @generated
-   */
-  String getUrl();
-
-  /**
-   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Test#getUrl <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Url</em>' attribute.
-   * @see #getUrl()
-   * @generated
-   */
-  void setUrl(String value);
 
   /**
    * Returns the value of the '<em><b>Statements</b></em>' containment reference list.

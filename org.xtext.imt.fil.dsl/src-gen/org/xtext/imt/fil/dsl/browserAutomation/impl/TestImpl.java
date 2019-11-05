@@ -32,7 +32,6 @@ import org.xtext.imt.fil.dsl.browserAutomation.Test;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getWebBrowser <em>Web Browser</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getUrl <em>Url</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.TestImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -59,26 +58,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
    * @ordered
    */
   protected String webBrowser = WEB_BROWSER_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUrl()
-   * @generated
-   * @ordered
-   */
-  protected static final String URL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUrl()
-   * @generated
-   * @ordered
-   */
-  protected String url = URL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -142,31 +121,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
    * @generated
    */
   @Override
-  public String getUrl()
-  {
-    return url;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setUrl(String newUrl)
-  {
-    String oldUrl = url;
-    url = newUrl;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.TEST__URL, oldUrl, url));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<Statement> getStatements()
   {
     if (statements == null)
@@ -204,8 +158,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
     {
       case BrowserAutomationPackage.TEST__WEB_BROWSER:
         return getWebBrowser();
-      case BrowserAutomationPackage.TEST__URL:
-        return getUrl();
       case BrowserAutomationPackage.TEST__STATEMENTS:
         return getStatements();
     }
@@ -225,9 +177,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
     {
       case BrowserAutomationPackage.TEST__WEB_BROWSER:
         setWebBrowser((String)newValue);
-        return;
-      case BrowserAutomationPackage.TEST__URL:
-        setUrl((String)newValue);
         return;
       case BrowserAutomationPackage.TEST__STATEMENTS:
         getStatements().clear();
@@ -250,9 +199,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
       case BrowserAutomationPackage.TEST__WEB_BROWSER:
         setWebBrowser(WEB_BROWSER_EDEFAULT);
         return;
-      case BrowserAutomationPackage.TEST__URL:
-        setUrl(URL_EDEFAULT);
-        return;
       case BrowserAutomationPackage.TEST__STATEMENTS:
         getStatements().clear();
         return;
@@ -272,8 +218,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
     {
       case BrowserAutomationPackage.TEST__WEB_BROWSER:
         return WEB_BROWSER_EDEFAULT == null ? webBrowser != null : !WEB_BROWSER_EDEFAULT.equals(webBrowser);
-      case BrowserAutomationPackage.TEST__URL:
-        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
       case BrowserAutomationPackage.TEST__STATEMENTS:
         return statements != null && !statements.isEmpty();
     }
@@ -293,8 +237,6 @@ public class TestImpl extends MinimalEObjectImpl.Container implements Test
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (webBrowser: ");
     result.append(webBrowser);
-    result.append(", url: ");
-    result.append(url);
     result.append(')');
     return result.toString();
   }

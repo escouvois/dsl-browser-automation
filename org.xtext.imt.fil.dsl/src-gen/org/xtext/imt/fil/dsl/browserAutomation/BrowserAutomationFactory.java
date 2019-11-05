@@ -60,6 +60,15 @@ public interface BrowserAutomationFactory extends EFactory
   Get createGet();
 
   /**
+   * Returns a new object of class '<em>Order</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Order</em>'.
+   * @generated
+   */
+  Order createOrder();
+
+  /**
    * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -121,6 +130,15 @@ public interface BrowserAutomationFactory extends EFactory
    * @generated
    */
   Choose createChoose();
+
+  /**
+   * Returns a new object of class '<em>Contains</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Contains</em>'.
+   * @generated
+   */
+  Contains createContains();
 
   /**
    * Returns the package supported by this factory.

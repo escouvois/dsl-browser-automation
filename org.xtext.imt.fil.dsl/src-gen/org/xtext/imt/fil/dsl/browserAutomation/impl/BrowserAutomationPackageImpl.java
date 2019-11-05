@@ -16,8 +16,10 @@ import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
 import org.xtext.imt.fil.dsl.browserAutomation.Check;
 import org.xtext.imt.fil.dsl.browserAutomation.Choose;
 import org.xtext.imt.fil.dsl.browserAutomation.Click;
+import org.xtext.imt.fil.dsl.browserAutomation.Contains;
 import org.xtext.imt.fil.dsl.browserAutomation.Get;
 import org.xtext.imt.fil.dsl.browserAutomation.Insert;
+import org.xtext.imt.fil.dsl.browserAutomation.Order;
 import org.xtext.imt.fil.dsl.browserAutomation.Statement;
 import org.xtext.imt.fil.dsl.browserAutomation.Test;
 import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
@@ -59,6 +61,13 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   private EClass getEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass orderEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -108,6 +117,13 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   private EClass chooseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass containsEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -200,20 +216,9 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
-  public EAttribute getTest_Url()
-  {
-    return (EAttribute)testEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getTest_Statements()
   {
-    return (EReference)testEClass.getEStructuralFeatures().get(2);
+    return (EReference)testEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -225,6 +230,17 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
   public EClass getStatement()
   {
     return statementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStatement_Url()
+  {
+    return (EAttribute)statementEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -299,9 +315,20 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
+  public EReference getGet_Order()
+  {
+    return (EReference)getEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getGet_Attr()
   {
-    return (EAttribute)getEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)getEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -312,7 +339,51 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
   @Override
   public EAttribute getGet_AttrVal()
   {
-    return (EAttribute)getEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)getEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGet_AttrVar()
+  {
+    return (EReference)getEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGet_VarRef()
+  {
+    return (EReference)getEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOrder()
+  {
+    return orderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOrder_Order()
+  {
+    return (EAttribute)orderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -387,9 +458,9 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
-  public EAttribute getInsert_Value()
+  public EReference getInsert_Var2()
   {
-    return (EAttribute)insertEClass.getEStructuralFeatures().get(0);
+    return (EReference)insertEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -431,6 +502,39 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
+  public EAttribute getChoose_Value()
+  {
+    return (EAttribute)chooseEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getContains()
+  {
+    return containsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getContains_Var2()
+  {
+    return (EReference)containsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public BrowserAutomationFactory getBrowserAutomationFactory()
   {
     return (BrowserAutomationFactory)getEFactoryInstance();
@@ -458,10 +562,10 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     // Create classes and their features
     testEClass = createEClass(TEST);
     createEAttribute(testEClass, TEST__WEB_BROWSER);
-    createEAttribute(testEClass, TEST__URL);
     createEReference(testEClass, TEST__STATEMENTS);
 
     statementEClass = createEClass(STATEMENT);
+    createEAttribute(statementEClass, STATEMENT__URL);
 
     actionEClass = createEClass(ACTION);
     createEReference(actionEClass, ACTION__VAR);
@@ -470,8 +574,14 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     createEReference(getEClass, GET__ACTION);
     createEReference(getEClass, GET__VAR);
     createEAttribute(getEClass, GET__ELEMENT);
+    createEReference(getEClass, GET__ORDER);
     createEAttribute(getEClass, GET__ATTR);
     createEAttribute(getEClass, GET__ATTR_VAL);
+    createEReference(getEClass, GET__ATTR_VAR);
+    createEReference(getEClass, GET__VAR_REF);
+
+    orderEClass = createEClass(ORDER);
+    createEAttribute(orderEClass, ORDER__ORDER);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__NAME);
@@ -482,13 +592,17 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     clickEClass = createEClass(CLICK);
 
     insertEClass = createEClass(INSERT);
-    createEAttribute(insertEClass, INSERT__VALUE);
+    createEReference(insertEClass, INSERT__VAR2);
 
     verifyEClass = createEClass(VERIFY);
 
     checkEClass = createEClass(CHECK);
 
     chooseEClass = createEClass(CHOOSE);
+    createEAttribute(chooseEClass, CHOOSE__VALUE);
+
+    containsEClass = createEClass(CONTAINS);
+    createEReference(containsEClass, CONTAINS__VAR2);
   }
 
   /**
@@ -526,14 +640,15 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     verifyEClass.getESuperTypes().add(this.getAction());
     checkEClass.getESuperTypes().add(this.getAction());
     chooseEClass.getESuperTypes().add(this.getAction());
+    containsEClass.getESuperTypes().add(this.getAction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(testEClass, Test.class, "Test", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTest_WebBrowser(), ecorePackage.getEString(), "webBrowser", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTest_Url(), ecorePackage.getEString(), "url", null, 0, 1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTest_Statements(), this.getStatement(), null, "statements", null, 0, -1, Test.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementEClass, Statement.class, "Statement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStatement_Url(), ecorePackage.getEString(), "url", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAction_Var(), this.getVarReference(), null, "var", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -542,8 +657,14 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     initEReference(getGet_Action(), this.getAction(), null, "action", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGet_Var(), this.getVariable(), null, "var", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGet_Element(), ecorePackage.getEString(), "element", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGet_Order(), this.getOrder(), null, "order", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGet_Attr(), ecorePackage.getEString(), "attr", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGet_AttrVal(), ecorePackage.getEString(), "attrVal", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGet_AttrVar(), this.getVarReference(), null, "attrVar", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGet_VarRef(), this.getVarReference(), null, "varRef", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(orderEClass, Order.class, "Order", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOrder_Order(), ecorePackage.getEInt(), "order", null, 0, 1, Order.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -554,13 +675,17 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     initEClass(clickEClass, Click.class, "Click", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(insertEClass, Insert.class, "Insert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInsert_Value(), ecorePackage.getEString(), "value", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInsert_Var2(), this.getVarReference(), null, "var2", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifyEClass, Verify.class, "Verify", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(checkEClass, Check.class, "Check", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(chooseEClass, Choose.class, "Choose", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getChoose_Value(), ecorePackage.getEString(), "value", null, 0, 1, Choose.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(containsEClass, Contains.class, "Contains", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getContains_Var2(), this.getVarReference(), null, "var2", null, 0, 1, Contains.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);
