@@ -2,26 +2,36 @@ grammar org.xtext.imt.fil.dsl.BrowserAutomation with org.eclipse.xtext.common.Te
 
 generate browserAutomation "http://www.xtext.org/imt/fil/dsl/BrowserAutomation"
 
-Test:
-	{Test}
+BrowserAutomation:
+	{BrowserAutomation}
 	'open' webBrowser=WebBrowser
 	(statements+= Statement)*
 ;
 
 WebBrowser:
-	'mozilla' | 'chrome' | 'safari' | 'internet' 'explorer'
+	'mozilla' | 'chrome' | 'safari' | 'internetExplorer'
 ;
 
 Statement:
-	(Get
-	action=Action) | Get | 'uncheck' 'all' | 'go' 'to' url=STRING
+	DoAction | Get | UncheckAll | GoTo
+;
+
+DoAction:
+	(get=Get)
+	(action=Action)
 ;
 
 Action:
 	Click | Insert | Verify | Check | Choose | Contains
 ;
 
-//| Check | Uncheck | Choose
+GoTo:
+	'go' 'to' url=STRING
+;
+
+UncheckAll:
+	'uncheck' 'all'
+;
 
 Get:
 	var=Variable '=' 'get' (element=Element (order=Order)? ('by' attr=Attribut '[' (attrVal=STRING | attrVar=VarReference) ']' | 'from' varRef=VarReference) | 'pageTitle')
@@ -52,7 +62,7 @@ Click:
 ;
 
 Insert:
-	'insert' var=VarReference 'in' var2=VarReference
+	'insert' (val=STRING | varRef=VarReference) 'in' var2=VarReference
 ;
 
 Verify:

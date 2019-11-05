@@ -6,46 +6,53 @@ package org.xtext.imt.fil.dsl.browserAutomation.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage;
-import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
-import org.xtext.imt.fil.dsl.browserAutomation.Variable;
+import org.xtext.imt.fil.dsl.browserAutomation.GoTo;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Var Reference</b></em>'.
+ * An implementation of the model object '<em><b>Go To</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VarReferenceImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GoToImpl#getUrl <em>Url</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class VarReferenceImpl extends MinimalEObjectImpl.Container implements VarReference
+public class GoToImpl extends StatementImpl implements GoTo
 {
   /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
+   * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar()
+   * @see #getUrl()
    * @generated
    * @ordered
    */
-  protected Variable var;
+  protected static final String URL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getUrl() <em>Url</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUrl()
+   * @generated
+   * @ordered
+   */
+  protected String url = URL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected VarReferenceImpl()
+  protected GoToImpl()
   {
     super();
   }
@@ -58,7 +65,7 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
   @Override
   protected EClass eStaticClass()
   {
-    return BrowserAutomationPackage.Literals.VAR_REFERENCE;
+    return BrowserAutomationPackage.Literals.GO_TO;
   }
 
   /**
@@ -67,29 +74,9 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
    * @generated
    */
   @Override
-  public Variable getVar()
+  public String getUrl()
   {
-    if (var != null && var.eIsProxy())
-    {
-      InternalEObject oldVar = (InternalEObject)var;
-      var = (Variable)eResolveProxy(oldVar);
-      if (var != oldVar)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, BrowserAutomationPackage.VAR_REFERENCE__VAR, oldVar, var));
-      }
-    }
-    return var;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable basicGetVar()
-  {
-    return var;
+    return url;
   }
 
   /**
@@ -98,12 +85,12 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
    * @generated
    */
   @Override
-  public void setVar(Variable newVar)
+  public void setUrl(String newUrl)
   {
-    Variable oldVar = var;
-    var = newVar;
+    String oldUrl = url;
+    url = newUrl;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.VAR_REFERENCE__VAR, oldVar, var));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.GO_TO__URL, oldUrl, url));
   }
 
   /**
@@ -116,9 +103,8 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.VAR_REFERENCE__VAR:
-        if (resolve) return getVar();
-        return basicGetVar();
+      case BrowserAutomationPackage.GO_TO__URL:
+        return getUrl();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -133,8 +119,8 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.VAR_REFERENCE__VAR:
-        setVar((Variable)newValue);
+      case BrowserAutomationPackage.GO_TO__URL:
+        setUrl((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,8 +136,8 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.VAR_REFERENCE__VAR:
-        setVar((Variable)null);
+      case BrowserAutomationPackage.GO_TO__URL:
+        setUrl(URL_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -167,10 +153,27 @@ public class VarReferenceImpl extends MinimalEObjectImpl.Container implements Va
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.VAR_REFERENCE__VAR:
-        return var != null;
+      case BrowserAutomationPackage.GO_TO__URL:
+        return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
     }
     return super.eIsSet(featureID);
   }
 
-} //VarReferenceImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (url: ");
+    result.append(url);
+    result.append(')');
+    return result.toString();
+  }
+
+} //GoToImpl

@@ -7,6 +7,17 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomation
+import org.xtext.imt.fil.dsl.browserAutomation.Statement
+import org.xtext.imt.fil.dsl.browserAutomation.Get
+import org.xtext.imt.fil.dsl.browserAutomation.GoTo
+import org.xtext.imt.fil.dsl.browserAutomation.DoAction
+import org.xtext.imt.fil.dsl.browserAutomation.Click
+import org.xtext.imt.fil.dsl.browserAutomation.Insert
+import org.xtext.imt.fil.dsl.browserAutomation.Verify
+import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl.EObjectOutputStream.Check
+import org.xtext.imt.fil.dsl.browserAutomation.Choose
+import org.xtext.imt.fil.dsl.browserAutomation.Contains
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +27,58 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class BrowserAutomationGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		fsa.generateFile("BrowserAutomation.java", resource.contents.filter(BrowserAutomation).head.compile);
 	}
+	
+	def compile(BrowserAutomation browserAutomation) '''
+		import org.openqa.selenium.*;
+
+		public class BrowserAutomation {
+			public static void main(String[] args) {
+				WebDriver driver = new «browserAutomation.webBrowser.toFirstUpper()»Driver();
+				
+				«FOR statement: browserAutomation.statements»
+					«statement.statementType»
+				«ENDFOR»
+				
+			}
+		}
+	'''
+	
+	def dispatch statementType(Get get) '''
+	
+	'''
+	 
+	def dispatch String statementType(GoTo goTo) '''
+		driver.get("«goTo.url»");
+	'''
+	
+	def dispatch statementType(DoAction doAction) '''
+		«doAction.get.statementType»
+		«doAction.action.actionType»
+	'''
+	
+	def dispatch String actionType(Click click) '''
+	
+	'''
+	
+	def dispatch String actionType(Insert insert) '''
+	
+	'''
+	
+	def dispatch String actionType(Verify verify) '''
+	
+	'''
+	
+	def dispatch String actionType(Check check) '''
+	
+	'''
+	
+	def dispatch String actionType(Choose choose) '''
+	
+	'''
+	
+	def dispatch String actionType(Contains contains) '''
+	
+	'''
 }
