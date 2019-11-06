@@ -48,12 +48,12 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		}
 	'''
 	
-	def dispatch statementType(Get get) '''
+	def dispatch String statementType(Get get) '''
 		«switch (get.element) {
 			case 'link': {
 				switch (get.attr) {
 					case 'value': {
-						'''WebElement element = driver.findElement(By.xpath("//*[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"));'''
+						return '''driver.findElement(By.xpath("//*[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
 					}
 					default: {
 						
@@ -68,34 +68,36 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	
 	def dispatch String statementType(GoTo goTo) '''
 		driver.get("«goTo.url»");
-	'''
+	'''	
+	
 	
 	def dispatch statementType(DoAction doAction) '''
-		«doAction.get.statementType»
-		«doAction.action.actionType»
+		«var i = doAction.get.statementType»
+		«doAction.action.actionType(i.toString)»
 	'''
 	
 	def dispatch actionType(Click click, String element) '''
-		.click();
+		driver.get(«element».getAttribute("href"));
 	'''
 	
-	def dispatch actionType(Insert insert) '''
+	def dispatch actionType(Insert insert, String element) '''
 	test
 	'''
 	
-	def dispatch actionType(Verify verify) '''
-	 	System.out.println("Test passed: " + (element == null ? "false" : "true"));
+	def dispatch actionType(Verify verify, String element) '''
+		WebElement element = «element»;
+		System.out.println("Test passed: " + (element == null ? "false" : "true"));
 	'''
 	
-	def dispatch actionType(Check check) '''
+	def dispatch actionType(Check check, String element) '''
 	test
 	'''
 	
-	def dispatch actionType(Choose choose) '''
+	def dispatch actionType(Choose choose, String element) '''
 	test
 	'''
 	
-	def dispatch actionType(Contains contains) '''
+	def dispatch actionType(Contains contains, String element) '''
 	test
 	'''
 }

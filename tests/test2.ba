@@ -1,4 +1,4 @@
-open safari
+open chrome
 go to "http://www.imt-atlantique.fr/fr"
 l = get link by value ["Toutes les actualités"]
 click on l

@@ -1,4 +1,4 @@
-open mozilla
+open chrome
 go to "http://www.imt-atlantique.fr/fr"
 actu = get link by value ["Toutes les actualités"]
 click on actu

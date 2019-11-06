@@ -1,4 +1,4 @@
-open mozilla
+open chrome
 go to "http://www.imt-atlantique.fr/fr/rechercher"
 trump = get input by value ["Search field"]
 insert "Donald Trump" in trump
