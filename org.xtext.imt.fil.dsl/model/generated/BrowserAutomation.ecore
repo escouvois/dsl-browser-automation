@@ -18,16 +18,20 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Get" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//Variable"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="element" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="order" eType="#//Order"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attrVar" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attrVal" eType="#//AttributeValue"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//VarReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varRefVal" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Order">
@@ -37,10 +41,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VarReference">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Click" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Insert" eSuperTypes="#//Action">
@@ -51,22 +55,22 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Verify" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varToVerify" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Check" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varCheck" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Choose" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varChoose" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Contains" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varContains" eType="#//VarReference"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var2" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varContained" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

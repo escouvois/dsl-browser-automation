@@ -18,6 +18,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.Verify
 import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl.EObjectOutputStream.Check
 import org.xtext.imt.fil.dsl.browserAutomation.Choose
 import org.xtext.imt.fil.dsl.browserAutomation.Contains
+import org.xtext.imt.fil.dsl.browserAutomation.VarReference
 
 /**
  * Generates code from your model files on save.
@@ -31,24 +32,40 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	}
 	
 	def compile(BrowserAutomation browserAutomation) '''
-		import org.openqa.selenium.*;
+		import org.openqa.selenium.By;
+		import org.openqa.selenium.WebDriver;
+		import org.openqa.selenium.WebElement;
+		import org.openqa.selenium.chrome.ChromeDriver;
 
 		public class BrowserAutomation {
 			public static void main(String[] args) {
 				WebDriver driver = new «browserAutomation.webBrowser.toFirstUpper()»Driver();
-				
 				«FOR statement: browserAutomation.statements»
 					«statement.statementType»
 				«ENDFOR»
-				
+				driver.quit();
 			}
 		}
 	'''
 	
 	def dispatch statementType(Get get) '''
-	
+		«switch (get.element) {
+			case 'link': {
+				switch (get.attr) {
+					case 'value': {
+						'''WebElement element = driver.findElement(By.xpath("//*[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"));'''
+					}
+					default: {
+						
+					}
+				}
+			}
+			default: {
+				
+			}
+		}»
 	'''
-	 
+	
 	def dispatch String statementType(GoTo goTo) '''
 		driver.get("«goTo.url»");
 	'''
@@ -58,27 +75,27 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		«doAction.action.actionType»
 	'''
 	
-	def dispatch String actionType(Click click) '''
-	
+	def dispatch actionType(Click click, String element) '''
+		.click();
 	'''
 	
-	def dispatch String actionType(Insert insert) '''
-	
+	def dispatch actionType(Insert insert) '''
+	test
 	'''
 	
-	def dispatch String actionType(Verify verify) '''
-	
+	def dispatch actionType(Verify verify) '''
+	 	System.out.println("Test passed: " + (element == null ? "false" : "true"));
 	'''
 	
-	def dispatch String actionType(Check check) '''
-	
+	def dispatch actionType(Check check) '''
+	test
 	'''
 	
-	def dispatch String actionType(Choose choose) '''
-	
+	def dispatch actionType(Choose choose) '''
+	test
 	'''
 	
-	def dispatch String actionType(Contains contains) '''
-	
+	def dispatch actionType(Contains contains) '''
+	test
 	'''
 }

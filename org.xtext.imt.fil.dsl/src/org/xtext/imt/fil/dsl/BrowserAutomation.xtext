@@ -34,7 +34,11 @@ UncheckAll:
 ;
 
 Get:
-	var=Variable '=' 'get' (element=Element (order=Order)? ('by' attr=Attribut '[' (attrVal=STRING | attrVar=VarReference) ']' | 'from' varRef=VarReference) | 'pageTitle')
+	varRef=Variable '=' 'get' (element=Element (order=Order)? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from' from=VarReference) | 'pageTitle')
+;
+
+AttributeValue:
+	stringVal=STRING | varRefVal=VarReference
 ;
 
 Order:
@@ -54,11 +58,11 @@ Variable:
 ;
 
 VarReference:
-	var=[Variable]
+	varRef=[Variable]
 ;
 
 Click:
-	'click' 'on' var=VarReference
+	'click' 'on' varRef=VarReference
 ;
 
 Insert:
@@ -66,17 +70,17 @@ Insert:
 ;
 
 Verify:
-	var=VarReference 'is' 'not' 'null'
+	varToVerify=VarReference 'is' 'not' 'null'
 ;
 
 Check:
-	'check' var=VarReference
+	'check' varCheck=VarReference
 ;
 
 Choose:
-	'choose' value=STRING 'in' var=VarReference
+	'choose' value=STRING 'in' varChoose=VarReference
 ;
 
 Contains:
-	var=VarReference 'contains' var2=VarReference
+	varContains=VarReference 'contains' varContained=VarReference
 ;
