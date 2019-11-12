@@ -144,10 +144,10 @@ ruleWebBrowser returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 	leaveRule();
 }:
 	(
-		kw='mozilla'
+		kw='firefox'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getWebBrowserAccess().getMozillaKeyword_0());
+			newLeafNode(kw, grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0());
 		}
 		    |
 		kw='chrome'

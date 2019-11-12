@@ -9,7 +9,7 @@ BrowserAutomation:
 ;
 
 WebBrowser:
-	'mozilla' | 'chrome' | 'safari' | 'internetExplorer'
+	'firefox' | 'chrome' | 'safari' | 'internetExplorer'
 ;
 
 Statement:

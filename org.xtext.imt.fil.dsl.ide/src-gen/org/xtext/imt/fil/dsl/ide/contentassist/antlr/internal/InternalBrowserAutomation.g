@@ -555,9 +555,9 @@ rule__WebBrowser__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getWebBrowserAccess().getMozillaKeyword_0()); }
-		'mozilla'
-		{ after(grammarAccess.getWebBrowserAccess().getMozillaKeyword_0()); }
+		{ before(grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0()); }
+		'firefox'
+		{ after(grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0()); }
 	)
 	|
 	(

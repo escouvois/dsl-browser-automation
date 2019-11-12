@@ -13,6 +13,7 @@
 'click'=41
 'combobox'=20
 'contains'=50
+'firefox'=11
 'from'=39
 'get'=35
 'go'=30
@@ -24,7 +25,6 @@
 'internetExplorer'=14
 'is'=45
 'link'=16
-'mozilla'=11
 'name'=27
 'not'=46
 'null'=47

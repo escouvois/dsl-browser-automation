@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'open'", "'mozilla'", "'chrome'", "'safari'", "'internetExplorer'", "'go'", "'to'", "'uncheck'", "'all'", "'='", "'get'", "'by'", "'['", "']'", "'from'", "'pageTitle'", "'number'", "'link'", "'input'", "'button'", "'checkbox'", "'combobox'", "'image'", "'text'", "'title'", "'class'", "'value'", "'alt'", "'name'", "'href'", "'click'", "'on'", "'insert'", "'in'", "'is'", "'not'", "'null'", "'check'", "'choose'", "'contains'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'open'", "'firefox'", "'chrome'", "'safari'", "'internetExplorer'", "'go'", "'to'", "'uncheck'", "'all'", "'='", "'get'", "'by'", "'['", "']'", "'from'", "'pageTitle'", "'number'", "'link'", "'input'", "'button'", "'checkbox'", "'combobox'", "'image'", "'text'", "'title'", "'class'", "'value'", "'alt'", "'name'", "'href'", "'click'", "'on'", "'insert'", "'in'", "'is'", "'not'", "'null'", "'check'", "'choose'", "'contains'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -322,7 +322,7 @@ public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleWebBrowser"
-    // InternalBrowserAutomation.g:139:1: ruleWebBrowser returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'mozilla' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' ) ;
+    // InternalBrowserAutomation.g:139:1: ruleWebBrowser returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'firefox' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' ) ;
     public final AntlrDatatypeRuleToken ruleWebBrowser() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -332,10 +332,10 @@ public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-            // InternalBrowserAutomation.g:145:2: ( (kw= 'mozilla' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' ) )
-            // InternalBrowserAutomation.g:146:2: (kw= 'mozilla' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' )
+            // InternalBrowserAutomation.g:145:2: ( (kw= 'firefox' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' ) )
+            // InternalBrowserAutomation.g:146:2: (kw= 'firefox' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' )
             {
-            // InternalBrowserAutomation.g:146:2: (kw= 'mozilla' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' )
+            // InternalBrowserAutomation.g:146:2: (kw= 'firefox' | kw= 'chrome' | kw= 'safari' | kw= 'internetExplorer' )
             int alt2=4;
             switch ( input.LA(1) ) {
             case 12:
@@ -367,12 +367,12 @@ public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser
 
             switch (alt2) {
                 case 1 :
-                    // InternalBrowserAutomation.g:147:3: kw= 'mozilla'
+                    // InternalBrowserAutomation.g:147:3: kw= 'firefox'
                     {
                     kw=(Token)match(input,12,FOLLOW_2); 
 
                     			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getWebBrowserAccess().getMozillaKeyword_0());
+                    			newLeafNode(kw, grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0());
                     		
 
                     }

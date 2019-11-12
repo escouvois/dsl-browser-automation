@@ -64,20 +64,20 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	public class WebBrowserElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.WebBrowser");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cMozillaKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFirefoxKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
 		private final Keyword cChromeKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		private final Keyword cSafariKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cInternetExplorerKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		
 		//WebBrowser:
-		//	'mozilla' | 'chrome' | 'safari' | 'internetExplorer';
+		//	'firefox' | 'chrome' | 'safari' | 'internetExplorer';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'mozilla' | 'chrome' | 'safari' | 'internetExplorer'
+		//'firefox' | 'chrome' | 'safari' | 'internetExplorer'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'mozilla'
-		public Keyword getMozillaKeyword_0() { return cMozillaKeyword_0; }
+		//'firefox'
+		public Keyword getFirefoxKeyword_0() { return cFirefoxKeyword_0; }
 		
 		//'chrome'
 		public Keyword getChromeKeyword_1() { return cChromeKeyword_1; }
@@ -779,7 +779,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//WebBrowser:
-	//	'mozilla' | 'chrome' | 'safari' | 'internetExplorer';
+	//	'firefox' | 'chrome' | 'safari' | 'internetExplorer';
 	public WebBrowserElements getWebBrowserAccess() {
 		return pWebBrowser;
 	}

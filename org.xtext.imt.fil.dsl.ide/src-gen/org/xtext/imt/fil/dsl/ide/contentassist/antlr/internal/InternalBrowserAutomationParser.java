@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalBrowserAutomationParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'mozilla'", "'chrome'", "'safari'", "'internetExplorer'", "'pageTitle'", "'link'", "'input'", "'button'", "'checkbox'", "'combobox'", "'image'", "'text'", "'title'", "'class'", "'value'", "'alt'", "'name'", "'href'", "'open'", "'go'", "'to'", "'uncheck'", "'all'", "'='", "'get'", "'by'", "'['", "']'", "'from'", "'number'", "'click'", "'on'", "'insert'", "'in'", "'is'", "'not'", "'null'", "'check'", "'choose'", "'contains'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'firefox'", "'chrome'", "'safari'", "'internetExplorer'", "'pageTitle'", "'link'", "'input'", "'button'", "'checkbox'", "'combobox'", "'image'", "'text'", "'title'", "'class'", "'value'", "'alt'", "'name'", "'href'", "'open'", "'go'", "'to'", "'uncheck'", "'all'", "'='", "'get'", "'by'", "'['", "']'", "'from'", "'number'", "'click'", "'on'", "'insert'", "'in'", "'is'", "'not'", "'null'", "'check'", "'choose'", "'contains'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1649,13 +1649,13 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__WebBrowser__Alternatives"
-    // InternalBrowserAutomation.g:552:1: rule__WebBrowser__Alternatives : ( ( 'mozilla' ) | ( 'chrome' ) | ( 'safari' ) | ( 'internetExplorer' ) );
+    // InternalBrowserAutomation.g:552:1: rule__WebBrowser__Alternatives : ( ( 'firefox' ) | ( 'chrome' ) | ( 'safari' ) | ( 'internetExplorer' ) );
     public final void rule__WebBrowser__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBrowserAutomation.g:556:1: ( ( 'mozilla' ) | ( 'chrome' ) | ( 'safari' ) | ( 'internetExplorer' ) )
+            // InternalBrowserAutomation.g:556:1: ( ( 'firefox' ) | ( 'chrome' ) | ( 'safari' ) | ( 'internetExplorer' ) )
             int alt1=4;
             switch ( input.LA(1) ) {
             case 11:
@@ -1687,14 +1687,14 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
 
             switch (alt1) {
                 case 1 :
-                    // InternalBrowserAutomation.g:557:2: ( 'mozilla' )
+                    // InternalBrowserAutomation.g:557:2: ( 'firefox' )
                     {
-                    // InternalBrowserAutomation.g:557:2: ( 'mozilla' )
-                    // InternalBrowserAutomation.g:558:3: 'mozilla'
+                    // InternalBrowserAutomation.g:557:2: ( 'firefox' )
+                    // InternalBrowserAutomation.g:558:3: 'firefox'
                     {
-                     before(grammarAccess.getWebBrowserAccess().getMozillaKeyword_0()); 
+                     before(grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0()); 
                     match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getWebBrowserAccess().getMozillaKeyword_0()); 
+                     after(grammarAccess.getWebBrowserAccess().getFirefoxKeyword_0()); 
 
                     }
 
