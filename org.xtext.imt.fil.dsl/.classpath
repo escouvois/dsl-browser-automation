@@ -9,6 +9,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="D:/COURS/IMT/FI4/DSL/PROJET/org.openqa.selenium"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.openqa.selenium"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

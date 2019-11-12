@@ -35,7 +35,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		import org.openqa.selenium.By;
 		import org.openqa.selenium.WebDriver;
 		import org.openqa.selenium.WebElement;
-		import org.openqa.selenium..«browserAutomation.webBrowser».«browserAutomation.webBrowser.toFirstUpper()»Driver;
+		import org.openqa.selenium.«browserAutomation.webBrowser».«browserAutomation.webBrowser.toFirstUpper()»Driver;
 
 		public class BrowserAutomation {
 			public static void main(String[] args) {
