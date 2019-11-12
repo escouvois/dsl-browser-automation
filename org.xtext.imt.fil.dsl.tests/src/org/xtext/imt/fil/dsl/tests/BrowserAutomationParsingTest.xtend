@@ -9,13 +9,13 @@ import org.eclipse.xtext.testing.extensions.InjectionExtension
 import org.eclipse.xtext.testing.util.ParseHelper
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.^extension.ExtendWith
-import org.xtext.imt.fil.dsl.browserAutomation.Test
+import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomation
 
 @ExtendWith(InjectionExtension)
 @InjectWith(BrowserAutomationInjectorProvider)
 class BrowserAutomationParsingTest {
 	@Inject
-	ParseHelper<Test> parseHelper
+	ParseHelper<BrowserAutomation> parseHelper
 	
 	@org.junit.jupiter.api.Test
 	def void loadModel() {

@@ -35,7 +35,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		import org.openqa.selenium.By;
 		import org.openqa.selenium.WebDriver;
 		import org.openqa.selenium.WebElement;
-		import org.openqa.selenium.chrome.ChromeDriver;
+		import org.openqa.selenium..«browserAutomation.webBrowser».«browserAutomation.webBrowser.toFirstUpper()»Driver;
 
 		public class BrowserAutomation {
 			public static void main(String[] args) {
@@ -54,6 +54,16 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 				switch (get.attr) {
 					case 'value': {
 						return '''driver.findElement(By.xpath("//*[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
+					}
+					default: {
+						
+					}
+				}
+			}
+			case 'image' : {
+				switch (get.attr) {
+					case 'alt': {
+						return '''driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
 					}
 					default: {
 						
