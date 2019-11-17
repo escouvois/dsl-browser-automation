@@ -40,7 +40,8 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		public class BrowserAutomation {
 			public static void main(String[] args) {
 				WebDriver driver = new «browserAutomation.webBrowser.toFirstUpper()»Driver();
-				webDriver.findElement(By.className("eu-cookie-compliance-default-button")).click();
+				driver.get("http://www.imt-atlantique.fr/fr");
+				driver.findElement(By.className("eu-cookie-compliance-default-button")).click();
 				«FOR statement: browserAutomation.statements»
 					«statement.statementType»
 				«ENDFOR»
@@ -88,7 +89,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch actionType(Click click, String element) '''
-		driver.get(«element».getAttribute("href"));
+		«element».click();
 	'''
 	
 	def dispatch actionType(Insert insert, String element) '''
