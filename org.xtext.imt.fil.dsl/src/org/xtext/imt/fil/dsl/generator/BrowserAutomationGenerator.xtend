@@ -40,8 +40,6 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		public class BrowserAutomation {
 			public static void main(String[] args) {
 				WebDriver driver = new «browserAutomation.webBrowser.toFirstUpper()»Driver();
-				driver.get("http://www.imt-atlantique.fr/fr");
-				driver.findElement(By.className("eu-cookie-compliance-default-button")).click();
 				«FOR statement: browserAutomation.statements»
 					«statement.statementType»
 				«ENDFOR»
@@ -55,7 +53,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 			case 'link': {
 				switch (get.attr) {
 					case 'value': {
-						return '''driver.findElement(By.xpath("//*[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
+						return '''driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
 					}
 					default: {
 						
@@ -80,6 +78,8 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	
 	def dispatch String statementType(GoTo goTo) '''
 		driver.get("«goTo.url»");
+		driver.findElement(By.className("eu-cookie-compliance-default-button")).click();
+		
 	'''	
 	
 	
