@@ -405,6 +405,17 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
+  public EAttribute getGet_PageTitle()
+  {
+    return (EAttribute)getEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAttributeValue()
   {
     return attributeValueEClass;
@@ -727,6 +738,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     createEAttribute(getEClass, GET__ATTR);
     createEReference(getEClass, GET__ATTR_VAL);
     createEReference(getEClass, GET__FROM);
+    createEAttribute(getEClass, GET__PAGE_TITLE);
 
     attributeValueEClass = createEClass(ATTRIBUTE_VALUE);
     createEAttribute(attributeValueEClass, ATTRIBUTE_VALUE__STRING_VAL);
@@ -826,6 +838,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     initEAttribute(getGet_Attr(), ecorePackage.getEString(), "attr", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGet_AttrVal(), this.getAttributeValue(), null, "attrVal", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getGet_From(), this.getVarReference(), null, "from", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGet_PageTitle(), ecorePackage.getEString(), "pageTitle", null, 0, 1, Get.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributeValueEClass, AttributeValue.class, "AttributeValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAttributeValue_StringVal(), ecorePackage.getEString(), "stringVal", null, 0, 1, AttributeValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

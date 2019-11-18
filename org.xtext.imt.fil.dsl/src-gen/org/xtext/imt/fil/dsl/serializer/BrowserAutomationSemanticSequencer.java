@@ -226,7 +226,7 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 *     Get returns Get
 	 *
 	 * Constraint:
-	 *     (varRef=Variable (element=Element order=Order? ((attr=Attribut attrVal=AttributeValue) | from=VarReference))?)
+	 *     (varRef=Variable ((element=Element order=Order? ((attr=Attribut attrVal=AttributeValue) | from=VarReference)) | pageTitle='pageTitle'))
 	 */
 	protected void sequence_Get(ISerializationContext context, Get semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

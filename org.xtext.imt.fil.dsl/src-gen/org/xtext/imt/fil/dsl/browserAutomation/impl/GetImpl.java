@@ -32,6 +32,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.Variable;
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getAttr <em>Attr</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getAttrVal <em>Attr Val</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getFrom <em>From</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.GetImpl#getPageTitle <em>Page Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -117,6 +118,26 @@ public class GetImpl extends StatementImpl implements Get
    * @ordered
    */
   protected VarReference from;
+
+  /**
+   * The default value of the '{@link #getPageTitle() <em>Page Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPageTitle()
+   * @generated
+   * @ordered
+   */
+  protected static final String PAGE_TITLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPageTitle() <em>Page Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPageTitle()
+   * @generated
+   * @ordered
+   */
+  protected String pageTitle = PAGE_TITLE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -395,6 +416,31 @@ public class GetImpl extends StatementImpl implements Get
    * @generated
    */
   @Override
+  public String getPageTitle()
+  {
+    return pageTitle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPageTitle(String newPageTitle)
+  {
+    String oldPageTitle = pageTitle;
+    pageTitle = newPageTitle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.GET__PAGE_TITLE, oldPageTitle, pageTitle));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -433,6 +479,8 @@ public class GetImpl extends StatementImpl implements Get
         return getAttrVal();
       case BrowserAutomationPackage.GET__FROM:
         return getFrom();
+      case BrowserAutomationPackage.GET__PAGE_TITLE:
+        return getPageTitle();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -464,6 +512,9 @@ public class GetImpl extends StatementImpl implements Get
         return;
       case BrowserAutomationPackage.GET__FROM:
         setFrom((VarReference)newValue);
+        return;
+      case BrowserAutomationPackage.GET__PAGE_TITLE:
+        setPageTitle((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -497,6 +548,9 @@ public class GetImpl extends StatementImpl implements Get
       case BrowserAutomationPackage.GET__FROM:
         setFrom((VarReference)null);
         return;
+      case BrowserAutomationPackage.GET__PAGE_TITLE:
+        setPageTitle(PAGE_TITLE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -523,6 +577,8 @@ public class GetImpl extends StatementImpl implements Get
         return attrVal != null;
       case BrowserAutomationPackage.GET__FROM:
         return from != null;
+      case BrowserAutomationPackage.GET__PAGE_TITLE:
+        return PAGE_TITLE_EDEFAULT == null ? pageTitle != null : !PAGE_TITLE_EDEFAULT.equals(pageTitle);
     }
     return super.eIsSet(featureID);
   }
@@ -542,6 +598,8 @@ public class GetImpl extends StatementImpl implements Get
     result.append(element);
     result.append(", attr: ");
     result.append(attr);
+    result.append(", pageTitle: ");
+    result.append(pageTitle);
     result.append(')');
     return result.toString();
   }

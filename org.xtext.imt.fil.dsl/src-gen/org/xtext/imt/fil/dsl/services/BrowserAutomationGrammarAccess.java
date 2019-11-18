@@ -249,15 +249,16 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cFromKeyword_3_0_2_1_0 = (Keyword)cGroup_3_0_2_1.eContents().get(0);
 		private final Assignment cFromAssignment_3_0_2_1_1 = (Assignment)cGroup_3_0_2_1.eContents().get(1);
 		private final RuleCall cFromVarReferenceParserRuleCall_3_0_2_1_1_0 = (RuleCall)cFromAssignment_3_0_2_1_1.eContents().get(0);
-		private final Keyword cPageTitleKeyword_3_1 = (Keyword)cAlternatives_3.eContents().get(1);
+		private final Assignment cPageTitleAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final Keyword cPageTitlePageTitleKeyword_3_1_0 = (Keyword)cPageTitleAssignment_3_1.eContents().get(0);
 		
 		//Get:
 		//	varRef=Variable '=' 'get' (element=Element order=Order? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from'
-		//	from=VarReference) | 'pageTitle');
+		//	from=VarReference) | pageTitle='pageTitle');
 		@Override public ParserRule getRule() { return rule; }
 		
 		//varRef=Variable '=' 'get' (element=Element order=Order? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from'
-		//from=VarReference) | 'pageTitle')
+		//from=VarReference) | pageTitle='pageTitle')
 		public Group getGroup() { return cGroup; }
 		
 		//varRef=Variable
@@ -273,7 +274,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		public Keyword getGetKeyword_2() { return cGetKeyword_2; }
 		
 		//element=Element order=Order? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from' from=VarReference) |
-		//'pageTitle'
+		//pageTitle='pageTitle'
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 		
 		//element=Element order=Order? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from' from=VarReference)
@@ -330,8 +331,11 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//VarReference
 		public RuleCall getFromVarReferenceParserRuleCall_3_0_2_1_1_0() { return cFromVarReferenceParserRuleCall_3_0_2_1_1_0; }
 		
+		//pageTitle='pageTitle'
+		public Assignment getPageTitleAssignment_3_1() { return cPageTitleAssignment_3_1; }
+		
 		//'pageTitle'
-		public Keyword getPageTitleKeyword_3_1() { return cPageTitleKeyword_3_1; }
+		public Keyword getPageTitlePageTitleKeyword_3_1_0() { return cPageTitlePageTitleKeyword_3_1_0; }
 	}
 	public class AttributeValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.AttributeValue");
@@ -840,7 +844,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	
 	//Get:
 	//	varRef=Variable '=' 'get' (element=Element order=Order? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from'
-	//	from=VarReference) | 'pageTitle');
+	//	from=VarReference) | pageTitle='pageTitle');
 	public GetElements getGetAccess() {
 		return pGet;
 	}

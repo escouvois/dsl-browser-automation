@@ -19,6 +19,7 @@ package org.xtext.imt.fil.dsl.browserAutomation;
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAttr <em>Attr</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getAttrVal <em>Attr Val</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getFrom <em>From</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getPageTitle <em>Page Title</em>}</li>
  * </ul>
  *
  * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getGet()
@@ -158,5 +159,27 @@ public interface Get extends Statement
    * @generated
    */
   void setFrom(VarReference value);
+
+  /**
+   * Returns the value of the '<em><b>Page Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Page Title</em>' attribute.
+   * @see #setPageTitle(String)
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getGet_PageTitle()
+   * @model
+   * @generated
+   */
+  String getPageTitle();
+
+  /**
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getPageTitle <em>Page Title</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Page Title</em>' attribute.
+   * @see #getPageTitle()
+   * @generated
+   */
+  void setPageTitle(String value);
 
 } // Get

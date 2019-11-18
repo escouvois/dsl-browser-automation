@@ -34,7 +34,7 @@ UncheckAll:
 ;
 
 Get:
-	varRef=Variable '=' 'get' (element=Element (order=Order)? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from' from=VarReference) | 'pageTitle')
+	varRef=Variable '=' 'get' (element=Element (order=Order)? ('by' attr=Attribut '[' attrVal=AttributeValue ']' | 'from' from=VarReference) | pageTitle='pageTitle')
 ;
 
 AttributeValue:

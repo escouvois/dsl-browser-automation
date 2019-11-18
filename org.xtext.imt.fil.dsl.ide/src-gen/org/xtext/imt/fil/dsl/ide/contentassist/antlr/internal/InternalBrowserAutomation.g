@@ -672,9 +672,9 @@ rule__Get__Alternatives_3
 	)
 	|
 	(
-		{ before(grammarAccess.getGetAccess().getPageTitleKeyword_3_1()); }
-		'pageTitle'
-		{ after(grammarAccess.getGetAccess().getPageTitleKeyword_3_1()); }
+		{ before(grammarAccess.getGetAccess().getPageTitleAssignment_3_1()); }
+		(rule__Get__PageTitleAssignment_3_1)
+		{ after(grammarAccess.getGetAccess().getPageTitleAssignment_3_1()); }
 	)
 ;
 finally {
@@ -2268,6 +2268,25 @@ rule__Get__FromAssignment_3_0_2_1_1
 		{ before(grammarAccess.getGetAccess().getFromVarReferenceParserRuleCall_3_0_2_1_1_0()); }
 		ruleVarReference
 		{ after(grammarAccess.getGetAccess().getFromVarReferenceParserRuleCall_3_0_2_1_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Get__PageTitleAssignment_3_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getGetAccess().getPageTitlePageTitleKeyword_3_1_0()); }
+		(
+			{ before(grammarAccess.getGetAccess().getPageTitlePageTitleKeyword_3_1_0()); }
+			'pageTitle'
+			{ after(grammarAccess.getGetAccess().getPageTitlePageTitleKeyword_3_1_0()); }
+		)
+		{ after(grammarAccess.getGetAccess().getPageTitlePageTitleKeyword_3_1_0()); }
 	)
 ;
 finally {

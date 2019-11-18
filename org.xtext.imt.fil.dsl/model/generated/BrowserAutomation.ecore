@@ -28,6 +28,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//VarReference"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pageTitle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AttributeValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

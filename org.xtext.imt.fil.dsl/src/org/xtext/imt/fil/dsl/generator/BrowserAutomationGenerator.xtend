@@ -49,31 +49,49 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch String statementType(Get get) '''
-		«switch (get.element) {
-			case 'link': {
-				switch (get.attr) {
-					case 'value': {
-						return '''driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
-					}
-					default: {
-						
-					}
-				}
-			}
-			case 'image' : {
-				switch (get.attr) {
-					case 'alt': {
-						return '''driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
-					}
-					default: {
-						
+		«
+		if(!get.pageTitle.isNullOrEmpty) {
+			return '''driver.getTitle()'''
+		} else {
+			switch (get.element) {
+				case 'link': {
+					switch (get.attr) {
+						case 'value': {
+							return '''driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
+						}
+						default: {
+							
+						}
 					}
 				}
-			}
-			default: {
-				
+				case 'image' : {
+					switch (get.attr) {
+						case 'alt': {
+							return '''driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
+						}
+						default: {
+							
+						}
+					}
+				}
+				case 'text' : {
+					switch (get.attr) {
+						case 'class': {
+							return '''WebElement e1 = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']")).get(«get.order.order»-1);
+								driver.findElement(By.xpath("//a[@title='" + e1.getText() + "']"))
+							'''
+						}
+						default: {
+							
+						}
+					}
+				}
+				default: {
+					
+				}
 			}
 		}»
+		
 	'''
 	
 	def dispatch String statementType(GoTo goTo) '''
@@ -110,6 +128,6 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch actionType(Contains contains, String element) '''
-	test
+	«element».contains(e1.getText());
 	'''
 }

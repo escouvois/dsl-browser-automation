@@ -591,10 +591,20 @@ ruleGet returns [EObject current=null]
 				)
 			)
 			    |
-			otherlv_12='pageTitle'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getGetAccess().getPageTitleKeyword_3_1());
-			}
+			(
+				(
+					lv_pageTitle_12_0='pageTitle'
+					{
+						newLeafNode(lv_pageTitle_12_0, grammarAccess.getGetAccess().getPageTitlePageTitleKeyword_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGetRule());
+						}
+						setWithLastConsumed($current, "pageTitle", lv_pageTitle_12_0, "pageTitle");
+					}
+				)
+			)
 		)
 	)
 ;

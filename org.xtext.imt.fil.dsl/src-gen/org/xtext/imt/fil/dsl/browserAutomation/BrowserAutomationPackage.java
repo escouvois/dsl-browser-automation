@@ -262,13 +262,22 @@ public interface BrowserAutomationPackage extends EPackage
   int GET__FROM = STATEMENT_FEATURE_COUNT + 5;
 
   /**
+   * The feature id for the '<em><b>Page Title</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET__PAGE_TITLE = STATEMENT_FEATURE_COUNT + 6;
+
+  /**
    * The number of structural features of the '<em>Get</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 6;
+  int GET_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
@@ -778,6 +787,17 @@ public interface BrowserAutomationPackage extends EPackage
   EReference getGet_From();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Get#getPageTitle <em>Page Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Page Title</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Get#getPageTitle()
+   * @see #getGet()
+   * @generated
+   */
+  EAttribute getGet_PageTitle();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.AttributeValue <em>Attribute Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1212,6 +1232,14 @@ public interface BrowserAutomationPackage extends EPackage
      * @generated
      */
     EReference GET__FROM = eINSTANCE.getGet_From();
+
+    /**
+     * The meta object literal for the '<em><b>Page Title</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GET__PAGE_TITLE = eINSTANCE.getGet_PageTitle();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.AttributeValueImpl <em>Attribute Value</em>}' class.
