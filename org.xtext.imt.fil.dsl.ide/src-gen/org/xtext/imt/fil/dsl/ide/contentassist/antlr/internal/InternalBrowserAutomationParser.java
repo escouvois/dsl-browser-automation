@@ -7461,15 +7461,9 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__Click__VarRefAssignment_2"
 
 
-<<<<<<< HEAD
     // $ANTLR start "rule__Insert__AttrValAssignment_1_0"
-    // InternalBrowserAutomation.g:2390:1: rule__Insert__AttrValAssignment_1_0 : ( RULE_STRING ) ;
+    // InternalBrowserAutomation.g:2486:1: rule__Insert__AttrValAssignment_1_0 : ( RULE_STRING ) ;
     public final void rule__Insert__AttrValAssignment_1_0() throws RecognitionException {
-=======
-    // $ANTLR start "rule__Insert__ValAssignment_1_0"
-    // InternalBrowserAutomation.g:2486:1: rule__Insert__ValAssignment_1_0 : ( RULE_STRING ) ;
-    public final void rule__Insert__ValAssignment_1_0() throws RecognitionException {
->>>>>>> 9d8006263693b343ff681bcf7c7b4505cf332f1f
 
         		int stackSize = keepStackSize();
         	

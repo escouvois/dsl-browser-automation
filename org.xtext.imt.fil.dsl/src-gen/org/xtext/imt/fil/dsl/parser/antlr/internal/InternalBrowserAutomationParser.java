@@ -2596,11 +2596,7 @@ public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleInsert"
-<<<<<<< HEAD
-    // InternalBrowserAutomation.g:943:1: ruleInsert returns [EObject current=null] : (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) ) ;
-=======
-    // InternalBrowserAutomation.g:969:1: ruleInsert returns [EObject current=null] : (otherlv_0= 'insert' ( ( (lv_val_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) ) ;
->>>>>>> 9d8006263693b343ff681bcf7c7b4505cf332f1f
+    // InternalBrowserAutomation.g:969:1: ruleInsert returns [EObject current=null] : (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) ) ;
     public final EObject ruleInsert() throws RecognitionException {
         EObject current = null;
 
@@ -2616,29 +2612,17 @@ public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser
         	enterRule();
 
         try {
-<<<<<<< HEAD
-            // InternalBrowserAutomation.g:949:2: ( (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) ) )
-            // InternalBrowserAutomation.g:950:2: (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) )
+            // InternalBrowserAutomation.g:975:2: ( (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) ) )
+            // InternalBrowserAutomation.g:976:2: (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) )
             {
-            // InternalBrowserAutomation.g:950:2: (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) )
-            // InternalBrowserAutomation.g:951:3: otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) )
-=======
-            // InternalBrowserAutomation.g:975:2: ( (otherlv_0= 'insert' ( ( (lv_val_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) ) )
-            // InternalBrowserAutomation.g:976:2: (otherlv_0= 'insert' ( ( (lv_val_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) )
-            {
-            // InternalBrowserAutomation.g:976:2: (otherlv_0= 'insert' ( ( (lv_val_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) )
-            // InternalBrowserAutomation.g:977:3: otherlv_0= 'insert' ( ( (lv_val_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) )
->>>>>>> 9d8006263693b343ff681bcf7c7b4505cf332f1f
+            // InternalBrowserAutomation.g:976:2: (otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) ) )
+            // InternalBrowserAutomation.g:977:3: otherlv_0= 'insert' ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) ) otherlv_3= 'in' ( (lv_var2_4_0= ruleVarReference ) )
             {
             otherlv_0=(Token)match(input,45,FOLLOW_18); 
 
             			newLeafNode(otherlv_0, grammarAccess.getInsertAccess().getInsertKeyword_0());
             		
-<<<<<<< HEAD
-            // InternalBrowserAutomation.g:955:3: ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) )
-=======
-            // InternalBrowserAutomation.g:981:3: ( ( (lv_val_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) )
->>>>>>> 9d8006263693b343ff681bcf7c7b4505cf332f1f
+            // InternalBrowserAutomation.g:981:3: ( ( (lv_attrVal_1_0= RULE_STRING ) ) | ( (lv_varRef_2_0= ruleVarReference ) ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -2656,27 +2640,15 @@ public class InternalBrowserAutomationParser extends AbstractInternalAntlrParser
             }
             switch (alt11) {
                 case 1 :
-<<<<<<< HEAD
-                    // InternalBrowserAutomation.g:956:4: ( (lv_attrVal_1_0= RULE_STRING ) )
+                    // InternalBrowserAutomation.g:982:4: ( (lv_attrVal_1_0= RULE_STRING ) )
                     {
-                    // InternalBrowserAutomation.g:956:4: ( (lv_attrVal_1_0= RULE_STRING ) )
-                    // InternalBrowserAutomation.g:957:5: (lv_attrVal_1_0= RULE_STRING )
+                    // InternalBrowserAutomation.g:982:4: ( (lv_attrVal_1_0= RULE_STRING ) )
+                    // InternalBrowserAutomation.g:983:5: (lv_attrVal_1_0= RULE_STRING )
                     {
-                    // InternalBrowserAutomation.g:957:5: (lv_attrVal_1_0= RULE_STRING )
-                    // InternalBrowserAutomation.g:958:6: lv_attrVal_1_0= RULE_STRING
+                    // InternalBrowserAutomation.g:983:5: (lv_attrVal_1_0= RULE_STRING )
+                    // InternalBrowserAutomation.g:984:6: lv_attrVal_1_0= RULE_STRING
                     {
-                    lv_attrVal_1_0=(Token)match(input,RULE_STRING,FOLLOW_21); 
-=======
-                    // InternalBrowserAutomation.g:982:4: ( (lv_val_1_0= RULE_STRING ) )
-                    {
-                    // InternalBrowserAutomation.g:982:4: ( (lv_val_1_0= RULE_STRING ) )
-                    // InternalBrowserAutomation.g:983:5: (lv_val_1_0= RULE_STRING )
-                    {
-                    // InternalBrowserAutomation.g:983:5: (lv_val_1_0= RULE_STRING )
-                    // InternalBrowserAutomation.g:984:6: lv_val_1_0= RULE_STRING
-                    {
-                    lv_val_1_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
->>>>>>> 9d8006263693b343ff681bcf7c7b4505cf332f1f
+                    lv_attrVal_1_0=(Token)match(input,RULE_STRING,FOLLOW_23); 
 
                     						newLeafNode(lv_attrVal_1_0, grammarAccess.getInsertAccess().getAttrValSTRINGTerminalRuleCall_1_0_0());
                     					
