@@ -73,7 +73,7 @@ public class BrowserAutomationParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment(), "rule__Variable__NameAssignment");
 			builder.put(grammarAccess.getVarReferenceAccess().getVarRefAssignment(), "rule__VarReference__VarRefAssignment");
 			builder.put(grammarAccess.getClickAccess().getVarRefAssignment_2(), "rule__Click__VarRefAssignment_2");
-			builder.put(grammarAccess.getInsertAccess().getValAssignment_1_0(), "rule__Insert__ValAssignment_1_0");
+			builder.put(grammarAccess.getInsertAccess().getAttrValAssignment_1_0(), "rule__Insert__AttrValAssignment_1_0");
 			builder.put(grammarAccess.getInsertAccess().getVarRefAssignment_1_1(), "rule__Insert__VarRefAssignment_1_1");
 			builder.put(grammarAccess.getInsertAccess().getVar2Assignment_3(), "rule__Insert__Var2Assignment_3");
 			builder.put(grammarAccess.getVerifyAccess().getVarToVerifyAssignment_0(), "rule__Verify__VarToVerifyAssignment_0");

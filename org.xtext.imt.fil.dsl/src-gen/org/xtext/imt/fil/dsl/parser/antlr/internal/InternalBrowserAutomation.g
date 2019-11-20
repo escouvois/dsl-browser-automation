@@ -955,9 +955,9 @@ ruleInsert returns [EObject current=null]
 		(
 			(
 				(
-					lv_val_1_0=RULE_STRING
+					lv_attrVal_1_0=RULE_STRING
 					{
-						newLeafNode(lv_val_1_0, grammarAccess.getInsertAccess().getValSTRINGTerminalRuleCall_1_0_0());
+						newLeafNode(lv_attrVal_1_0, grammarAccess.getInsertAccess().getAttrValSTRINGTerminalRuleCall_1_0_0());
 					}
 					{
 						if ($current==null) {
@@ -965,8 +965,8 @@ ruleInsert returns [EObject current=null]
 						}
 						setWithLastConsumed(
 							$current,
-							"val",
-							lv_val_1_0,
+							"attrVal",
+							lv_attrVal_1_0,
 							"org.eclipse.xtext.common.Terminals.STRING");
 					}
 				)

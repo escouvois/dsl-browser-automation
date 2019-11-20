@@ -825,9 +825,9 @@ rule__Insert__Alternatives_1
 	}
 :
 	(
-		{ before(grammarAccess.getInsertAccess().getValAssignment_1_0()); }
-		(rule__Insert__ValAssignment_1_0)
-		{ after(grammarAccess.getInsertAccess().getValAssignment_1_0()); }
+		{ before(grammarAccess.getInsertAccess().getAttrValAssignment_1_0()); }
+		(rule__Insert__AttrValAssignment_1_0)
+		{ after(grammarAccess.getInsertAccess().getAttrValAssignment_1_0()); }
 	)
 	|
 	(
@@ -2387,15 +2387,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Insert__ValAssignment_1_0
+rule__Insert__AttrValAssignment_1_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInsertAccess().getValSTRINGTerminalRuleCall_1_0_0()); }
+		{ before(grammarAccess.getInsertAccess().getAttrValSTRINGTerminalRuleCall_1_0_0()); }
 		RULE_STRING
-		{ after(grammarAccess.getInsertAccess().getValSTRINGTerminalRuleCall_1_0_0()); }
+		{ after(grammarAccess.getInsertAccess().getAttrValSTRINGTerminalRuleCall_1_0_0()); }
 	)
 ;
 finally {

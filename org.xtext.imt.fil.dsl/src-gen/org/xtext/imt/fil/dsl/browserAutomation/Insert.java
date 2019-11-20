@@ -13,7 +13,7 @@ package org.xtext.imt.fil.dsl.browserAutomation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVal <em>Val</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getAttrVal <em>Attr Val</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarRef <em>Var Ref</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}</li>
  * </ul>
@@ -25,26 +25,26 @@ package org.xtext.imt.fil.dsl.browserAutomation;
 public interface Insert extends Action
 {
   /**
-   * Returns the value of the '<em><b>Val</b></em>' attribute.
+   * Returns the value of the '<em><b>Attr Val</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(String)
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_Val()
+   * @return the value of the '<em>Attr Val</em>' attribute.
+   * @see #setAttrVal(String)
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_AttrVal()
    * @model
    * @generated
    */
-  String getVal();
+  String getAttrVal();
 
   /**
-   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVal <em>Val</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getAttrVal <em>Attr Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Val</em>' attribute.
-   * @see #getVal()
+   * @param value the new value of the '<em>Attr Val</em>' attribute.
+   * @see #getAttrVal()
    * @generated
    */
-  void setVal(String value);
+  void setAttrVal(String value);
 
   /**
    * Returns the value of the '<em><b>Var Ref</b></em>' containment reference.

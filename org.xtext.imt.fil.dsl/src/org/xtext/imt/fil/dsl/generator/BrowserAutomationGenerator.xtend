@@ -36,6 +36,8 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		import org.openqa.selenium.WebDriver;
 		import org.openqa.selenium.WebElement;
 		import org.openqa.selenium.«browserAutomation.webBrowser».«browserAutomation.webBrowser.toFirstUpper()»Driver;
+		import org.openqa.selenium.support.ui.ExpectedConditions;
+		import org.openqa.selenium.support.ui.WebDriverWait;
 
 		public class BrowserAutomation {
 			public static void main(String[] args) {
@@ -57,20 +59,20 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 				case 'link': {
 					switch (get.attr) {
 						case 'value': {
-							return '''driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
-						}
-						default: {
-							
+							return 
+							'''
+							driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))
+							'''
 						}
 					}
 				}
 				case 'image' : {
 					switch (get.attr) {
 						case 'alt': {
-							return '''driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))'''
-						}
-						default: {
-							
+							return 
+							'''
+							driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))
+							'''
 						}
 					}
 				}
@@ -79,13 +81,36 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 						case 'class': {
 							return 
 							'''
-							WebElement e1 = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']")).get(«get.order.order»-1);
+							WebElement e1 = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']")).get(«get.order.order»-1);
 							String e1Text = e1.getText();
 							driver.findElement(By.xpath("//a[@title='" + e1Text + "']"))
 							'''
 						}
-						default: {
-							
+						case 'value' : {
+							return
+							'''
+							driver.findElement(By.xpath("//*[contains(text(), '«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»')]"))
+							'''
+						}
+					}
+				}
+				case 'input' : {
+					switch (get.attr) {
+						case 'value' : {
+							return 
+							'''
+							driver.findElement(By.xpath("//input[@id='edit-search-api-fulltext']"))
+							'''
+						}
+					}
+				}
+				case 'button' : {
+					switch (get.attr) {
+						case 'value' : {
+							return
+							'''
+							driver.findElement(By.xpath("//*[contains(@value,'«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»')]"))
+							'''
 						}
 					}
 				}
@@ -97,40 +122,48 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		
 	'''
 	
-	def dispatch String statementType(GoTo goTo) '''
-		driver.get("«goTo.url»");
-		driver.findElement(By.className("eu-cookie-compliance-default-button")).click();
+	def dispatch String statementType(GoTo goTo) 
+	'''
+	driver.get("«goTo.url»");
+	new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='agree-button eu-cookie-compliance-default-button']"))).click();
 		
 	'''	
 	
 	
-	def dispatch statementType(DoAction doAction) '''
-		«var i = doAction.get.statementType»
-		«doAction.action.actionType(i.toString)»
+	def dispatch statementType(DoAction doAction) 
+	'''
+	«var i = doAction.get.statementType»
+	«doAction.action.actionType(i.toString)»
 	'''
 	
-	def dispatch actionType(Click click, String element) '''
-		«element».click();
+	def dispatch actionType(Click click, String element) 
+	'''
+	«element».click();
 	'''
 	
-	def dispatch actionType(Insert insert, String element) '''
+	def dispatch actionType(Insert insert, String element) 
+	'''
+	«element».sendKeys("«IF insert.attrVal !== null»«insert.attrVal»«ELSE»«insert.varRef»«ENDIF»");
+	'''
+	
+	def dispatch actionType(Verify verify, String element)
+	'''
+	WebElement element = «element»;
+	System.out.println("Test passed: " + (element == null ? "false" : "true"));
+	'''
+	
+	def dispatch actionType(Check check, String element) 
+	'''
 	test
 	'''
 	
-	def dispatch actionType(Verify verify, String element) '''
-		WebElement element = «element»;
-		System.out.println("Test passed: " + (element == null ? "false" : "true"));
+	def dispatch actionType(Choose choose, String element) 
 	'''
-	
-	def dispatch actionType(Check check, String element) '''
 	test
 	'''
 	
-	def dispatch actionType(Choose choose, String element) '''
-	test
+	def dispatch actionType(Contains contains, String element) 
 	'''
-	
-	def dispatch actionType(Contains contains, String element) '''
 	«element».contains(e1Text);
 	'''
 }

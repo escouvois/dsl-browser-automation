@@ -439,13 +439,13 @@ public interface BrowserAutomationPackage extends EPackage
   int INSERT = 11;
 
   /**
-   * The feature id for the '<em><b>Val</b></em>' attribute.
+   * The feature id for the '<em><b>Attr Val</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT__VAL = ACTION_FEATURE_COUNT + 0;
+  int INSERT__ATTR_VAL = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Var Ref</b></em>' containment reference.
@@ -924,15 +924,15 @@ public interface BrowserAutomationPackage extends EPackage
   EClass getInsert();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVal <em>Val</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getAttrVal <em>Attr Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Val</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVal()
+   * @return the meta object for the attribute '<em>Attr Val</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getAttrVal()
    * @see #getInsert()
    * @generated
    */
-  EAttribute getInsert_Val();
+  EAttribute getInsert_AttrVal();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarRef <em>Var Ref</em>}'.
@@ -1350,12 +1350,12 @@ public interface BrowserAutomationPackage extends EPackage
     EClass INSERT = eINSTANCE.getInsert();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Attr Val</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INSERT__VAL = eINSTANCE.getInsert_Val();
+    EAttribute INSERT__ATTR_VAL = eINSTANCE.getInsert_AttrVal();
 
     /**
      * The meta object literal for the '<em><b>Var Ref</b></em>' containment reference feature.

@@ -258,7 +258,7 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 *     Insert returns Insert
 	 *
 	 * Constraint:
-	 *     ((val=STRING | varRef=VarReference) var2=VarReference)
+	 *     ((attrVal=STRING | varRef=VarReference) var2=VarReference)
 	 */
 	protected void sequence_Insert(ISerializationContext context, Insert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

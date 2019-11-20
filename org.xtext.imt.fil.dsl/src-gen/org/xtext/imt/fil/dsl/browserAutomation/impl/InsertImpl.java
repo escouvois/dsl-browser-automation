@@ -23,7 +23,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVal <em>Val</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getAttrVal <em>Attr Val</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVarRef <em>Var Ref</em>}</li>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVar2 <em>Var2</em>}</li>
  * </ul>
@@ -33,24 +33,24 @@ import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
 public class InsertImpl extends ActionImpl implements Insert
 {
   /**
-   * The default value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The default value of the '{@link #getAttrVal() <em>Attr Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getAttrVal()
    * @generated
    * @ordered
    */
-  protected static final String VAL_EDEFAULT = null;
+  protected static final String ATTR_VAL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
+   * The cached value of the '{@link #getAttrVal() <em>Attr Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVal()
+   * @see #getAttrVal()
    * @generated
    * @ordered
    */
-  protected String val = VAL_EDEFAULT;
+  protected String attrVal = ATTR_VAL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getVarRef() <em>Var Ref</em>}' containment reference.
@@ -99,9 +99,9 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
-  public String getVal()
+  public String getAttrVal()
   {
-    return val;
+    return attrVal;
   }
 
   /**
@@ -110,12 +110,12 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
-  public void setVal(String newVal)
+  public void setAttrVal(String newAttrVal)
   {
-    String oldVal = val;
-    val = newVal;
+    String oldAttrVal = attrVal;
+    attrVal = newAttrVal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAL, oldVal, val));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__ATTR_VAL, oldAttrVal, attrVal));
   }
 
   /**
@@ -246,8 +246,8 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAL:
-        return getVal();
+      case BrowserAutomationPackage.INSERT__ATTR_VAL:
+        return getAttrVal();
       case BrowserAutomationPackage.INSERT__VAR_REF:
         return getVarRef();
       case BrowserAutomationPackage.INSERT__VAR2:
@@ -266,8 +266,8 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAL:
-        setVal((String)newValue);
+      case BrowserAutomationPackage.INSERT__ATTR_VAL:
+        setAttrVal((String)newValue);
         return;
       case BrowserAutomationPackage.INSERT__VAR_REF:
         setVarRef((VarReference)newValue);
@@ -289,8 +289,8 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAL:
-        setVal(VAL_EDEFAULT);
+      case BrowserAutomationPackage.INSERT__ATTR_VAL:
+        setAttrVal(ATTR_VAL_EDEFAULT);
         return;
       case BrowserAutomationPackage.INSERT__VAR_REF:
         setVarRef((VarReference)null);
@@ -312,8 +312,8 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAL:
-        return VAL_EDEFAULT == null ? val != null : !VAL_EDEFAULT.equals(val);
+      case BrowserAutomationPackage.INSERT__ATTR_VAL:
+        return ATTR_VAL_EDEFAULT == null ? attrVal != null : !ATTR_VAL_EDEFAULT.equals(attrVal);
       case BrowserAutomationPackage.INSERT__VAR_REF:
         return varRef != null;
       case BrowserAutomationPackage.INSERT__VAR2:
@@ -333,8 +333,8 @@ public class InsertImpl extends ActionImpl implements Insert
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (val: ");
-    result.append(val);
+    result.append(" (attrVal: ");
+    result.append(attrVal);
     result.append(')');
     return result.toString();
   }

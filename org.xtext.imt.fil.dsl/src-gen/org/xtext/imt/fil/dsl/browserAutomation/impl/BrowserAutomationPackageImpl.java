@@ -548,7 +548,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
-  public EAttribute getInsert_Val()
+  public EAttribute getInsert_AttrVal()
   {
     return (EAttribute)insertEClass.getEStructuralFeatures().get(0);
   }
@@ -757,7 +757,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     createEReference(clickEClass, CLICK__VAR_REF);
 
     insertEClass = createEClass(INSERT);
-    createEAttribute(insertEClass, INSERT__VAL);
+    createEAttribute(insertEClass, INSERT__ATTR_VAL);
     createEReference(insertEClass, INSERT__VAR_REF);
     createEReference(insertEClass, INSERT__VAR2);
 
@@ -857,7 +857,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     initEReference(getClick_VarRef(), this.getVarReference(), null, "varRef", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(insertEClass, Insert.class, "Insert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInsert_Val(), ecorePackage.getEString(), "val", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInsert_AttrVal(), ecorePackage.getEString(), "attrVal", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsert_VarRef(), this.getVarReference(), null, "varRef", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInsert_Var2(), this.getVarReference(), null, "var2", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

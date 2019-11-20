@@ -45,7 +45,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Click/varRef"/>
     </genClasses>
     <genClasses ecoreClass="BrowserAutomation.ecore#//Insert">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Insert/val"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BrowserAutomation.ecore#//Insert/attrVal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Insert/varRef"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BrowserAutomation.ecore#//Insert/var2"/>
     </genClasses>

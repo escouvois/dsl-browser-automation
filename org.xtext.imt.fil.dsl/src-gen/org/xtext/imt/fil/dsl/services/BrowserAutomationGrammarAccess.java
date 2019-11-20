@@ -527,8 +527,8 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInsertKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cValAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cValSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cValAssignment_1_0.eContents().get(0);
+		private final Assignment cAttrValAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cAttrValSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cAttrValAssignment_1_0.eContents().get(0);
 		private final Assignment cVarRefAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
 		private final RuleCall cVarRefVarReferenceParserRuleCall_1_1_0 = (RuleCall)cVarRefAssignment_1_1.eContents().get(0);
 		private final Keyword cInKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -536,23 +536,23 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final RuleCall cVar2VarReferenceParserRuleCall_3_0 = (RuleCall)cVar2Assignment_3.eContents().get(0);
 		
 		//Insert:
-		//	'insert' (val=STRING | varRef=VarReference) 'in' var2=VarReference;
+		//	'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'insert' (val=STRING | varRef=VarReference) 'in' var2=VarReference
+		//'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference
 		public Group getGroup() { return cGroup; }
 		
 		//'insert'
 		public Keyword getInsertKeyword_0() { return cInsertKeyword_0; }
 		
-		//(val=STRING | varRef=VarReference)
+		//(attrVal=STRING | varRef=VarReference)
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
-		//val=STRING
-		public Assignment getValAssignment_1_0() { return cValAssignment_1_0; }
+		//attrVal=STRING
+		public Assignment getAttrValAssignment_1_0() { return cAttrValAssignment_1_0; }
 		
 		//STRING
-		public RuleCall getValSTRINGTerminalRuleCall_1_0_0() { return cValSTRINGTerminalRuleCall_1_0_0; }
+		public RuleCall getAttrValSTRINGTerminalRuleCall_1_0_0() { return cAttrValSTRINGTerminalRuleCall_1_0_0; }
 		
 		//varRef=VarReference
 		public Assignment getVarRefAssignment_1_1() { return cVarRefAssignment_1_1; }
@@ -924,7 +924,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Insert:
-	//	'insert' (val=STRING | varRef=VarReference) 'in' var2=VarReference;
+	//	'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference;
 	public InsertElements getInsertAccess() {
 		return pInsert;
 	}
