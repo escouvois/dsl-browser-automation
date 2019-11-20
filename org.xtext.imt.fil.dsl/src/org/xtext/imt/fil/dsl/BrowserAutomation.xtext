@@ -4,8 +4,10 @@ generate browserAutomation "http://www.xtext.org/imt/fil/dsl/BrowserAutomation"
 
 BrowserAutomation:
 	{BrowserAutomation}
-	'open' webBrowser=WebBrowser
-	(statements+= Statement)*
+	testName=ID '{'
+		'open' webBrowser=WebBrowser
+		(statements+= Statement)*
+	'}'
 ;
 
 WebBrowser:

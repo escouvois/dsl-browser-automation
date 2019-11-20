@@ -1,13 +1,15 @@
-open chrome
-go to "http://www.imt-atlantique.fr/fr/formation/trouver-ma-formation"
-uncheck all
-anglais = get checkbox by value ["Anglais"]
-check anglais
-aDomicile = get checkbox by value ["A domicile"]
-check aDomicile
-tempsPlein = get checkbox by value ["Temps plein"]
-check tempsPlein
-btn = get button by value ["Appliquer les critères"]
-click on btn
-noMatching = get text by value ["No found course matching"]
-noMatching is not null
+test5 {
+	open chrome
+	go to "http://www.imt-atlantique.fr/fr/formation/trouver-ma-formation"
+	uncheck all
+	anglais = get checkbox by value ["Anglais"]
+	check anglais
+	aDomicile = get checkbox by value ["A domicile"]
+	check aDomicile
+	tempsPlein = get checkbox by value ["Temps plein"]
+	check tempsPlein
+	btn = get button by value ["Appliquer les critères"]
+	click on btn
+	noMatching = get text by value ["No found course matching"]
+	noMatching is not null
+}

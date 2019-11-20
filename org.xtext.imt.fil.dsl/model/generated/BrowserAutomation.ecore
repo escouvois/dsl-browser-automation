@@ -3,6 +3,7 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="browserAutomation" nsURI="http://www.xtext.org/imt/fil/dsl/BrowserAutomation"
     nsPrefix="browserAutomation">
   <eClassifiers xsi:type="ecore:EClass" name="BrowserAutomation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="testName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="webBrowser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
         eType="#//Statement" containment="true"/>

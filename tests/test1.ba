@@ -1,4 +1,6 @@
-open chrome
-go to "http://www.imt-atlantique.fr/fr"
-a = get link by value ['Toutes les actualités']
-a is not null
+test1 {
+	open chrome
+	go to "http://www.imt-atlantique.fr/fr"
+	a = get link by value ['Toutes les actualités']
+	a is not null
+}
