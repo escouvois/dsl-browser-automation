@@ -1,11 +1,13 @@
-open chrome
-go to "http://www.imt-atlantique.fr/fr"
-title1 = get text number 2 by class ["actu_home_ctner_inner_cell1_titre"]
-l1 = get link from title1
-go to "http://www.imt-atlantique.fr/fr/rechercher"
-search = get input by value ["Rechercher"]
-insert title1 in search
-btn = get button by value ["Appliquer les filtres"]
-click on btn
-l2 = get link by href [l]
-l2 is not null
+test8 {
+	open chrome
+	go to "http://www.imt-atlantique.fr/fr"
+	title1 = get text number 2 by class ["actu_home_ctner_inner_cell1_titre"]
+	l1 = get link from title1
+	go to "http://www.imt-atlantique.fr/fr/rechercher"
+	search = get input by value ["Rechercher"]
+	insert title1 in search
+	btn = get button by value ["Appliquer les filtres"]
+	click on btn
+	l2 = get link by href [l]
+	l2 is not null
+}

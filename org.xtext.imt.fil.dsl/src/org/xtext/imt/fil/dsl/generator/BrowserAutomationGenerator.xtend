@@ -28,7 +28,9 @@ import org.xtext.imt.fil.dsl.browserAutomation.Check
 class BrowserAutomationGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile("BrowserAutomation.java", resource.contents.filter(BrowserAutomation).head.compile);
+		for (e : resource.allContents.toIterable.filter(BrowserAutomation)) {
+			fsa.generateFile(e.testName.toFirstUpper + ".java", e.compile)
+		}
 	}
 	
 	def compile(BrowserAutomation browserAutomation) '''
@@ -37,7 +39,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		import org.openqa.selenium.WebElement;
 		import org.openqa.selenium.«browserAutomation.webBrowser».«browserAutomation.webBrowser.toFirstUpper()»Driver;
 
-		public class BrowserAutomation {
+		public class «browserAutomation.testName.toFirstUpper» {
 			public static void main(String[] args) {
 				WebDriver driver = new «browserAutomation.webBrowser.toFirstUpper()»Driver();
 				«FOR statement: browserAutomation.statements»
