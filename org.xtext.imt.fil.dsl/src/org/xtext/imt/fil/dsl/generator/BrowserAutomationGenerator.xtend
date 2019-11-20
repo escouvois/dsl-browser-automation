@@ -59,13 +59,20 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		} else {
 			switch (get.element) {
 				case 'link': {
-					switch (get.attr) {
-						case 'value': {
-							return 
-							'''
-							driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))
-							'''
+					if (!get.attr.nullOrEmpty) {
+						switch (get.attr) {
+							case 'value': {
+								return 
+								'''
+								driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))
+								'''
+							}
 						}
+					} else {
+						return
+						'''
+						
+						'''
 					}
 				}
 				case 'image' : {
@@ -127,8 +134,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	def dispatch String statementType(GoTo goTo) 
 	'''
 	driver.get("«goTo.url»");
-	new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='agree-button eu-cookie-compliance-default-button']"))).click();
-		
+	try{new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='agree-button eu-cookie-compliance-default-button']"))).click();} catch(Exception e){}
 	'''	
 	
 	
@@ -166,6 +172,6 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	
 	def dispatch actionType(Contains contains, String element) 
 	'''
-	«element».contains(e1Text);
+	System.out.println("Test passed: " + «element».contains(e1Text));
 	'''
 }
