@@ -15,10 +15,10 @@ import org.xtext.imt.fil.dsl.browserAutomation.DoAction
 import org.xtext.imt.fil.dsl.browserAutomation.Click
 import org.xtext.imt.fil.dsl.browserAutomation.Insert
 import org.xtext.imt.fil.dsl.browserAutomation.Verify
-import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl.EObjectOutputStream.Check
 import org.xtext.imt.fil.dsl.browserAutomation.Choose
 import org.xtext.imt.fil.dsl.browserAutomation.Contains
 import org.xtext.imt.fil.dsl.browserAutomation.VarReference
+import org.xtext.imt.fil.dsl.browserAutomation.Check
 
 /**
  * Generates code from your model files on save.
@@ -77,8 +77,11 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 				case 'text' : {
 					switch (get.attr) {
 						case 'class': {
-							return '''WebElement e1 = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']")).get(«get.order.order»-1);
-								driver.findElement(By.xpath("//a[@title='" + e1.getText() + "']"))
+							return 
+							'''
+							WebElement e1 = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal != null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']")).get(«get.order.order»-1);
+							String e1Text = e1.getText();
+							driver.findElement(By.xpath("//a[@title='" + e1Text + "']"))
 							'''
 						}
 						default: {
@@ -128,6 +131,6 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch actionType(Contains contains, String element) '''
-	«element».contains(e1.getText());
+	«element».contains(e1Text);
 	'''
 }
