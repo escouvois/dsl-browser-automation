@@ -537,7 +537,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
-  public EReference getClick_VarRef()
+  public EReference getClick_VarClick()
   {
     return (EReference)clickEClass.getEStructuralFeatures().get(0);
   }
@@ -570,7 +570,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
-  public EReference getInsert_VarRef()
+  public EReference getInsert_VarToInsert()
   {
     return (EReference)insertEClass.getEStructuralFeatures().get(1);
   }
@@ -581,7 +581,7 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
    * @generated
    */
   @Override
-  public EReference getInsert_Var2()
+  public EReference getInsert_VarInserted()
   {
     return (EReference)insertEClass.getEStructuralFeatures().get(2);
   }
@@ -766,12 +766,12 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     createEReference(varReferenceEClass, VAR_REFERENCE__VAR_REF);
 
     clickEClass = createEClass(CLICK);
-    createEReference(clickEClass, CLICK__VAR_REF);
+    createEReference(clickEClass, CLICK__VAR_CLICK);
 
     insertEClass = createEClass(INSERT);
     createEAttribute(insertEClass, INSERT__ATTR_VAL);
-    createEReference(insertEClass, INSERT__VAR_REF);
-    createEReference(insertEClass, INSERT__VAR2);
+    createEReference(insertEClass, INSERT__VAR_TO_INSERT);
+    createEReference(insertEClass, INSERT__VAR_INSERTED);
 
     verifyEClass = createEClass(VERIFY);
     createEReference(verifyEClass, VERIFY__VAR_TO_VERIFY);
@@ -867,12 +867,12 @@ public class BrowserAutomationPackageImpl extends EPackageImpl implements Browse
     initEReference(getVarReference_VarRef(), this.getVariable(), null, "varRef", null, 0, 1, VarReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(clickEClass, Click.class, "Click", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getClick_VarRef(), this.getVarReference(), null, "varRef", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getClick_VarClick(), this.getVarReference(), null, "varClick", null, 0, 1, Click.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(insertEClass, Insert.class, "Insert", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInsert_AttrVal(), ecorePackage.getEString(), "attrVal", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInsert_VarRef(), this.getVarReference(), null, "varRef", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInsert_Var2(), this.getVarReference(), null, "var2", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInsert_VarToInsert(), this.getVarReference(), null, "varToInsert", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInsert_VarInserted(), this.getVarReference(), null, "varInserted", null, 0, 1, Insert.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(verifyEClass, Verify.class, "Verify", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVerify_VarToVerify(), this.getVarReference(), null, "varToVerify", null, 0, 1, Verify.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

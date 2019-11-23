@@ -8,6 +8,6 @@ test8 {
 	insert title1 in search
 	btn = get button by value ["Appliquer les filtres"]
 	click on btn
-	l2 = get link by href [l]
+	l2 = get link by href [l1]
 	l2 is not null
 }

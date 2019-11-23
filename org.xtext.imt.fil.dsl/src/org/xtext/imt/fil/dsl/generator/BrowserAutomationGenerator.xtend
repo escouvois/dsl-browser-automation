@@ -8,17 +8,15 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomation
-import org.xtext.imt.fil.dsl.browserAutomation.Statement
+import org.xtext.imt.fil.dsl.browserAutomation.Check
+import org.xtext.imt.fil.dsl.browserAutomation.Choose
+import org.xtext.imt.fil.dsl.browserAutomation.Click
+import org.xtext.imt.fil.dsl.browserAutomation.Contains
+import org.xtext.imt.fil.dsl.browserAutomation.DoAction
 import org.xtext.imt.fil.dsl.browserAutomation.Get
 import org.xtext.imt.fil.dsl.browserAutomation.GoTo
-import org.xtext.imt.fil.dsl.browserAutomation.DoAction
-import org.xtext.imt.fil.dsl.browserAutomation.Click
 import org.xtext.imt.fil.dsl.browserAutomation.Insert
 import org.xtext.imt.fil.dsl.browserAutomation.Verify
-import org.xtext.imt.fil.dsl.browserAutomation.Choose
-import org.xtext.imt.fil.dsl.browserAutomation.Contains
-import org.xtext.imt.fil.dsl.browserAutomation.VarReference
-import org.xtext.imt.fil.dsl.browserAutomation.Check
 
 /**
  * Generates code from your model files on save.
@@ -32,7 +30,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 			fsa.generateFile(e.testName.toFirstUpper + ".java", e.compile)
 		}
 	}
-	
+
 	def compile(BrowserAutomation browserAutomation) '''
 		import org.openqa.selenium.By;
 		import org.openqa.selenium.WebDriver;
@@ -40,47 +38,65 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		import org.openqa.selenium.«browserAutomation.webBrowser».«browserAutomation.webBrowser.toFirstUpper()»Driver;
 		import org.openqa.selenium.support.ui.ExpectedConditions;
 		import org.openqa.selenium.support.ui.WebDriverWait;
-
+		«importList(browserAutomation)»
+		
 		public class «browserAutomation.testName.toFirstUpper» {
 			public static void main(String[] args) {
 				WebDriver driver = new «browserAutomation.webBrowser.toFirstUpper()»Driver();
-				«FOR statement: browserAutomation.statements»
+				«FOR statement : browserAutomation.statements»
 					«statement.statementType»
 				«ENDFOR»
 				driver.quit();
 			}
 		}
 	'''
-	
+
+	protected def CharSequence importList(
+		BrowserAutomation browserAutomation) '''«FOR statement : browserAutomation.statements»
+		«IF statement instanceof DoAction»
+			«IF ("text").equals(statement.get.element) && ("class").equals(statement.get.attr)»
+				import java.util.List;
+			«ENDIF»
+		«ELSEIF statement instanceof Get»
+			«IF ("text").equals(statement.element) && ("class").equals(statement.attr)»
+				import java.util.List;
+			«ENDIF»
+		«ENDIF»
+	«ENDFOR»'''
+
 	def dispatch String statementType(Get get) '''
-		«
-		if(!get.pageTitle.isNullOrEmpty) {
-			return '''driver.getTitle()'''
+		«if(!get.pageTitle.isNullOrEmpty) {
+			return '''String «get.varRef.name» = driver.getTitle();'''
 		} else {
 			switch (get.element) {
 				case 'link': {
-					if (!get.attr.nullOrEmpty) {
-						switch (get.attr) {
-							case 'value': {
-								return 
-								'''
-								driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))
-								'''
-							}
+					switch (get.attr) {
+						case 'value': {
+							return 
+							'''
+							WebElement «get.varRef.name» = driver.findElement(By.xpath("//a[text()='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal.varRef.name»«ENDIF»']"));
+							'''
 						}
-					} else {
-						return
-						'''
-						
-						'''
+						case 'href': {
+							return
+							'''
+							WebElement «get.varRef.name» = driver.findElement(By.xpath("//a[@href='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»" + «get.attrVal.varRefVal.varRef.name» + "«ENDIF»']"));
+							'''
+						}
+						default: {
+							return
+							'''
+							String «get.varRef.name» = «get.from.varRef.name».getAttribute("pathname");
+							'''
+						}
 					}
 				}
 				case 'image' : {
-					switch (get.attr) {
+					switch (get.attr){
 						case 'alt': {
 							return 
 							'''
-							driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"))
+							WebElement « get.varRef.name» = driver.findElement(By.xpath("//img[@alt='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal.varRef.name»«ENDIF»']"));
 							'''
 						}
 					}
@@ -90,15 +106,15 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 						case 'class': {
 							return 
 							'''
-							WebElement e1 = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']")).get(«get.order.order»-1);
-							String e1Text = e1.getText();
-							driver.findElement(By.xpath("//a[@title='" + e1Text + "']"))
+							List<WebElement> list = driver.findElements(By.cssSelector("div[class='«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»']"));
+							String «get.varRef.name»Text = list.get(«get.order.order»-1).getText();
+							WebElement «get.varRef.name» = driver.findElement(By.xpath("//a[@title='" + «get.varRef.name»Text + "']"));
 							'''
 						}
 						case 'value' : {
 							return
 							'''
-							driver.findElement(By.xpath("//*[contains(text(), '«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»')]"))
+							WebElement «get.varRef.name» = driver.findElement(By.xpath("//*[contains(text(), '«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»')]"));
 							'''
 						}
 					}
@@ -108,7 +124,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 						case 'value' : {
 							return 
 							'''
-							driver.findElement(By.xpath("//input[@id='edit-search-api-fulltext']"))
+							WebElement «get.varRef.name» = driver.findElement(By.xpath("//input[@id='edit-search-api-fulltext']"));
 							'''
 						}
 					}
@@ -118,7 +134,7 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 						case 'value' : {
 							return
 							'''
-							driver.findElement(By.xpath("//*[contains(@value,'«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»')]"))
+							WebElement «get.varRef.name» = driver.findElement(By.xpath("//*[contains(@value,'«IF get.attrVal.stringVal !== null»«get.attrVal.stringVal.intern»«ELSE»«get.attrVal.varRefVal»«ENDIF»')]"));
 							'''
 						}
 					}
@@ -130,48 +146,40 @@ class BrowserAutomationGenerator extends AbstractGenerator {
 		}»
 		
 	'''
-	
-	def dispatch String statementType(GoTo goTo) 
+
+	def dispatch String statementType(GoTo goTo) '''
+		driver.get("«goTo.url»");
+		try{new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='agree-button eu-cookie-compliance-default-button']"))).click();} catch(Exception e){}
 	'''
-	driver.get("«goTo.url»");
-	try{new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='agree-button eu-cookie-compliance-default-button']"))).click();} catch(Exception e){}
-	'''	
-	
-	
-	def dispatch statementType(DoAction doAction) 
+
+	def dispatch statementType(DoAction doAction) '''
+		«var i = doAction.get.statementType»
+		«doAction.action.actionType(i.toString)»
 	'''
-	«var i = doAction.get.statementType»
-	«doAction.action.actionType(i.toString)»
+
+	def dispatch actionType(Click click, String element) '''
+		«element»
+		«click.varClick.varRef.name».click();
 	'''
-	
-	def dispatch actionType(Click click, String element) 
+
+	def dispatch actionType(Insert insert, String element) '''
+		«element»
+		«insert.varInserted.varRef.name».sendKeys(«IF insert.attrVal !== null»"«insert.attrVal»"«ELSE»«insert.varToInsert.varRef.name»Text«ENDIF»);
 	'''
-	«element».click();
+
+	def dispatch actionType(Verify verify, String element) '''
+		«element»
+		System.out.println("Test passed: " + («verify.varToVerify.varRef.name» == null ? "false" : "true"));
 	'''
-	
-	def dispatch actionType(Insert insert, String element) 
+
+	def dispatch actionType(Check check, String element) '''
 	'''
-	«element».sendKeys("«IF insert.attrVal !== null»«insert.attrVal»«ELSE»«insert.varRef»«ENDIF»");
+
+	def dispatch actionType(Choose choose, String element) '''
 	'''
-	
-	def dispatch actionType(Verify verify, String element)
-	'''
-	WebElement element = «element»;
-	System.out.println("Test passed: " + (element == null ? "false" : "true"));
-	'''
-	
-	def dispatch actionType(Check check, String element) 
-	'''
-	test
-	'''
-	
-	def dispatch actionType(Choose choose, String element) 
-	'''
-	test
-	'''
-	
-	def dispatch actionType(Contains contains, String element) 
-	'''
-	System.out.println("Test passed: " + «element».contains(e1Text));
+
+	def dispatch actionType(Contains contains, String element) '''
+		«element»
+		System.out.println("Test passed: " + «contains.varContains.varRef.name».contains(«contains.varContained.varRef.name»Text));
 	'''
 }

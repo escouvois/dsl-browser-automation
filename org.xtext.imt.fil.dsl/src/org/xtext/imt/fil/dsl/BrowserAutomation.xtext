@@ -64,11 +64,11 @@ VarReference:
 ;
 
 Click:
-	'click' 'on' varRef=VarReference
+	'click' 'on' varClick=VarReference
 ;
 
 Insert:
-	'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference
+	'insert' (attrVal=STRING | varToInsert=VarReference) 'in' varInserted=VarReference
 ;
 
 Verify:

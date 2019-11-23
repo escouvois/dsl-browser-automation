@@ -2660,13 +2660,13 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__Insert__Alternatives_1"
-    // InternalBrowserAutomation.g:822:1: rule__Insert__Alternatives_1 : ( ( ( rule__Insert__AttrValAssignment_1_0 ) ) | ( ( rule__Insert__VarRefAssignment_1_1 ) ) );
+    // InternalBrowserAutomation.g:822:1: rule__Insert__Alternatives_1 : ( ( ( rule__Insert__AttrValAssignment_1_0 ) ) | ( ( rule__Insert__VarToInsertAssignment_1_1 ) ) );
     public final void rule__Insert__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBrowserAutomation.g:826:1: ( ( ( rule__Insert__AttrValAssignment_1_0 ) ) | ( ( rule__Insert__VarRefAssignment_1_1 ) ) )
+            // InternalBrowserAutomation.g:826:1: ( ( ( rule__Insert__AttrValAssignment_1_0 ) ) | ( ( rule__Insert__VarToInsertAssignment_1_1 ) ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2709,24 +2709,24 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
                     }
                     break;
                 case 2 :
-                    // InternalBrowserAutomation.g:833:2: ( ( rule__Insert__VarRefAssignment_1_1 ) )
+                    // InternalBrowserAutomation.g:833:2: ( ( rule__Insert__VarToInsertAssignment_1_1 ) )
                     {
-                    // InternalBrowserAutomation.g:833:2: ( ( rule__Insert__VarRefAssignment_1_1 ) )
-                    // InternalBrowserAutomation.g:834:3: ( rule__Insert__VarRefAssignment_1_1 )
+                    // InternalBrowserAutomation.g:833:2: ( ( rule__Insert__VarToInsertAssignment_1_1 ) )
+                    // InternalBrowserAutomation.g:834:3: ( rule__Insert__VarToInsertAssignment_1_1 )
                     {
-                     before(grammarAccess.getInsertAccess().getVarRefAssignment_1_1()); 
-                    // InternalBrowserAutomation.g:835:3: ( rule__Insert__VarRefAssignment_1_1 )
-                    // InternalBrowserAutomation.g:835:4: rule__Insert__VarRefAssignment_1_1
+                     before(grammarAccess.getInsertAccess().getVarToInsertAssignment_1_1()); 
+                    // InternalBrowserAutomation.g:835:3: ( rule__Insert__VarToInsertAssignment_1_1 )
+                    // InternalBrowserAutomation.g:835:4: rule__Insert__VarToInsertAssignment_1_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Insert__VarRefAssignment_1_1();
+                    rule__Insert__VarToInsertAssignment_1_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getInsertAccess().getVarRefAssignment_1_1()); 
+                     after(grammarAccess.getInsertAccess().getVarToInsertAssignment_1_1()); 
 
                     }
 
@@ -5318,31 +5318,31 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__Click__Group__2__Impl"
-    // InternalBrowserAutomation.g:1718:1: rule__Click__Group__2__Impl : ( ( rule__Click__VarRefAssignment_2 ) ) ;
+    // InternalBrowserAutomation.g:1718:1: rule__Click__Group__2__Impl : ( ( rule__Click__VarClickAssignment_2 ) ) ;
     public final void rule__Click__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBrowserAutomation.g:1722:1: ( ( ( rule__Click__VarRefAssignment_2 ) ) )
-            // InternalBrowserAutomation.g:1723:1: ( ( rule__Click__VarRefAssignment_2 ) )
+            // InternalBrowserAutomation.g:1722:1: ( ( ( rule__Click__VarClickAssignment_2 ) ) )
+            // InternalBrowserAutomation.g:1723:1: ( ( rule__Click__VarClickAssignment_2 ) )
             {
-            // InternalBrowserAutomation.g:1723:1: ( ( rule__Click__VarRefAssignment_2 ) )
-            // InternalBrowserAutomation.g:1724:2: ( rule__Click__VarRefAssignment_2 )
+            // InternalBrowserAutomation.g:1723:1: ( ( rule__Click__VarClickAssignment_2 ) )
+            // InternalBrowserAutomation.g:1724:2: ( rule__Click__VarClickAssignment_2 )
             {
-             before(grammarAccess.getClickAccess().getVarRefAssignment_2()); 
-            // InternalBrowserAutomation.g:1725:2: ( rule__Click__VarRefAssignment_2 )
-            // InternalBrowserAutomation.g:1725:3: rule__Click__VarRefAssignment_2
+             before(grammarAccess.getClickAccess().getVarClickAssignment_2()); 
+            // InternalBrowserAutomation.g:1725:2: ( rule__Click__VarClickAssignment_2 )
+            // InternalBrowserAutomation.g:1725:3: rule__Click__VarClickAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Click__VarRefAssignment_2();
+            rule__Click__VarClickAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getClickAccess().getVarRefAssignment_2()); 
+             after(grammarAccess.getClickAccess().getVarClickAssignment_2()); 
 
             }
 
@@ -5633,31 +5633,31 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__Insert__Group__3__Impl"
-    // InternalBrowserAutomation.g:1826:1: rule__Insert__Group__3__Impl : ( ( rule__Insert__Var2Assignment_3 ) ) ;
+    // InternalBrowserAutomation.g:1826:1: rule__Insert__Group__3__Impl : ( ( rule__Insert__VarInsertedAssignment_3 ) ) ;
     public final void rule__Insert__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalBrowserAutomation.g:1830:1: ( ( ( rule__Insert__Var2Assignment_3 ) ) )
-            // InternalBrowserAutomation.g:1831:1: ( ( rule__Insert__Var2Assignment_3 ) )
+            // InternalBrowserAutomation.g:1830:1: ( ( ( rule__Insert__VarInsertedAssignment_3 ) ) )
+            // InternalBrowserAutomation.g:1831:1: ( ( rule__Insert__VarInsertedAssignment_3 ) )
             {
-            // InternalBrowserAutomation.g:1831:1: ( ( rule__Insert__Var2Assignment_3 ) )
-            // InternalBrowserAutomation.g:1832:2: ( rule__Insert__Var2Assignment_3 )
+            // InternalBrowserAutomation.g:1831:1: ( ( rule__Insert__VarInsertedAssignment_3 ) )
+            // InternalBrowserAutomation.g:1832:2: ( rule__Insert__VarInsertedAssignment_3 )
             {
-             before(grammarAccess.getInsertAccess().getVar2Assignment_3()); 
-            // InternalBrowserAutomation.g:1833:2: ( rule__Insert__Var2Assignment_3 )
-            // InternalBrowserAutomation.g:1833:3: rule__Insert__Var2Assignment_3
+             before(grammarAccess.getInsertAccess().getVarInsertedAssignment_3()); 
+            // InternalBrowserAutomation.g:1833:2: ( rule__Insert__VarInsertedAssignment_3 )
+            // InternalBrowserAutomation.g:1833:3: rule__Insert__VarInsertedAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Insert__Var2Assignment_3();
+            rule__Insert__VarInsertedAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getInsertAccess().getVar2Assignment_3()); 
+             after(grammarAccess.getInsertAccess().getVarInsertedAssignment_3()); 
 
             }
 
@@ -7420,9 +7420,9 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__VarReference__VarRefAssignment"
 
 
-    // $ANTLR start "rule__Click__VarRefAssignment_2"
-    // InternalBrowserAutomation.g:2471:1: rule__Click__VarRefAssignment_2 : ( ruleVarReference ) ;
-    public final void rule__Click__VarRefAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Click__VarClickAssignment_2"
+    // InternalBrowserAutomation.g:2471:1: rule__Click__VarClickAssignment_2 : ( ruleVarReference ) ;
+    public final void rule__Click__VarClickAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7433,13 +7433,13 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
             // InternalBrowserAutomation.g:2476:2: ( ruleVarReference )
             // InternalBrowserAutomation.g:2477:3: ruleVarReference
             {
-             before(grammarAccess.getClickAccess().getVarRefVarReferenceParserRuleCall_2_0()); 
+             before(grammarAccess.getClickAccess().getVarClickVarReferenceParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleVarReference();
 
             state._fsp--;
 
-             after(grammarAccess.getClickAccess().getVarRefVarReferenceParserRuleCall_2_0()); 
+             after(grammarAccess.getClickAccess().getVarClickVarReferenceParserRuleCall_2_0()); 
 
             }
 
@@ -7458,7 +7458,7 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Click__VarRefAssignment_2"
+    // $ANTLR end "rule__Click__VarClickAssignment_2"
 
 
     // $ANTLR start "rule__Insert__AttrValAssignment_1_0"
@@ -7498,9 +7498,9 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__Insert__AttrValAssignment_1_0"
 
 
-    // $ANTLR start "rule__Insert__VarRefAssignment_1_1"
-    // InternalBrowserAutomation.g:2501:1: rule__Insert__VarRefAssignment_1_1 : ( ruleVarReference ) ;
-    public final void rule__Insert__VarRefAssignment_1_1() throws RecognitionException {
+    // $ANTLR start "rule__Insert__VarToInsertAssignment_1_1"
+    // InternalBrowserAutomation.g:2501:1: rule__Insert__VarToInsertAssignment_1_1 : ( ruleVarReference ) ;
+    public final void rule__Insert__VarToInsertAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7511,13 +7511,13 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
             // InternalBrowserAutomation.g:2506:2: ( ruleVarReference )
             // InternalBrowserAutomation.g:2507:3: ruleVarReference
             {
-             before(grammarAccess.getInsertAccess().getVarRefVarReferenceParserRuleCall_1_1_0()); 
+             before(grammarAccess.getInsertAccess().getVarToInsertVarReferenceParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
             ruleVarReference();
 
             state._fsp--;
 
-             after(grammarAccess.getInsertAccess().getVarRefVarReferenceParserRuleCall_1_1_0()); 
+             after(grammarAccess.getInsertAccess().getVarToInsertVarReferenceParserRuleCall_1_1_0()); 
 
             }
 
@@ -7536,12 +7536,12 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Insert__VarRefAssignment_1_1"
+    // $ANTLR end "rule__Insert__VarToInsertAssignment_1_1"
 
 
-    // $ANTLR start "rule__Insert__Var2Assignment_3"
-    // InternalBrowserAutomation.g:2516:1: rule__Insert__Var2Assignment_3 : ( ruleVarReference ) ;
-    public final void rule__Insert__Var2Assignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Insert__VarInsertedAssignment_3"
+    // InternalBrowserAutomation.g:2516:1: rule__Insert__VarInsertedAssignment_3 : ( ruleVarReference ) ;
+    public final void rule__Insert__VarInsertedAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7552,13 +7552,13 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
             // InternalBrowserAutomation.g:2521:2: ( ruleVarReference )
             // InternalBrowserAutomation.g:2522:3: ruleVarReference
             {
-             before(grammarAccess.getInsertAccess().getVar2VarReferenceParserRuleCall_3_0()); 
+             before(grammarAccess.getInsertAccess().getVarInsertedVarReferenceParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleVarReference();
 
             state._fsp--;
 
-             after(grammarAccess.getInsertAccess().getVar2VarReferenceParserRuleCall_3_0()); 
+             after(grammarAccess.getInsertAccess().getVarInsertedVarReferenceParserRuleCall_3_0()); 
 
             }
 
@@ -7577,7 +7577,7 @@ public class InternalBrowserAutomationParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Insert__Var2Assignment_3"
+    // $ANTLR end "rule__Insert__VarInsertedAssignment_3"
 
 
     // $ANTLR start "rule__Verify__VarToVerifyAssignment_0"

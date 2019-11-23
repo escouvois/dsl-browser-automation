@@ -420,13 +420,13 @@ public interface BrowserAutomationPackage extends EPackage
   int CLICK = 10;
 
   /**
-   * The feature id for the '<em><b>Var Ref</b></em>' containment reference.
+   * The feature id for the '<em><b>Var Click</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CLICK__VAR_REF = ACTION_FEATURE_COUNT + 0;
+  int CLICK__VAR_CLICK = ACTION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Click</em>' class.
@@ -457,22 +457,22 @@ public interface BrowserAutomationPackage extends EPackage
   int INSERT__ATTR_VAL = ACTION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Var Ref</b></em>' containment reference.
+   * The feature id for the '<em><b>Var To Insert</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT__VAR_REF = ACTION_FEATURE_COUNT + 1;
+  int INSERT__VAR_TO_INSERT = ACTION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Var2</b></em>' containment reference.
+   * The feature id for the '<em><b>Var Inserted</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INSERT__VAR2 = ACTION_FEATURE_COUNT + 2;
+  int INSERT__VAR_INSERTED = ACTION_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Insert</em>' class.
@@ -923,15 +923,15 @@ public interface BrowserAutomationPackage extends EPackage
   EClass getClick();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVarRef <em>Var Ref</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVarClick <em>Var Click</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var Ref</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Click#getVarRef()
+   * @return the meta object for the containment reference '<em>Var Click</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Click#getVarClick()
    * @see #getClick()
    * @generated
    */
-  EReference getClick_VarRef();
+  EReference getClick_VarClick();
 
   /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert <em>Insert</em>}'.
@@ -955,26 +955,26 @@ public interface BrowserAutomationPackage extends EPackage
   EAttribute getInsert_AttrVal();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarRef <em>Var Ref</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarToInsert <em>Var To Insert</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var Ref</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarRef()
+   * @return the meta object for the containment reference '<em>Var To Insert</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarToInsert()
    * @see #getInsert()
    * @generated
    */
-  EReference getInsert_VarRef();
+  EReference getInsert_VarToInsert();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarInserted <em>Var Inserted</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Var2</em>'.
-   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2()
+   * @return the meta object for the containment reference '<em>Var Inserted</em>'.
+   * @see org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarInserted()
    * @see #getInsert()
    * @generated
    */
-  EReference getInsert_Var2();
+  EReference getInsert_VarInserted();
 
   /**
    * Returns the meta object for class '{@link org.xtext.imt.fil.dsl.browserAutomation.Verify <em>Verify</em>}'.
@@ -1360,12 +1360,12 @@ public interface BrowserAutomationPackage extends EPackage
     EClass CLICK = eINSTANCE.getClick();
 
     /**
-     * The meta object literal for the '<em><b>Var Ref</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Var Click</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CLICK__VAR_REF = eINSTANCE.getClick_VarRef();
+    EReference CLICK__VAR_CLICK = eINSTANCE.getClick_VarClick();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl <em>Insert</em>}' class.
@@ -1386,20 +1386,20 @@ public interface BrowserAutomationPackage extends EPackage
     EAttribute INSERT__ATTR_VAL = eINSTANCE.getInsert_AttrVal();
 
     /**
-     * The meta object literal for the '<em><b>Var Ref</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Var To Insert</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INSERT__VAR_REF = eINSTANCE.getInsert_VarRef();
+    EReference INSERT__VAR_TO_INSERT = eINSTANCE.getInsert_VarToInsert();
 
     /**
-     * The meta object literal for the '<em><b>Var2</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Var Inserted</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INSERT__VAR2 = eINSTANCE.getInsert_Var2();
+    EReference INSERT__VAR_INSERTED = eINSTANCE.getInsert_VarInserted();
 
     /**
      * The meta object literal for the '{@link org.xtext.imt.fil.dsl.browserAutomation.impl.VerifyImpl <em>Verify</em>}' class.

@@ -163,15 +163,15 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 *     Click returns Click
 	 *
 	 * Constraint:
-	 *     varRef=VarReference
+	 *     varClick=VarReference
 	 */
 	protected void sequence_Click(ISerializationContext context, Click semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.CLICK__VAR_REF) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.CLICK__VAR_REF));
+			if (transientValues.isValueTransient(semanticObject, BrowserAutomationPackage.Literals.CLICK__VAR_CLICK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, BrowserAutomationPackage.Literals.CLICK__VAR_CLICK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClickAccess().getVarRefVarReferenceParserRuleCall_2_0(), semanticObject.getVarRef());
+		feeder.accept(grammarAccess.getClickAccess().getVarClickVarReferenceParserRuleCall_2_0(), semanticObject.getVarClick());
 		feeder.finish();
 	}
 	
@@ -258,7 +258,7 @@ public class BrowserAutomationSemanticSequencer extends AbstractDelegatingSemant
 	 *     Insert returns Insert
 	 *
 	 * Constraint:
-	 *     ((attrVal=STRING | varRef=VarReference) var2=VarReference)
+	 *     ((attrVal=STRING | varToInsert=VarReference) varInserted=VarReference)
 	 */
 	protected void sequence_Insert(ISerializationContext context, Insert semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

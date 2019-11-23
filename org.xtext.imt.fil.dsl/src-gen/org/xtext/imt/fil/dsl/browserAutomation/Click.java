@@ -13,7 +13,7 @@ package org.xtext.imt.fil.dsl.browserAutomation;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVarRef <em>Var Ref</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVarClick <em>Var Click</em>}</li>
  * </ul>
  *
  * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getClick()
@@ -23,25 +23,25 @@ package org.xtext.imt.fil.dsl.browserAutomation;
 public interface Click extends Action
 {
   /**
-   * Returns the value of the '<em><b>Var Ref</b></em>' containment reference.
+   * Returns the value of the '<em><b>Var Click</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Ref</em>' containment reference.
-   * @see #setVarRef(VarReference)
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getClick_VarRef()
+   * @return the value of the '<em>Var Click</em>' containment reference.
+   * @see #setVarClick(VarReference)
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getClick_VarClick()
    * @model containment="true"
    * @generated
    */
-  VarReference getVarRef();
+  VarReference getVarClick();
 
   /**
-   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVarRef <em>Var Ref</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Click#getVarClick <em>Var Click</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Ref</em>' containment reference.
-   * @see #getVarRef()
+   * @param value the new value of the '<em>Var Click</em>' containment reference.
+   * @see #getVarClick()
    * @generated
    */
-  void setVarRef(VarReference value);
+  void setVarClick(VarReference value);
 
 } // Click

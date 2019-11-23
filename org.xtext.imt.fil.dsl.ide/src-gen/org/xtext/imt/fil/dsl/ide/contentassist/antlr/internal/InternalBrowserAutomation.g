@@ -831,9 +831,9 @@ rule__Insert__Alternatives_1
 	)
 	|
 	(
-		{ before(grammarAccess.getInsertAccess().getVarRefAssignment_1_1()); }
-		(rule__Insert__VarRefAssignment_1_1)
-		{ after(grammarAccess.getInsertAccess().getVarRefAssignment_1_1()); }
+		{ before(grammarAccess.getInsertAccess().getVarToInsertAssignment_1_1()); }
+		(rule__Insert__VarToInsertAssignment_1_1)
+		{ after(grammarAccess.getInsertAccess().getVarToInsertAssignment_1_1()); }
 	)
 ;
 finally {
@@ -1721,9 +1721,9 @@ rule__Click__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getClickAccess().getVarRefAssignment_2()); }
-	(rule__Click__VarRefAssignment_2)
-	{ after(grammarAccess.getClickAccess().getVarRefAssignment_2()); }
+	{ before(grammarAccess.getClickAccess().getVarClickAssignment_2()); }
+	(rule__Click__VarClickAssignment_2)
+	{ after(grammarAccess.getClickAccess().getVarClickAssignment_2()); }
 )
 ;
 finally {
@@ -1829,9 +1829,9 @@ rule__Insert__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getInsertAccess().getVar2Assignment_3()); }
-	(rule__Insert__Var2Assignment_3)
-	{ after(grammarAccess.getInsertAccess().getVar2Assignment_3()); }
+	{ before(grammarAccess.getInsertAccess().getVarInsertedAssignment_3()); }
+	(rule__Insert__VarInsertedAssignment_3)
+	{ after(grammarAccess.getInsertAccess().getVarInsertedAssignment_3()); }
 )
 ;
 finally {
@@ -2468,15 +2468,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Click__VarRefAssignment_2
+rule__Click__VarClickAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getClickAccess().getVarRefVarReferenceParserRuleCall_2_0()); }
+		{ before(grammarAccess.getClickAccess().getVarClickVarReferenceParserRuleCall_2_0()); }
 		ruleVarReference
-		{ after(grammarAccess.getClickAccess().getVarRefVarReferenceParserRuleCall_2_0()); }
+		{ after(grammarAccess.getClickAccess().getVarClickVarReferenceParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -2498,30 +2498,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Insert__VarRefAssignment_1_1
+rule__Insert__VarToInsertAssignment_1_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInsertAccess().getVarRefVarReferenceParserRuleCall_1_1_0()); }
+		{ before(grammarAccess.getInsertAccess().getVarToInsertVarReferenceParserRuleCall_1_1_0()); }
 		ruleVarReference
-		{ after(grammarAccess.getInsertAccess().getVarRefVarReferenceParserRuleCall_1_1_0()); }
+		{ after(grammarAccess.getInsertAccess().getVarToInsertVarReferenceParserRuleCall_1_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Insert__Var2Assignment_3
+rule__Insert__VarInsertedAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getInsertAccess().getVar2VarReferenceParserRuleCall_3_0()); }
+		{ before(grammarAccess.getInsertAccess().getVarInsertedVarReferenceParserRuleCall_3_0()); }
 		ruleVarReference
-		{ after(grammarAccess.getInsertAccess().getVar2VarReferenceParserRuleCall_3_0()); }
+		{ after(grammarAccess.getInsertAccess().getVarInsertedVarReferenceParserRuleCall_3_0()); }
 	)
 ;
 finally {

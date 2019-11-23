@@ -46,14 +46,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Click" eSuperTypes="#//Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varClick" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Insert" eSuperTypes="#//Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attrVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varRef" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varToInsert" eType="#//VarReference"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="var2" eType="#//VarReference"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varInserted" eType="#//VarReference"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Verify" eSuperTypes="#//Action">

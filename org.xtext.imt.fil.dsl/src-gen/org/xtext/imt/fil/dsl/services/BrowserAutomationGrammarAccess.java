@@ -517,14 +517,14 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cClickKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cOnKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cVarRefAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cVarRefVarReferenceParserRuleCall_2_0 = (RuleCall)cVarRefAssignment_2.eContents().get(0);
+		private final Assignment cVarClickAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cVarClickVarReferenceParserRuleCall_2_0 = (RuleCall)cVarClickAssignment_2.eContents().get(0);
 		
 		//Click:
-		//	'click' 'on' varRef=VarReference;
+		//	'click' 'on' varClick=VarReference;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'click' 'on' varRef=VarReference
+		//'click' 'on' varClick=VarReference
 		public Group getGroup() { return cGroup; }
 		
 		//'click'
@@ -533,11 +533,11 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//'on'
 		public Keyword getOnKeyword_1() { return cOnKeyword_1; }
 		
-		//varRef=VarReference
-		public Assignment getVarRefAssignment_2() { return cVarRefAssignment_2; }
+		//varClick=VarReference
+		public Assignment getVarClickAssignment_2() { return cVarClickAssignment_2; }
 		
 		//VarReference
-		public RuleCall getVarRefVarReferenceParserRuleCall_2_0() { return cVarRefVarReferenceParserRuleCall_2_0; }
+		public RuleCall getVarClickVarReferenceParserRuleCall_2_0() { return cVarClickVarReferenceParserRuleCall_2_0; }
 	}
 	public class InsertElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Insert");
@@ -546,23 +546,23 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cAttrValAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cAttrValSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cAttrValAssignment_1_0.eContents().get(0);
-		private final Assignment cVarRefAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final RuleCall cVarRefVarReferenceParserRuleCall_1_1_0 = (RuleCall)cVarRefAssignment_1_1.eContents().get(0);
+		private final Assignment cVarToInsertAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cVarToInsertVarReferenceParserRuleCall_1_1_0 = (RuleCall)cVarToInsertAssignment_1_1.eContents().get(0);
 		private final Keyword cInKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cVar2Assignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cVar2VarReferenceParserRuleCall_3_0 = (RuleCall)cVar2Assignment_3.eContents().get(0);
+		private final Assignment cVarInsertedAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cVarInsertedVarReferenceParserRuleCall_3_0 = (RuleCall)cVarInsertedAssignment_3.eContents().get(0);
 		
 		//Insert:
-		//	'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference;
+		//	'insert' (attrVal=STRING | varToInsert=VarReference) 'in' varInserted=VarReference;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference
+		//'insert' (attrVal=STRING | varToInsert=VarReference) 'in' varInserted=VarReference
 		public Group getGroup() { return cGroup; }
 		
 		//'insert'
 		public Keyword getInsertKeyword_0() { return cInsertKeyword_0; }
 		
-		//attrVal=STRING | varRef=VarReference
+		//attrVal=STRING | varToInsert=VarReference
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//attrVal=STRING
@@ -571,20 +571,20 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 		//STRING
 		public RuleCall getAttrValSTRINGTerminalRuleCall_1_0_0() { return cAttrValSTRINGTerminalRuleCall_1_0_0; }
 		
-		//varRef=VarReference
-		public Assignment getVarRefAssignment_1_1() { return cVarRefAssignment_1_1; }
+		//varToInsert=VarReference
+		public Assignment getVarToInsertAssignment_1_1() { return cVarToInsertAssignment_1_1; }
 		
 		//VarReference
-		public RuleCall getVarRefVarReferenceParserRuleCall_1_1_0() { return cVarRefVarReferenceParserRuleCall_1_1_0; }
+		public RuleCall getVarToInsertVarReferenceParserRuleCall_1_1_0() { return cVarToInsertVarReferenceParserRuleCall_1_1_0; }
 		
 		//'in'
 		public Keyword getInKeyword_2() { return cInKeyword_2; }
 		
-		//var2=VarReference
-		public Assignment getVar2Assignment_3() { return cVar2Assignment_3; }
+		//varInserted=VarReference
+		public Assignment getVarInsertedAssignment_3() { return cVarInsertedAssignment_3; }
 		
 		//VarReference
-		public RuleCall getVar2VarReferenceParserRuleCall_3_0() { return cVar2VarReferenceParserRuleCall_3_0; }
+		public RuleCall getVarInsertedVarReferenceParserRuleCall_3_0() { return cVarInsertedVarReferenceParserRuleCall_3_0; }
 	}
 	public class VerifyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.imt.fil.dsl.BrowserAutomation.Verify");
@@ -932,7 +932,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Click:
-	//	'click' 'on' varRef=VarReference;
+	//	'click' 'on' varClick=VarReference;
 	public ClickElements getClickAccess() {
 		return pClick;
 	}
@@ -942,7 +942,7 @@ public class BrowserAutomationGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Insert:
-	//	'insert' (attrVal=STRING | varRef=VarReference) 'in' var2=VarReference;
+	//	'insert' (attrVal=STRING | varToInsert=VarReference) 'in' varInserted=VarReference;
 	public InsertElements getInsertAccess() {
 		return pInsert;
 	}

@@ -23,7 +23,7 @@ import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ClickImpl#getVarRef <em>Var Ref</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.ClickImpl#getVarClick <em>Var Click</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
 public class ClickImpl extends ActionImpl implements Click
 {
   /**
-   * The cached value of the '{@link #getVarRef() <em>Var Ref</em>}' containment reference.
+   * The cached value of the '{@link #getVarClick() <em>Var Click</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarRef()
+   * @see #getVarClick()
    * @generated
    * @ordered
    */
-  protected VarReference varRef;
+  protected VarReference varClick;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class ClickImpl extends ActionImpl implements Click
    * @generated
    */
   @Override
-  public VarReference getVarRef()
+  public VarReference getVarClick()
   {
-    return varRef;
+    return varClick;
   }
 
   /**
@@ -77,13 +77,13 @@ public class ClickImpl extends ActionImpl implements Click
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVarRef(VarReference newVarRef, NotificationChain msgs)
+  public NotificationChain basicSetVarClick(VarReference newVarClick, NotificationChain msgs)
   {
-    VarReference oldVarRef = varRef;
-    varRef = newVarRef;
+    VarReference oldVarClick = varClick;
+    varClick = newVarClick;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.CLICK__VAR_REF, oldVarRef, newVarRef);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.CLICK__VAR_CLICK, oldVarClick, newVarClick);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -95,20 +95,20 @@ public class ClickImpl extends ActionImpl implements Click
    * @generated
    */
   @Override
-  public void setVarRef(VarReference newVarRef)
+  public void setVarClick(VarReference newVarClick)
   {
-    if (newVarRef != varRef)
+    if (newVarClick != varClick)
     {
       NotificationChain msgs = null;
-      if (varRef != null)
-        msgs = ((InternalEObject)varRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.CLICK__VAR_REF, null, msgs);
-      if (newVarRef != null)
-        msgs = ((InternalEObject)newVarRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.CLICK__VAR_REF, null, msgs);
-      msgs = basicSetVarRef(newVarRef, msgs);
+      if (varClick != null)
+        msgs = ((InternalEObject)varClick).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.CLICK__VAR_CLICK, null, msgs);
+      if (newVarClick != null)
+        msgs = ((InternalEObject)newVarClick).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.CLICK__VAR_CLICK, null, msgs);
+      msgs = basicSetVarClick(newVarClick, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.CLICK__VAR_REF, newVarRef, newVarRef));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.CLICK__VAR_CLICK, newVarClick, newVarClick));
   }
 
   /**
@@ -121,8 +121,8 @@ public class ClickImpl extends ActionImpl implements Click
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.CLICK__VAR_REF:
-        return basicSetVarRef(null, msgs);
+      case BrowserAutomationPackage.CLICK__VAR_CLICK:
+        return basicSetVarClick(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,8 +137,8 @@ public class ClickImpl extends ActionImpl implements Click
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.CLICK__VAR_REF:
-        return getVarRef();
+      case BrowserAutomationPackage.CLICK__VAR_CLICK:
+        return getVarClick();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +153,8 @@ public class ClickImpl extends ActionImpl implements Click
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.CLICK__VAR_REF:
-        setVarRef((VarReference)newValue);
+      case BrowserAutomationPackage.CLICK__VAR_CLICK:
+        setVarClick((VarReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +170,8 @@ public class ClickImpl extends ActionImpl implements Click
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.CLICK__VAR_REF:
-        setVarRef((VarReference)null);
+      case BrowserAutomationPackage.CLICK__VAR_CLICK:
+        setVarClick((VarReference)null);
         return;
     }
     super.eUnset(featureID);
@@ -187,8 +187,8 @@ public class ClickImpl extends ActionImpl implements Click
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.CLICK__VAR_REF:
-        return varRef != null;
+      case BrowserAutomationPackage.CLICK__VAR_CLICK:
+        return varClick != null;
     }
     return super.eIsSet(featureID);
   }

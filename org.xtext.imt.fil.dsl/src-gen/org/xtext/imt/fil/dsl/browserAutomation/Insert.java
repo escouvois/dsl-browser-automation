@@ -14,8 +14,8 @@ package org.xtext.imt.fil.dsl.browserAutomation;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getAttrVal <em>Attr Val</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarRef <em>Var Ref</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarToInsert <em>Var To Insert</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarInserted <em>Var Inserted</em>}</li>
  * </ul>
  *
  * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert()
@@ -47,47 +47,47 @@ public interface Insert extends Action
   void setAttrVal(String value);
 
   /**
-   * Returns the value of the '<em><b>Var Ref</b></em>' containment reference.
+   * Returns the value of the '<em><b>Var To Insert</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Ref</em>' containment reference.
-   * @see #setVarRef(VarReference)
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_VarRef()
+   * @return the value of the '<em>Var To Insert</em>' containment reference.
+   * @see #setVarToInsert(VarReference)
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_VarToInsert()
    * @model containment="true"
    * @generated
    */
-  VarReference getVarRef();
+  VarReference getVarToInsert();
 
   /**
-   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarRef <em>Var Ref</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarToInsert <em>Var To Insert</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var Ref</em>' containment reference.
-   * @see #getVarRef()
+   * @param value the new value of the '<em>Var To Insert</em>' containment reference.
+   * @see #getVarToInsert()
    * @generated
    */
-  void setVarRef(VarReference value);
+  void setVarToInsert(VarReference value);
 
   /**
-   * Returns the value of the '<em><b>Var2</b></em>' containment reference.
+   * Returns the value of the '<em><b>Var Inserted</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var2</em>' containment reference.
-   * @see #setVar2(VarReference)
-   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_Var2()
+   * @return the value of the '<em>Var Inserted</em>' containment reference.
+   * @see #setVarInserted(VarReference)
+   * @see org.xtext.imt.fil.dsl.browserAutomation.BrowserAutomationPackage#getInsert_VarInserted()
    * @model containment="true"
    * @generated
    */
-  VarReference getVar2();
+  VarReference getVarInserted();
 
   /**
-   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVar2 <em>Var2</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.imt.fil.dsl.browserAutomation.Insert#getVarInserted <em>Var Inserted</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var2</em>' containment reference.
-   * @see #getVar2()
+   * @param value the new value of the '<em>Var Inserted</em>' containment reference.
+   * @see #getVarInserted()
    * @generated
    */
-  void setVar2(VarReference value);
+  void setVarInserted(VarReference value);
 
 } // Insert

@@ -24,8 +24,8 @@ import org.xtext.imt.fil.dsl.browserAutomation.VarReference;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getAttrVal <em>Attr Val</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVarRef <em>Var Ref</em>}</li>
- *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVar2 <em>Var2</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVarToInsert <em>Var To Insert</em>}</li>
+ *   <li>{@link org.xtext.imt.fil.dsl.browserAutomation.impl.InsertImpl#getVarInserted <em>Var Inserted</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,24 +53,24 @@ public class InsertImpl extends ActionImpl implements Insert
   protected String attrVal = ATTR_VAL_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getVarRef() <em>Var Ref</em>}' containment reference.
+   * The cached value of the '{@link #getVarToInsert() <em>Var To Insert</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarRef()
+   * @see #getVarToInsert()
    * @generated
    * @ordered
    */
-  protected VarReference varRef;
+  protected VarReference varToInsert;
 
   /**
-   * The cached value of the '{@link #getVar2() <em>Var2</em>}' containment reference.
+   * The cached value of the '{@link #getVarInserted() <em>Var Inserted</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVar2()
+   * @see #getVarInserted()
    * @generated
    * @ordered
    */
-  protected VarReference var2;
+  protected VarReference varInserted;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,9 +124,9 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
-  public VarReference getVarRef()
+  public VarReference getVarToInsert()
   {
-    return varRef;
+    return varToInsert;
   }
 
   /**
@@ -134,13 +134,13 @@ public class InsertImpl extends ActionImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVarRef(VarReference newVarRef, NotificationChain msgs)
+  public NotificationChain basicSetVarToInsert(VarReference newVarToInsert, NotificationChain msgs)
   {
-    VarReference oldVarRef = varRef;
-    varRef = newVarRef;
+    VarReference oldVarToInsert = varToInsert;
+    varToInsert = newVarToInsert;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR_REF, oldVarRef, newVarRef);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR_TO_INSERT, oldVarToInsert, newVarToInsert);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -152,20 +152,20 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
-  public void setVarRef(VarReference newVarRef)
+  public void setVarToInsert(VarReference newVarToInsert)
   {
-    if (newVarRef != varRef)
+    if (newVarToInsert != varToInsert)
     {
       NotificationChain msgs = null;
-      if (varRef != null)
-        msgs = ((InternalEObject)varRef).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR_REF, null, msgs);
-      if (newVarRef != null)
-        msgs = ((InternalEObject)newVarRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR_REF, null, msgs);
-      msgs = basicSetVarRef(newVarRef, msgs);
+      if (varToInsert != null)
+        msgs = ((InternalEObject)varToInsert).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR_TO_INSERT, null, msgs);
+      if (newVarToInsert != null)
+        msgs = ((InternalEObject)newVarToInsert).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR_TO_INSERT, null, msgs);
+      msgs = basicSetVarToInsert(newVarToInsert, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR_REF, newVarRef, newVarRef));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR_TO_INSERT, newVarToInsert, newVarToInsert));
   }
 
   /**
@@ -174,9 +174,9 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
-  public VarReference getVar2()
+  public VarReference getVarInserted()
   {
-    return var2;
+    return varInserted;
   }
 
   /**
@@ -184,13 +184,13 @@ public class InsertImpl extends ActionImpl implements Insert
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVar2(VarReference newVar2, NotificationChain msgs)
+  public NotificationChain basicSetVarInserted(VarReference newVarInserted, NotificationChain msgs)
   {
-    VarReference oldVar2 = var2;
-    var2 = newVar2;
+    VarReference oldVarInserted = varInserted;
+    varInserted = newVarInserted;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR2, oldVar2, newVar2);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR_INSERTED, oldVarInserted, newVarInserted);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -202,20 +202,20 @@ public class InsertImpl extends ActionImpl implements Insert
    * @generated
    */
   @Override
-  public void setVar2(VarReference newVar2)
+  public void setVarInserted(VarReference newVarInserted)
   {
-    if (newVar2 != var2)
+    if (newVarInserted != varInserted)
     {
       NotificationChain msgs = null;
-      if (var2 != null)
-        msgs = ((InternalEObject)var2).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR2, null, msgs);
-      if (newVar2 != null)
-        msgs = ((InternalEObject)newVar2).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR2, null, msgs);
-      msgs = basicSetVar2(newVar2, msgs);
+      if (varInserted != null)
+        msgs = ((InternalEObject)varInserted).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR_INSERTED, null, msgs);
+      if (newVarInserted != null)
+        msgs = ((InternalEObject)newVarInserted).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - BrowserAutomationPackage.INSERT__VAR_INSERTED, null, msgs);
+      msgs = basicSetVarInserted(newVarInserted, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR2, newVar2, newVar2));
+      eNotify(new ENotificationImpl(this, Notification.SET, BrowserAutomationPackage.INSERT__VAR_INSERTED, newVarInserted, newVarInserted));
   }
 
   /**
@@ -228,10 +228,10 @@ public class InsertImpl extends ActionImpl implements Insert
   {
     switch (featureID)
     {
-      case BrowserAutomationPackage.INSERT__VAR_REF:
-        return basicSetVarRef(null, msgs);
-      case BrowserAutomationPackage.INSERT__VAR2:
-        return basicSetVar2(null, msgs);
+      case BrowserAutomationPackage.INSERT__VAR_TO_INSERT:
+        return basicSetVarToInsert(null, msgs);
+      case BrowserAutomationPackage.INSERT__VAR_INSERTED:
+        return basicSetVarInserted(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -248,10 +248,10 @@ public class InsertImpl extends ActionImpl implements Insert
     {
       case BrowserAutomationPackage.INSERT__ATTR_VAL:
         return getAttrVal();
-      case BrowserAutomationPackage.INSERT__VAR_REF:
-        return getVarRef();
-      case BrowserAutomationPackage.INSERT__VAR2:
-        return getVar2();
+      case BrowserAutomationPackage.INSERT__VAR_TO_INSERT:
+        return getVarToInsert();
+      case BrowserAutomationPackage.INSERT__VAR_INSERTED:
+        return getVarInserted();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -269,11 +269,11 @@ public class InsertImpl extends ActionImpl implements Insert
       case BrowserAutomationPackage.INSERT__ATTR_VAL:
         setAttrVal((String)newValue);
         return;
-      case BrowserAutomationPackage.INSERT__VAR_REF:
-        setVarRef((VarReference)newValue);
+      case BrowserAutomationPackage.INSERT__VAR_TO_INSERT:
+        setVarToInsert((VarReference)newValue);
         return;
-      case BrowserAutomationPackage.INSERT__VAR2:
-        setVar2((VarReference)newValue);
+      case BrowserAutomationPackage.INSERT__VAR_INSERTED:
+        setVarInserted((VarReference)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -292,11 +292,11 @@ public class InsertImpl extends ActionImpl implements Insert
       case BrowserAutomationPackage.INSERT__ATTR_VAL:
         setAttrVal(ATTR_VAL_EDEFAULT);
         return;
-      case BrowserAutomationPackage.INSERT__VAR_REF:
-        setVarRef((VarReference)null);
+      case BrowserAutomationPackage.INSERT__VAR_TO_INSERT:
+        setVarToInsert((VarReference)null);
         return;
-      case BrowserAutomationPackage.INSERT__VAR2:
-        setVar2((VarReference)null);
+      case BrowserAutomationPackage.INSERT__VAR_INSERTED:
+        setVarInserted((VarReference)null);
         return;
     }
     super.eUnset(featureID);
@@ -314,10 +314,10 @@ public class InsertImpl extends ActionImpl implements Insert
     {
       case BrowserAutomationPackage.INSERT__ATTR_VAL:
         return ATTR_VAL_EDEFAULT == null ? attrVal != null : !ATTR_VAL_EDEFAULT.equals(attrVal);
-      case BrowserAutomationPackage.INSERT__VAR_REF:
-        return varRef != null;
-      case BrowserAutomationPackage.INSERT__VAR2:
-        return var2 != null;
+      case BrowserAutomationPackage.INSERT__VAR_TO_INSERT:
+        return varToInsert != null;
+      case BrowserAutomationPackage.INSERT__VAR_INSERTED:
+        return varInserted != null;
     }
     return super.eIsSet(featureID);
   }

@@ -1,0 +1,12 @@
+test_7_and_4 {
+	open chrome
+	go to "http://www.imt-atlantique.fr/fr/rechercher"
+	trump = get input by value ["Search field"]
+	insert "plateforme" in trump
+	btn = get button by value ["Appliquer les filtres"]
+	click on btn
+	texte = get link by value ["IMT Atlantique présente ses plateformes d'excellence pour l'Industrie du futur"]
+	click on texte
+	title2 = get pageTitle
+	title2 contains texte
+}

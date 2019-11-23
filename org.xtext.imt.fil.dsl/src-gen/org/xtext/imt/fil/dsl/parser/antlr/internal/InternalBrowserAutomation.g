@@ -939,17 +939,17 @@ ruleClick returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getClickAccess().getVarRefVarReferenceParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getClickAccess().getVarClickVarReferenceParserRuleCall_2_0());
 				}
-				lv_varRef_2_0=ruleVarReference
+				lv_varClick_2_0=ruleVarReference
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getClickRule());
 					}
 					set(
 						$current,
-						"varRef",
-						lv_varRef_2_0,
+						"varClick",
+						lv_varClick_2_0,
 						"org.xtext.imt.fil.dsl.BrowserAutomation.VarReference");
 					afterParserOrEnumRuleCall();
 				}
@@ -1001,17 +1001,17 @@ ruleInsert returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getInsertAccess().getVarRefVarReferenceParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getInsertAccess().getVarToInsertVarReferenceParserRuleCall_1_1_0());
 					}
-					lv_varRef_2_0=ruleVarReference
+					lv_varToInsert_2_0=ruleVarReference
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getInsertRule());
 						}
 						set(
 							$current,
-							"varRef",
-							lv_varRef_2_0,
+							"varToInsert",
+							lv_varToInsert_2_0,
 							"org.xtext.imt.fil.dsl.BrowserAutomation.VarReference");
 						afterParserOrEnumRuleCall();
 					}
@@ -1025,17 +1025,17 @@ ruleInsert returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInsertAccess().getVar2VarReferenceParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getInsertAccess().getVarInsertedVarReferenceParserRuleCall_3_0());
 				}
-				lv_var2_4_0=ruleVarReference
+				lv_varInserted_4_0=ruleVarReference
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getInsertRule());
 					}
 					set(
 						$current,
-						"var2",
-						lv_var2_4_0,
+						"varInserted",
+						lv_varInserted_4_0,
 						"org.xtext.imt.fil.dsl.BrowserAutomation.VarReference");
 					afterParserOrEnumRuleCall();
 				}
